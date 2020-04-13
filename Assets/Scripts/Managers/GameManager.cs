@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Игровые состояния
+/// </summary>
 public enum GameState
 {
     PREGAME,    // начальное состояние / главное меню
@@ -10,31 +13,27 @@ public enum GameState
     PAUSED      // пауза
 }
 
+/// <summary>
+/// Отвечает за главную логику игры
+/// </summary>
 public class GameManager : Singleton<GameManager>
 {
-    [SerializeField] public GameState CurrentState { get; private set; }
+    /// <summary>
+    /// Текущее состояние игры
+    /// </summary>
+    public GameState CurrentState { get; private set; }
 
     void Start()
     {
         DontDestroyOnLoad(gameObject);
-         DontDestroyOnLoad(CanvasManager.instance.gameObject);
+        DontDestroyOnLoad(CanvasManager.instance.gameObject);
         // DontDestroyOnLoad(InputManager.instance.gameObject);
 
         CurrentState = GameState.PREGAME;
     }
 
-    void Update()
-    {
-        //if (Input.GetKeyDown(KeyCode.Escape))
-        //{
-        //    TogglePause();
-        //}
-    }
-
-
-
     /// <summary>
-    /// Обновляет состояние игры
+    /// Применяет и обрабатывает изменение состояния игры
     /// </summary>
     /// <param name="state">Состояние, в которое переходит</param>
     public void UpdateGameState(GameState state)
@@ -62,7 +61,7 @@ public class GameManager : Singleton<GameManager>
 
 
     /// <summary>
-    /// Отвечает за паузу
+    /// Изменяет состояние игры
     /// </summary>
     public void TogglePause()
     {

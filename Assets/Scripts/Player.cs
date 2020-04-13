@@ -10,8 +10,8 @@ public class Player : AbstractCharacter
     //CanvasManager _canvasManager;
 
     [Header("Values")]
-    [SerializeField] float _cameraMoveSens = 5;
-    [SerializeField] float _movespeed = 3;
+    //[SerializeField] float _cameraMoveSens = 5;
+    //[SerializeField] float _movespeed = 3;
 
     [HideInInspector] public static Player instance;
 
@@ -40,6 +40,7 @@ public class Player : AbstractCharacter
         {
             //Health -= 10;
             Debug.Log($"health:{Health -= 10}");
+            Debug.Log($"Exp: {Experience += 10}");
         }
 
         //if (Input.GetKeyDown(KeyCode.Space))

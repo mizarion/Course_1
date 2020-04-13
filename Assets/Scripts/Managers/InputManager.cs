@@ -1,19 +1,28 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// Отвечает за обработку ввода
+/// </summary>
 public class InputManager : Singleton<InputManager>
 {
     public LayerMask clickableLayer; // layermask used to isolate raycasts against clickable layers
 
     public Texture2D pointer; // normal mouse pointer
     public Texture2D target; // target mouse pointer
-    public Texture2D doorway; // doorway mouse pointer
+    //public Texture2D doorway; // doorway mouse pointer
     public Texture2D sword;
 
     public EventVector3 OnClickEnviroment;
 
     void Update()
     {
+        // Если это начало игры, то данный функционал не требуется
+        if (GameManager.instance.CurrentState == GameState.PREGAME)
+        {
+            return;
+        }
+
         // Raycast into scene
         RaycastHit hit;
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 50, clickableLayer.value))
@@ -52,7 +61,7 @@ public class InputManager : Singleton<InputManager>
         {
             //GameManager.instance.UpdateGameState(GameState.PAUSED);
             CanvasManager.instance.PauseHandler();
-            Debug.Log($"you press escape: timescale: {Time.timeScale}, curGameState: {GameManager.instance.CurrentState}");
+            //Debug.Log($"you press escape: timescale: {Time.timeScale}, curGameState: {GameManager.instance.CurrentState}");
         }
         if (Input.GetKeyDown(KeyCode.Q))
         {

@@ -1,34 +1,25 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Отвечает за UI
+/// </summary>
 public class CanvasManager : Singleton<CanvasManager>
 {
     [Header("StartScene")]
-    [SerializeField] GameObject StartSceneUI;
-    [SerializeField] Image _load;
-    [SerializeField] Button _start_Button;
-    [SerializeField] Button _quit_Button;
+    [SerializeField] GameObject StartSceneUI;   // 'Родитель' объектов главного меню
+    //[SerializeField] Image _load;
+    //[SerializeField] Button _start_Button;
+    //[SerializeField] Button _quit_Button;   
 
     [Header("Settings")]
     [SerializeField] Image _settings_Image;
 
     [Header("HUD")]
-    [SerializeField] GameObject HUD;
+    [SerializeField] GameObject HUD;     // 'Родитель' объектов HUD'а
     [SerializeField] Image _healthImage;
     [SerializeField] Image _manaImage;
     [SerializeField] Image _expImage;
-
-    //[Header("Player")]
-    //[SerializeField] Player _player;
-
-
-    /// <summary>
-    /// Открывает меню настроек
-    /// </summary>
-    public void OpenSettings()
-    {
-        _settings_Image.gameObject.SetActive(!_settings_Image.gameObject.activeSelf);
-    }
 
     /// <summary>
     /// Обновляет HUD
@@ -40,10 +31,10 @@ public class CanvasManager : Singleton<CanvasManager>
         _healthImage.fillAmount = player.Health / DataManager.Stats.Player.Health[lvl];
         _manaImage.fillAmount = player.Manapool / DataManager.Stats.Player.Manapool[lvl];
         _expImage.fillAmount = player.Experience / DataManager.Stats.Player.Experience[lvl];
-    }   
+    }
 
     /// <summary>
-    /// Переключает UI из меню в игровой режим.
+    /// Переключает UI из главного меню в игровой режим.
     /// </summary>
     /// <param name="isGameStart">Это начало игры?</param>
     public void ActivateHUD(bool isGameStart)
@@ -61,19 +52,14 @@ public class CanvasManager : Singleton<CanvasManager>
     /// </summary>
     public void StartHandler()
     {
-        //_start_Button.gameObject.SetActive(false);
-        //_load.gameObject.SetActive(true);
-
         ActivateHUD(true);
 
         GameManager.instance.StartGame();
 
-        // ToDo: update image: "_load"
     }
 
-
     /// <summary>
-    /// Обработчик возобновления игры
+    /// Ставит игру на паузу и открывает меню паузы/настроек
     /// </summary>
     public void PauseHandler()
     {
@@ -83,13 +69,30 @@ public class CanvasManager : Singleton<CanvasManager>
     }
 
     /// <summary>
+    /// Сохраняет игру
+    /// </summary>
+    public void SaveHandler()
+    {
+        // todo: Сделать сохранение
+        Debug.Log("[CanvasManger] SaveHandler");
+    }
+
+    /// <summary>
+    /// Загружает сохранение
+    /// </summary>
+    public void LoadHandler()
+    {
+        // todo: Сделать загрузку сохранения
+        Debug.Log("[CanvasManger] LoadHandler");
+    }
+
+    /// <summary>
     /// Обработчик перезапуска игры
     /// </summary>
     public void RestartHandler()
     {
         ActivateHUD(false);
         GameManager.instance.RestartGame();
-        // Todo: активировать интерфейс
     }
 
     /// <summary>
@@ -102,4 +105,8 @@ public class CanvasManager : Singleton<CanvasManager>
 
     #endregion
 
+    public void Debuger()
+    {
+        Debug.Log("[CanvasManager] Debuger");
+    }
 }
