@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 /// <summary>
 /// Отвечает за обработку ввода
@@ -8,12 +9,12 @@ public class InputManager : Singleton<InputManager>
 {
     public LayerMask clickableLayer; // layermask used to isolate raycasts against clickable layers
 
-    public Texture2D pointer; // normal mouse pointer
-    public Texture2D target; // target mouse pointer
-    //public Texture2D doorway; // doorway mouse pointer
-    public Texture2D sword;
+    public Texture2D pointer;   // стандартный курсор
+    public Texture2D target;    // курсор в виде прицел
+    //public Texture2D doorway; // курсор в виде двери
+    public Texture2D sword;     // курсор в виде меча
 
-    public EventVector3 OnClickEnviroment;
+    public EventVector3 OnClickEnviroment;  // Подписчик в эдиторе Hero.MavMeshAgent.destination
 
     void Update()
     {
@@ -23,9 +24,9 @@ public class InputManager : Singleton<InputManager>
             return;
         }
 
-        // Raycast into scene
+        // Стреляем лучами по сцене :)
         RaycastHit hit;
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 50, clickableLayer.value))
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 50, clickableLayer.value) && !EventSystem.current.IsPointerOverGameObject())
         {
             //bool door = false;
             //if (hit.collider.gameObject.CompareTag("Doorway"))
@@ -57,17 +58,25 @@ public class InputManager : Singleton<InputManager>
             Cursor.SetCursor(pointer, Vector2.zero, CursorMode.Auto);
         }
 
+        #region Нажатия клавиш
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            //GameManager.instance.UpdateGameState(GameState.PAUSED);
             CanvasManager.instance.PauseHandler();
-            //Debug.Log($"you press escape: timescale: {Time.timeScale}, curGameState: {GameManager.instance.CurrentState}");
         }
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            //GameManager.instance.RestartGame();
             CanvasManager.instance.RestartHandler();
         }
+        if (Input.GetKeyDown(KeyCode.F5))
+        {
+            CanvasManager.instance.SaveHandler();
+        }
+        if (Input.GetKeyDown(KeyCode.F6))
+        {
+            CanvasManager.instance.LoadHandler();
+        }
+        #endregion
     }
 }
 

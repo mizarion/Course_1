@@ -40,8 +40,7 @@ public class GameManager : Singleton<GameManager>
     {
         GameState privState = CurrentState;
         CurrentState = state;
-        Debug.Log($"cur state:{CurrentState}, privState: {privState}");
-
+        //Debug.Log($"cur state:{CurrentState}, privState: {privState}");
         switch (CurrentState)
         {
             case GameState.PREGAME:
@@ -57,6 +56,9 @@ public class GameManager : Singleton<GameManager>
                 Debug.LogError("[GameManager/UpdateGameState] default State");
                 break;
         }
+
+        Debug.Log($"cur: {state} time: {Time.timeScale}");
+
     }
 
 
@@ -76,6 +78,7 @@ public class GameManager : Singleton<GameManager>
     }
 
 
+
     /// <summary>
     /// Начинает игру, загружая главную сцену
     /// </summary>
@@ -83,7 +86,22 @@ public class GameManager : Singleton<GameManager>
     {
         //AsyncOperation loading = SceneManager.LoadSceneAsync(DataManager.Scenes.MainGame); //, LoadSceneMode.Additive);
         AsyncOperation loading = SceneManager.LoadSceneAsync("PoligonVikings", LoadSceneMode.Additive);
+
+        loading.completed += Loading_completed;
+
         CurrentState = GameState.RUNNING;
+    }
+
+    /// <summary>
+    /// Выполняет необходимые действия после загрузки сцены
+    /// </summary>
+    /// <param name="obj"></param>
+    private void Loading_completed(AsyncOperation obj)
+    {
+        if (obj.isDone && CanvasManager.instance.needLoad)
+        {
+            CanvasManager.instance.LoadHandler();
+        }
     }
 
 
@@ -96,8 +114,94 @@ public class GameManager : Singleton<GameManager>
 
         //AsyncOperation loading = SceneManager.LoadSceneAsync(DataManager.Scenes.startScene);
 
-        CurrentState = GameState.PREGAME;
+        UpdateGameState(GameState.PREGAME);
     }
+
+
+    const string position = "position";
+    const string rotation = "rotation";
+
+    const string pathHealth = "PlayerHealth";
+    const string pathMana = "PlayerMana";
+    const string pathExp = "PlayerExp";
+    const string pathLevel = "PlayerLevel";
+
+    /// <summary>
+    /// Сохраняет игру
+    /// </summary>
+    public void SaveGame()
+    {
+        // Todo: сохранить массив врагов
+
+        Player inst = Player.instance;
+
+        #region Save player stats 
+
+        PlayerPrefs.SetFloat(pathHealth, inst.Health);
+        PlayerPrefs.SetFloat(pathMana, inst.Manapool);
+        PlayerPrefs.SetFloat(pathExp, inst.Experience);
+        PlayerPrefs.SetInt(pathLevel, inst.Level);
+
+        #endregion
+
+        SaveTransform(Camera.main.transform);
+        SaveTransform(inst.transform);
+        Debug.Log("[GameManager] SaveGame");
+    }
+
+    /// <summary>
+    /// Загружает игру
+    /// </summary>
+    public void LoadGame()
+    {
+        Player inst = Player.instance;
+
+        #region Load player stat
+
+        inst.Health = PlayerPrefs.GetFloat(pathHealth);
+        inst.Manapool = PlayerPrefs.GetFloat(pathMana);
+        inst.Experience = PlayerPrefs.GetFloat(pathExp);
+        inst.Level = PlayerPrefs.GetInt(pathLevel);
+
+        #endregion
+
+        LoadTransform(inst.transform);
+        //LoadTransform(Camera.main.transform);
+        Debug.Log("[GameManager] LoadGame");
+    }
+
+
+
+    /// <summary>
+    /// Сохраняет данные персонажа в transform'е
+    /// </summary>
+    /// <param name="tr">Ссылка на трансформ</param>
+    void SaveTransform(Transform tr)
+    {
+        // Сохраняем позицию
+        string data = JsonUtility.ToJson(tr.position);
+        PlayerPrefs.SetString(position, data);
+        // сохраняем поворот
+        data = JsonUtility.ToJson(tr.rotation);
+        PlayerPrefs.SetString(rotation, data);
+        // Выгружаем буфер
+        PlayerPrefs.Save();
+    }
+
+    /// <summary>
+    /// Загружает данные персонажа в transform'е
+    /// </summary>
+    /// <param name="tr">Ссылка на трансформ</param>
+    void LoadTransform(Transform tr)
+    {
+        string data = PlayerPrefs.GetString(position);
+        tr.position = JsonUtility.FromJson<Vector3>(data);
+
+        data = PlayerPrefs.GetString(rotation);
+        tr.rotation = JsonUtility.FromJson<Quaternion>(data);
+    }
+
+
 
     /// <summary>
     /// Завершает работу игры

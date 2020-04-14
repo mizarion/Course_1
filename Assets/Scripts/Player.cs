@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+[System.Serializable]
+/// <summary>
+/// Класс, реализующий игрока
+/// </summary>
 public class Player : AbstractCharacter
 {
     //[SerializeField] GameObject enemy;
@@ -17,7 +21,7 @@ public class Player : AbstractCharacter
 
     private void Awake()
     {
-        InitializeProperties(DataManager.Stats.Player.Health, DataManager.Stats.Player.Manapool, DataManager.Stats.Player.Experience, "Hero");
+        InitializeProperties(DataManager.Stats.Player.Health, DataManager.Stats.Player.Manapool, DataManager.Stats.Player.Experience, "Yuusha");
         instance = this;
     }
 
@@ -38,41 +42,13 @@ public class Player : AbstractCharacter
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            //Health -= 10;
-            Debug.Log($"health:{Health -= 10}");
+            //int damage = 10;
+            //GetDamage(damage);
+            Debug.Log($"health:{Health}");
             Debug.Log($"Exp: {Experience += 10}");
         }
-
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    if (enemy != null)
-        //    {
-
-        //        Attack(enemy);
-        //        //GetDamage(10);
-        //        Debug.Log($"I am {Name} and i attack {goblin.Name} {10} damage, {goblin.Health} hp");
-        //    }
-        //    Debug.Log($"player: {Name} have exp: {Experience += 10} and lvl: {Level}");
-        //}
-
-        //    if (enemy != null)
-        //    {
-
-        //    }
-
-
-        //    TakeTarget();
     }
 
-    //void FixedUpdate()
-    //{
-    //    Move();
-    //}
-
-    //private void LateUpdate()
-    //{
-    //    RotateCamera();
-    //}
 
     /// <summary>
     /// Получиет урон в размере damage.
@@ -108,8 +84,22 @@ public class Player : AbstractCharacter
     {
         // ToDo: обработать смерть
 
+        Debug.Log($"[Player] Hero: {Name} die");
         //base.Die();
     }
+
+    #region Legacy
+
+    //void FixedUpdate()
+    //{
+    //    Move();
+    //}
+
+    //private void LateUpdate()
+    //{
+    //    RotateCamera();
+    //}
+
     ///// <summary>
     ///// Отвечает за движение персонажа
     ///// </summary>
@@ -153,4 +143,7 @@ public class Player : AbstractCharacter
     //        }
     //    }
     //}
+
+    #endregion
+
 }

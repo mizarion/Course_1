@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
@@ -13,7 +14,7 @@ public class CanvasManager : Singleton<CanvasManager>
     //[SerializeField] Button _quit_Button;   
 
     [Header("Settings")]
-    [SerializeField] Image _settings_Image;
+    [SerializeField] Image _pauseImage;
 
     [Header("HUD")]
     [SerializeField] GameObject HUD;     // 'Родитель' объектов HUD'а
@@ -41,6 +42,12 @@ public class CanvasManager : Singleton<CanvasManager>
     {
         HUD.SetActive(isGameStart);
 
+        // Todo: rewrite
+        if (!isGameStart && _pauseImage.gameObject.activeSelf)
+        {
+            _pauseImage.gameObject.SetActive(false);
+        }
+
         StartSceneUI.SetActive(!isGameStart);
     }
 
@@ -65,7 +72,7 @@ public class CanvasManager : Singleton<CanvasManager>
     {
         GameManager.instance.TogglePause();
 
-        _settings_Image.gameObject.SetActive(!_settings_Image.gameObject.activeSelf);
+        _pauseImage.gameObject.SetActive(!_pauseImage.gameObject.activeSelf);
     }
 
     /// <summary>
@@ -74,6 +81,9 @@ public class CanvasManager : Singleton<CanvasManager>
     public void SaveHandler()
     {
         // todo: Сделать сохранение
+
+        GameManager.instance.SaveGame();
+
         Debug.Log("[CanvasManger] SaveHandler");
     }
 
@@ -83,8 +93,22 @@ public class CanvasManager : Singleton<CanvasManager>
     public void LoadHandler()
     {
         // todo: Сделать загрузку сохранения
+
+        GameManager.instance.LoadGame();
+
         Debug.Log("[CanvasManger] LoadHandler");
     }
+
+    /// <summary>
+    /// Начинает игру и загружает сохранение
+    /// </summary>
+    public void StartGameAndLoadSave()
+    {
+        StartHandler();
+        needLoad = true;
+    }
+
+    public bool needLoad { get; set; }
 
     /// <summary>
     /// Обработчик перезапуска игры
