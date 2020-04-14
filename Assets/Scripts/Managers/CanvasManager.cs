@@ -59,7 +59,7 @@ public class CanvasManager : Singleton<CanvasManager>
     /// </summary>
     public void StartHandler()
     {
-        ActivateHUD(true);
+        //ActivateHUD(true);
 
         GameManager.instance.StartGame();
 

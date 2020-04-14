@@ -10,7 +10,7 @@ using UnityEngine.AI;
 public abstract class AbstractEnemy : AbstractCharacter, IEnemy
 {
     ///// <summary>
-    ///// Конструктор для создания абстрактного персонажа
+    ///// Конструктор для создания абстрактного врага
     ///// </summary>
     ///// <param name="health">Список значений количества здоровья, соответствующий уровню героя</param>
     ///// <param name="mana">Список значений количества маны, соответствующий уровню героя</param>

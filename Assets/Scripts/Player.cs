@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-[System.Serializable]
 /// <summary>
 /// Класс, реализующий игрока
 /// </summary>
+[System.Serializable]
 public class Player : AbstractCharacter
 {
     //[SerializeField] GameObject enemy;

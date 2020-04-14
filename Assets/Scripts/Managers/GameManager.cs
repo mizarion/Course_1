@@ -57,8 +57,7 @@ public class GameManager : Singleton<GameManager>
                 break;
         }
 
-        Debug.Log($"cur: {state} time: {Time.timeScale}");
-
+        //Debug.Log($"curState: {state} time: {Time.timeScale}");
     }
 
 
@@ -98,9 +97,13 @@ public class GameManager : Singleton<GameManager>
     /// <param name="obj"></param>
     private void Loading_completed(AsyncOperation obj)
     {
-        if (obj.isDone && CanvasManager.instance.needLoad)
+        if (obj.isDone)
         {
-            CanvasManager.instance.LoadHandler();
+            if ( CanvasManager.instance.needLoad)
+            {
+                CanvasManager.instance.LoadHandler();
+            }
+            CanvasManager.instance.ActivateHUD(true);
         }
     }
 

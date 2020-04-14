@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(NavMeshAgent)), RequireComponent(typeof(Animator))]
 /// <summary>
 /// Абстрактный класс отвечающий за базовый функционал существа.
 /// </summary>
+[RequireComponent(typeof(NavMeshAgent)), RequireComponent(typeof(Animator))]
 public abstract class AbstractCharacter : MonoBehaviour, ICharacter
 {
     protected NavMeshAgent agent;
