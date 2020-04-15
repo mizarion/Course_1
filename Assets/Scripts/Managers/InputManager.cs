@@ -14,7 +14,10 @@ public class InputManager : Singleton<InputManager>
     //public Texture2D doorway; // курсор в виде двери
     public Texture2D sword;     // курсор в виде меча
 
+    [SerializeField] float _ScrollSens = 5;
+
     public EventVector3 OnClickEnviroment;  // Подписчик в эдиторе Hero.MavMeshAgent.destination
+    public EventGameObject onClickAttackable; // 
 
     void Update()
     {
@@ -28,35 +31,53 @@ public class InputManager : Singleton<InputManager>
         RaycastHit hit;
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 50, clickableLayer.value) && !EventSystem.current.IsPointerOverGameObject())
         {
-            //bool door = false;
-            //if (hit.collider.gameObject.CompareTag("Doorway"))
-            //{
-            //    Cursor.SetCursor(doorway, new Vector2(16, 16), CursorMode.Auto);
-            //    door = true;
-            //}
-            //else
-            //{
-            //    Cursor.SetCursor(target, new Vector2(16, 16), CursorMode.Auto);
-            //}
-            Cursor.SetCursor(target, new Vector2(16, 16), CursorMode.Auto);
-            if (Input.GetMouseButtonDown(1))
+            // Если объект содержит интерфейс IEnemy - значит это враг, которого можно атаковать
+            if (hit.collider.GetComponent(typeof(IEnemy)) != null /*|| hit.collider.CompareTag("Enemy")*/)
             {
-                //if (door)
-                //{
-                //    Transform doorway = hit.collider.transform;
-                //    OnClickEnviroment?.Invoke(doorway.position + doorway.forward * 10);
-                //}
-                //else
-                //{
-                //}
+                Cursor.SetCursor(sword, new Vector2(16, 16), CursorMode.Auto);
 
-                OnClickEnviroment?.Invoke(hit.point);
+                //// Недостаток - на добегание до места где стоял враг, а не сам враг
+                //if (Input.GetMouseButtonDown(1))
+                //{
+                //    if (Vector3.Distance(hit.point, Player.instance.transform.position) < 3)
+                //    {
+                //        onClickAttackable?.Invoke(hit.collider.gameObject /*.GetComponent<ICharacter>()*/);
+                //    }
+                //    else
+                //    {
+                //        OnClickEnviroment?.Invoke(hit.point);
+                //    }
+                //}
+                if (Input.GetMouseButtonDown(0))
+                {
+                    onClickAttackable?.Invoke(hit.collider.gameObject);
+                }
+            }
+
+            else
+            {
+                Cursor.SetCursor(target, new Vector2(16, 16), CursorMode.Auto);
+                if (Input.GetMouseButtonDown(1))
+                {
+                    OnClickEnviroment?.Invoke(hit.point);
+                }
             }
         }
         else
         {
             Cursor.SetCursor(pointer, Vector2.zero, CursorMode.Auto);
         }
+
+
+        if (Input.GetAxis("Mouse ScrollWheel") < 0 && SmoothFollowTarget.instance.offset.magnitude < 30)
+        {
+            SmoothFollowTarget.instance.offset += SmoothFollowTarget.instance.offset * Time.deltaTime * _ScrollSens;
+        }
+        else if (Input.GetAxis("Mouse ScrollWheel") > 0 && SmoothFollowTarget.instance.offset.magnitude > 10)
+        {
+            SmoothFollowTarget.instance.offset -= SmoothFollowTarget.instance.offset * Time.deltaTime * _ScrollSens;
+        }
+
 
         #region Нажатия клавиш
 
@@ -84,3 +105,5 @@ public class InputManager : Singleton<InputManager>
 public class EventVector3 : UnityEvent<Vector3> { }
 
 
+[System.Serializable]
+public class EventGameObject : UnityEvent<GameObject> { }

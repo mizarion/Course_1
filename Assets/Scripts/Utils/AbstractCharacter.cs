@@ -6,11 +6,15 @@ using UnityEngine.AI;
 /// <summary>
 /// Абстрактный класс отвечающий за базовый функционал существа.
 /// </summary>
-[RequireComponent(typeof(NavMeshAgent)), RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(NavMeshAgent)), RequireComponent(typeof(Animator))/*, RequireComponent(typeof(Rigidbody))*/]
 public abstract class AbstractCharacter : MonoBehaviour, ICharacter
 {
     protected NavMeshAgent agent;
     protected Animator animator;
+    protected Rigidbody rbody;
+    [SerializeField] ScrollingText _scrollingText;
+    [SerializeField] Color _scrollingTextColor;
+    Transform _scrollingTextContainer;
 
     ///// <summary>
     ///// Конструктор для создания абстрактного персонажа
@@ -50,6 +54,9 @@ public abstract class AbstractCharacter : MonoBehaviour, ICharacter
         Name = name;
 
         animator = GetComponent<Animator>();
+        //rbody = GetComponent<Rigidbody>();
+
+        _scrollingTextContainer = GameObject.Find("TextContainer").transform;
 
         // инициализация NavMeshAgent 
         agent = GetComponent<NavMeshAgent>();
@@ -67,6 +74,18 @@ public abstract class AbstractCharacter : MonoBehaviour, ICharacter
     /// <summary>
     /// Свойство отвечающее за здоровье.
     /// </summary>
+
+
+    [Header("Values"), Space]
+    [SerializeField] float _health;
+    [SerializeField] float _mana;
+    [SerializeField] int _lvl;
+    [SerializeField] float _exp;
+    [SerializeField] private float damage = 10;
+
+    /// <summary>
+    /// Свойство отвечающее за здоровье
+    /// </summary>
     public float Health
     {
         get => _health;
@@ -76,7 +95,6 @@ public abstract class AbstractCharacter : MonoBehaviour, ICharacter
             if (_health <= 0) Die();
         }
     }
-    float _health;
 
     /// <summary>
     /// Свойство отвечающее за ману.
@@ -86,7 +104,6 @@ public abstract class AbstractCharacter : MonoBehaviour, ICharacter
         get => _mana;
         set => _mana = Mathf.Clamp(value, 0, _listMp[Level]);
     }
-    float _mana;
 
     /// <summary>
     /// Свойство отвечающее за уровень.
@@ -96,7 +113,6 @@ public abstract class AbstractCharacter : MonoBehaviour, ICharacter
         get => _lvl;
         set => _lvl = Mathf.Clamp(value, 1, _listExp.Count - 1);
     }
-    int _lvl;
 
     /// <summary>
     /// Свойство отвечающее за опыт.
@@ -114,18 +130,35 @@ public abstract class AbstractCharacter : MonoBehaviour, ICharacter
             _exp = value;
         }
     }
-    float _exp;
 
-    public float Movespeed { get; set; }
+    /// <summary>
+    /// Свойство отвечающее за урон
+    /// </summary>
+    public float Damage
+    {
+        get => damage;
+        protected set => (damage) = value;
+    }
+
+    /// <summary>
+    /// Свойство отвечающее за скорость перемещения
+    /// </summary>
+    public float Movespeed { get; protected set; }
 
     /// <summary>
     /// Атакует выбранную цель, нанося damage урона.
     /// </summary>
     /// <param name="character">Цель атаки</param>
-    /// <param name="damage">Количество урона</param>
-    public virtual void Attack(ICharacter character, float damage = 10)
+    public virtual void Attack(ICharacter character)
     {
-        character.GetDamage(damage);
+        character.GetDamage(Random.Range(Damage / 2, Damage));
+
+        animator.SetTrigger("Attack");
+    }
+
+    public virtual void Hit()
+    {
+
     }
 
     /// <summary>
@@ -133,7 +166,7 @@ public abstract class AbstractCharacter : MonoBehaviour, ICharacter
     /// </summary>
     public virtual void Die()
     {
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
 
     /// <summary>
@@ -143,6 +176,8 @@ public abstract class AbstractCharacter : MonoBehaviour, ICharacter
     public virtual void GetDamage(float damage)
     {
         Health -= damage;
+        var text = Instantiate(_scrollingText, transform.position, Quaternion.identity, _scrollingTextContainer);
+        text.SetTextAndColor(((int)damage).ToString(), _scrollingTextColor);
     }
 
     /// <summary>

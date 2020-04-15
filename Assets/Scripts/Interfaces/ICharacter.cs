@@ -16,8 +16,7 @@ public interface ICharacter
     /// Атакует выбранную цель.
     /// </summary>
     /// <param name="character">Цель атаки</param>
-    /// <param name="damage">Количество урона</param>
-    void Attack(ICharacter character, float damage);
+    void Attack(ICharacter character);
 
     /// <summary>
     /// Обрабатывает смерть персонажа.

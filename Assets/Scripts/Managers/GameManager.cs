@@ -22,6 +22,8 @@ public class GameManager : Singleton<GameManager>
     /// Текущее состояние игры
     /// </summary>
     public GameState CurrentState { get; private set; }
+    public DataManager.Scenes CurrentScene { get; private set; }
+
 
     void Start()
     {
@@ -30,6 +32,7 @@ public class GameManager : Singleton<GameManager>
         // DontDestroyOnLoad(InputManager.instance.gameObject);
 
         CurrentState = GameState.PREGAME;
+        CurrentScene = DataManager.Scenes.StartScene;
     }
 
     /// <summary>
@@ -61,6 +64,28 @@ public class GameManager : Singleton<GameManager>
     }
 
 
+    public void UpdateGameScene(DataManager.Scenes newScene)
+    {
+        // Todo: Добавить проверку на предыдущую сцену
+        // Этот метод должен помочь настроить многоуровневость
+
+        var privScene = CurrentScene;
+        CurrentScene = newScene;
+
+        switch (CurrentScene)
+        {
+            case DataManager.Scenes.StartScene:
+
+                break;
+            case DataManager.Scenes.MainGame:
+
+                break;
+            default:
+                break;
+        }
+    }
+
+
     /// <summary>
     /// Изменяет состояние игры
     /// </summary>
@@ -77,18 +102,19 @@ public class GameManager : Singleton<GameManager>
     }
 
 
-
     /// <summary>
     /// Начинает игру, загружая главную сцену
     /// </summary>
     public void StartGame()
     {
         //AsyncOperation loading = SceneManager.LoadSceneAsync(DataManager.Scenes.MainGame); //, LoadSceneMode.Additive);
-        AsyncOperation loading = SceneManager.LoadSceneAsync("PoligonVikings", LoadSceneMode.Additive);
+        AsyncOperation loading = SceneManager.LoadSceneAsync(/*"PoligonVikings"*/ (int)DataManager.Scenes.MainGame, LoadSceneMode.Additive);
 
         loading.completed += Loading_completed;
 
-        CurrentState = GameState.RUNNING;
+        UpdateGameState(GameState.RUNNING);
+        UpdateGameScene(DataManager.Scenes.MainGame);
+
     }
 
     /// <summary>
@@ -99,7 +125,7 @@ public class GameManager : Singleton<GameManager>
     {
         if (obj.isDone)
         {
-            if ( CanvasManager.instance.needLoad)
+            if (CanvasManager.instance.needLoad)
             {
                 CanvasManager.instance.LoadHandler();
             }
@@ -113,12 +139,15 @@ public class GameManager : Singleton<GameManager>
     /// </summary>
     public void RestartGame()
     {
-        AsyncOperation unloading = SceneManager.UnloadSceneAsync("PoligonVikings");
+        AsyncOperation unloading = SceneManager.UnloadSceneAsync(/*"PoligonVikings"*/ (int)DataManager.Scenes.MainGame);
 
         //AsyncOperation loading = SceneManager.LoadSceneAsync(DataManager.Scenes.startScene);
 
         UpdateGameState(GameState.PREGAME);
+        UpdateGameScene(DataManager.Scenes.MainGame);
     }
+
+    #region Save & Load
 
 
     const string position = "position";
@@ -147,8 +176,8 @@ public class GameManager : Singleton<GameManager>
 
         #endregion
 
-        SaveTransform(Camera.main.transform);
-        SaveTransform(inst.transform);
+        SaveTransform(inst.transform, "Player");
+        SaveTransform(Camera.main.transform, "Camera");
         Debug.Log("[GameManager] SaveGame");
     }
 
@@ -168,8 +197,8 @@ public class GameManager : Singleton<GameManager>
 
         #endregion
 
-        LoadTransform(inst.transform);
-        //LoadTransform(Camera.main.transform);
+        LoadTransform(inst.transform, "Player");
+        LoadTransform(Camera.main.transform, "Camera");
         Debug.Log("[GameManager] LoadGame");
     }
 
@@ -179,14 +208,15 @@ public class GameManager : Singleton<GameManager>
     /// Сохраняет данные персонажа в transform'е
     /// </summary>
     /// <param name="tr">Ссылка на трансформ</param>
-    void SaveTransform(Transform tr)
+    /// <param name="pathName">Дополнительный путь</param>
+    void SaveTransform(Transform tr, string pathName)
     {
         // Сохраняем позицию
         string data = JsonUtility.ToJson(tr.position);
-        PlayerPrefs.SetString(position, data);
+        PlayerPrefs.SetString(position + pathName, data);
         // сохраняем поворот
         data = JsonUtility.ToJson(tr.rotation);
-        PlayerPrefs.SetString(rotation, data);
+        PlayerPrefs.SetString(rotation + pathName, data);
         // Выгружаем буфер
         PlayerPrefs.Save();
     }
@@ -195,16 +225,17 @@ public class GameManager : Singleton<GameManager>
     /// Загружает данные персонажа в transform'е
     /// </summary>
     /// <param name="tr">Ссылка на трансформ</param>
-    void LoadTransform(Transform tr)
+    /// <param name="pathName">Дополнительный путь</param>
+    void LoadTransform(Transform tr, string pathName)
     {
-        string data = PlayerPrefs.GetString(position);
+        string data = PlayerPrefs.GetString(position + pathName);
         tr.position = JsonUtility.FromJson<Vector3>(data);
 
-        data = PlayerPrefs.GetString(rotation);
+        data = PlayerPrefs.GetString(rotation + pathName);
         tr.rotation = JsonUtility.FromJson<Quaternion>(data);
     }
 
-
+    #endregion
 
     /// <summary>
     /// Завершает работу игры

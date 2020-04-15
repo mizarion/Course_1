@@ -19,6 +19,8 @@ public class Player : AbstractCharacter
 
     [HideInInspector] public static Player instance;
 
+    GameObject attackTarget;
+
     private void Awake()
     {
         InitializeProperties(DataManager.Stats.Player.Health, DataManager.Stats.Player.Manapool, DataManager.Stats.Player.Experience, "Yuusha");
@@ -27,12 +29,6 @@ public class Player : AbstractCharacter
 
     void Start()
     {
-        //_canvasManager = FindObjectOfType<CanvasManager>();
-
-        //_canvasManager = G
-        //Debug.Log($"I am {Name} with lvl: {Level}, hp: {Health}, mp: {Manapool}");
-
-        //Debug.Log($"I am {goblin.Name} with {goblin.Level}, hp: {goblin.Health}, mp: {goblin.Manapool}");
         StartCoroutine(Recovery(5, 5));
     }
 
@@ -49,6 +45,58 @@ public class Player : AbstractCharacter
         }
     }
 
+    /// <summary>
+    /// Корутина для атаки
+    /// Если Расстояние больше радиуса атаки, то герой сначала подбежит. И лишь потом ударит.
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator AttackTarget()
+    {
+        agent.isStopped = false;
+
+        while (Vector3.Distance(transform.position, attackTarget.transform.position) > 2)
+        {
+            agent.stoppingDistance = 2;
+            agent.destination = attackTarget.transform.position;
+            yield return null;
+        }
+
+        agent.isStopped = true;
+
+        // Todo: Донастроить
+
+        transform.LookAt(attackTarget.transform);
+        //animator.SetTrigger("Attack");
+        Attack(attackTarget.GetComponent<ICharacter>());
+        StopCoroutine(AttackTarget());
+    }
+
+    public override void Hit()
+    {
+        //Debug.Log("Hit");
+        agent.isStopped = false;
+        StopCoroutine(AttackTarget());
+    }
+
+    ///// <summary>
+    ///// Наносит урон переданной цели
+    ///// </summary>
+    ///// <param name="character">атакуемый персонаж</param>
+    //public override void Attack(ICharacter character)
+    //{
+    //    base.Attack(character);
+    //}
+
+
+    /// <summary>
+    /// Обработчик события атаки
+    /// </summary>
+    /// <param name="target">Цель атаки</param>
+    public void AttackHandler(GameObject target)
+    {
+        attackTarget = target;
+        StartCoroutine(AttackTarget());
+    }
 
     /// <summary>
     /// Получиет урон в размере damage.

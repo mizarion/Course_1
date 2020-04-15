@@ -4,10 +4,10 @@ using UnityEngine;
 /// <summary>
 /// ќтвечает за плавное движение камеры за игроком
 /// </summary>
-public class SmoothFollowTarget : MonoBehaviour
+public class SmoothFollowTarget : Singleton<SmoothFollowTarget>
 {
     public GameObject target;
-    Vector3 offset;
+    public Vector3 offset { get; set; }
 
     bool hasTarget;
 

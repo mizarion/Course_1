@@ -25,9 +25,9 @@ public abstract class AbstractEnemy : AbstractCharacter, IEnemy
 
     [SerializeField] protected float _agrRadius = 10;
     [SerializeField] protected float _attackRadius; //= 2;
-    [SerializeField] protected float _dps = 10;
     [SerializeField] protected float _movespeed = 3;
     [SerializeField] protected float _attackRate = 1;
+    [SerializeField] float _multiplier = 3;
 
     /// <summary>
     /// Метод (Конструктор) для создания абстрактного врага.
@@ -78,7 +78,7 @@ public abstract class AbstractEnemy : AbstractCharacter, IEnemy
         if (GetAggressive(player.transform.position, _attackRadius) && timer > _attackRate)
         {
             timer = 0;
-            Attack(player, _dps);
+            Attack(player);
         }
         timer += Time.deltaTime;
     }
@@ -86,6 +86,17 @@ public abstract class AbstractEnemy : AbstractCharacter, IEnemy
     public override void Die()
     {
         player.Experience += _expCost;
+
+
+        // Todo: удалить этот объект и создать на его месте маникен, который визуализирует смерть
+
+
+
+
+        //var forceDirection = transform.position - Player.instance.transform.position;
+
+        //rbody.AddForce(forceDirection.normalized * _multiplier);
+
         base.Die();
     }
 
