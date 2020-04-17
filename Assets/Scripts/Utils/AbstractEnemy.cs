@@ -4,30 +4,20 @@ using UnityEngine;
 using UnityEngine.AI;
 
 /// <summary>
-/// Абстрактный класс представляющий базовый функционал врага
+/// Абстрактный класс, дополняющий AbstractCharacter, реализуя базовый функционал врага
 /// </summary>
 [RequireComponent(typeof(NavMeshAgent))]
 public abstract class AbstractEnemy : AbstractCharacter, IEnemy
 {
-    ///// <summary>
-    ///// Конструктор для создания абстрактного врага
-    ///// </summary>
-    ///// <param name="health">Список значений количества здоровья, соответствующий уровню героя</param>
-    ///// <param name="mana">Список значений количества маны, соответствующий уровню героя</param>
-    ///// <param name="experience">Список значений количества опыта, соответствующий уровню героя</param>
-    ///// <param name="name">Имя персонажа</param>
-    ///// <param name="lvl">Уровень персонажа</param>
-    //public AbstractEnemy(List<int> health, List<int> mana, List<int> experience, string name, int lvl = 1) : base(health, mana, experience, name, lvl) { }
+    protected Player player;    //Ссылка на главного героя
+    protected float _expCost;    // Получаемый опыт за убийство этого врага
 
-    protected Player player;
+    [SerializeField] protected float _agrRadius = 10;       // Радиус, с которого враг замечает героя
+    [SerializeField] protected float _attackRadius; //= 2;  // Радиус, с которого враг начинает атаковать героя
+    [SerializeField] protected float _attackRate = 1;       // Время необходимое для совершения одной атаки
+    //[SerializeField] float _multiplier = 3;
 
-    protected float _expCost;
-
-    [SerializeField] protected float _agrRadius = 10;
-    [SerializeField] protected float _attackRadius; //= 2;
-    [SerializeField] protected float _movespeed = 3;
-    [SerializeField] protected float _attackRate = 1;
-    [SerializeField] float _multiplier = 3;
+    float timer;    // Отсчитывает время прошедшее с предыдущей атаки
 
     /// <summary>
     /// Метод (Конструктор) для создания абстрактного врага.
@@ -43,71 +33,69 @@ public abstract class AbstractEnemy : AbstractCharacter, IEnemy
         base.InitializeProperties(health, mana, experience, name, lvl);
         _expCost = expCost;
 
-        player = Player.instance;
 
         agent.stoppingDistance += .5f;
         _attackRadius = agent.stoppingDistance + .5f;
+
     }
 
-    /// <summary>
-    /// Проверяет, находится ли игрок в радиусе агра
-    /// </summary>
-    /// <param name="target">Цель</param>
-    /// <param name="agrRadius">Радиус агра</param>
-    /// <returns></returns>
-    public virtual bool GetAggressive(Vector3 target, float agrRadius = 10)
+    protected virtual void Start()
     {
-        return Vector3.Distance(transform.position, target) < agrRadius;
+        player = Player.instance;
     }
 
+    protected virtual void FixedUpdate()
+    {
+        animator.SetFloat("Speed", agent.velocity.magnitude);
 
-    float timer;
+        Move();
+    }
+
+    ///// <summary>
+    ///// Проверяет, находится ли игрок в радиусе агра
+    ///// </summary>
+    ///// <param name="target">Цель</param>
+    ///// <param name="agrRadius">Радиус агра</param>
+    ///// <returns></returns>
+    //public virtual bool GetAggressive(Vector3 target, float agrRadius = 10)
+    //{
+    //    return Vector3.Distance(transform.position, target) < agrRadius;
+    //}
+
 
     /// <summary>
-    /// Реализует движение к переданной позиции
+    /// Реализует перемещение врага к игроку.
     /// </summary>
-    /// <param name="target">Координаты</param>
-    /// <param name="movespeed">Скорость передвижения</param>
-    /// <param name="agrRadius">Дистанция, с которой враг замечает героя и заагривается</param>
-    public virtual void Move(Vector3 target, float movespeed = 3,/* float agrRadius = 10,*/ float agrRadius = 1)
+    ///// <param name="target">Координаты</param>
+    ///// <param name="movespeed">Скорость передвижения</param>
+    public virtual void Move(/*Vector3 target*//*, float movespeed = 3*/)
     {
-        agent.speed = movespeed;
+        //agent.speed = movespeed;
         //agent.acceleration = 20;
         //agent.stoppingDistance = agrRadius;
-        agent.SetDestination(target);
-        if (GetAggressive(player.transform.position, _attackRadius) && timer > _attackRate)
+        if (Vector3.Distance(player.transform.position, transform.position) < _agrRadius)
         {
-            timer = 0;
-            Attack(player);
+            agent.SetDestination(player.transform.position);
+            if (Vector3.Distance(player.transform.position, transform.position) < _attackRadius && timer > _attackRate)
+            {
+                timer = 0;
+                Attack(player);
+            }
+            timer += Time.deltaTime;
         }
-        timer += Time.deltaTime;
     }
 
     public override void Die()
     {
         player.Experience += _expCost;
 
-
         // Todo: удалить этот объект и создать на его месте маникен, который визуализирует смерть
 
 
-
-
         //var forceDirection = transform.position - Player.instance.transform.position;
-
         //rbody.AddForce(forceDirection.normalized * _multiplier);
 
         base.Die();
-    }
-
-    protected virtual void FixedUpdate()
-    {
-        animator.SetFloat("Speed", agent.velocity.magnitude);
-        //if (GetAggressive(player.transform.position, _agrRadius))
-        if (Vector3.Distance(player.transform.position, transform.position) < _agrRadius)
-        {
-            Move(player.transform.position, _movespeed);
-        }
     }
 
     private void OnDrawGizmos()

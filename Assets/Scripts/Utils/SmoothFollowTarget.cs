@@ -1,0 +1,32 @@
+using System;
+using UnityEngine;
+
+/// <summary>
+/// Отвечает за плавное движение камеры за игроком
+/// </summary>
+public class SmoothFollowTarget : Singleton<SmoothFollowTarget>
+{
+    public GameObject target;           // Ссылка на главного героя
+    public Vector3 Offset { get; set; } // Расстояние до цели
+
+    /// <summary>
+    /// Встроенный метод, который вызывается в конце каждого кадра. 
+    /// Используется для перемещения камеры за героем  
+    /// </summary>
+    private void LateUpdate()
+    {
+        if (target == null)
+        {
+            target = GameObject.FindGameObjectWithTag("Player");
+            if (target != null)
+            {
+                transform.position = new Vector3(1.5f, 12, -7) + target.transform.position;
+                Offset = transform.position - target.transform.position;
+            }
+            return;
+        }
+
+        transform.position = Vector3.Lerp(transform.position, target.transform.position + Offset, Time.deltaTime * 5);
+    }
+}
+

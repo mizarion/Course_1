@@ -28,7 +28,7 @@ public class GameManager : Singleton<GameManager>
     void Start()
     {
         DontDestroyOnLoad(gameObject);
-        DontDestroyOnLoad(CanvasManager.instance.gameObject);
+        DontDestroyOnLoad(CanvasManager.Instance.gameObject);
         // DontDestroyOnLoad(InputManager.instance.gameObject);
 
         CurrentState = GameState.PREGAME;
@@ -125,11 +125,12 @@ public class GameManager : Singleton<GameManager>
     {
         if (obj.isDone)
         {
-            if (CanvasManager.instance.needLoad)
+            if (CanvasManager.Instance.needLoad)
             {
-                CanvasManager.instance.LoadHandler();
+                CanvasManager.Instance.LoadHandler();
+                CanvasManager.Instance.needLoad = false;
             }
-            CanvasManager.instance.ActivateHUD(true);
+            CanvasManager.Instance.ActivateHUD(true);
         }
     }
 
@@ -163,7 +164,7 @@ public class GameManager : Singleton<GameManager>
     /// </summary>
     public void SaveGame()
     {
-        // Todo: сохранить массив врагов
+        // Todo: сохранить массив врагов и настроить сохранение координат персонажа
 
         Player inst = Player.instance;
 

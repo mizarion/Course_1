@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Класс, реализующий визуализацию информации об уроне.
+/// </summary>
 [RequireComponent(typeof(TextMesh))]
 public class ScrollingText : MonoBehaviour
 {
@@ -14,10 +17,13 @@ public class ScrollingText : MonoBehaviour
     {
         _textMesh = GetComponent<TextMesh>();
         _timer = 0;
-        transform.LookAt(Camera.main.transform.position); 
+        transform.LookAt(Camera.main.transform.position);
     }
 
-    void Update()
+    /// <summary>
+    /// Встроенный метод, который отрабатывает, каждые Time.fixedDeltaTime.  
+    /// </summary>
+    void FixedUpdate()
     {
         if (_timer > _duration)
         {
@@ -28,6 +34,11 @@ public class ScrollingText : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Устанавливает текст и цвет 
+    /// </summary>
+    /// <param name="damage">Количество урона</param>
+    /// <param name="color">Цвет</param>
     public void SetTextAndColor(string damage, Color color)
     {
         _textMesh.text = damage;

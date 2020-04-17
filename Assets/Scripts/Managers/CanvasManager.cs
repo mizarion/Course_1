@@ -3,27 +3,30 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// Отвечает за UI
+/// Класс, реализующий работу UI
 /// </summary>
 public class CanvasManager : Singleton<CanvasManager>
 {
     [Header("StartScene")]
-    [SerializeField] GameObject StartSceneUI;   // 'Родитель' объектов главного меню
+    [SerializeField] GameObject _startSceneUI;   // Контейнер для объектов стартового меню
     //[SerializeField] Image _load;
     //[SerializeField] Button _start_Button;
     //[SerializeField] Button _quit_Button;   
 
     [Header("Settings")]
-    [SerializeField] Image _pauseImage;
+    [SerializeField] Image _pauseImage;         // Ссылка на меню паузы
 
     [Header("HUD")]
-    [SerializeField] GameObject HUD;     // 'Родитель' объектов HUD'а
-    [SerializeField] Image _healthImage;
-    [SerializeField] Image _manaImage;
-    [SerializeField] Image _expImage;
+    [SerializeField] GameObject HUD;            // Контейнер для объектов пользовательского интерфейса
+    [SerializeField] Image _healthImage;        // Полоска здоровья героя
+    [SerializeField] Image _manaImage;          // Полоска маны героя
+    [SerializeField] Image _expImage;           // Полоска опыта героя
+    //[SerializeField] Text _levelText;
+
+    public bool needLoad;                       // отвечает за информирование о необходимости загрузки сохранения 
 
     /// <summary>
-    /// Обновляет HUD
+    /// Обновляет значения _healthImage, _manaImage, _expImage
     /// </summary>
     public void UpdateHUD()
     {
@@ -35,72 +38,67 @@ public class CanvasManager : Singleton<CanvasManager>
     }
 
     /// <summary>
-    /// Переключает UI из главного меню в игровой режим.
+    /// Переключает режим интерфейса. 
+    /// Из стартового в игровой режим и обратно
     /// </summary>
     /// <param name="isGameStart">Это начало игры?</param>
     public void ActivateHUD(bool isGameStart)
     {
         HUD.SetActive(isGameStart);
-
-        // Todo: rewrite
         if (!isGameStart && _pauseImage.gameObject.activeSelf)
         {
             _pauseImage.gameObject.SetActive(false);
         }
-
-        StartSceneUI.SetActive(!isGameStart);
+        _startSceneUI.SetActive(!isGameStart);
     }
 
 
     #region GameState / Handlers
 
     /// <summary>
-    /// Начинает загрузку сцены
+    /// Обработчик загрузки сцены
     /// </summary>
     public void StartHandler()
     {
         //ActivateHUD(true);
 
-        GameManager.instance.StartGame();
-
+        GameManager.Instance.StartGame();
     }
 
     /// <summary>
-    /// Ставит игру на паузу и открывает меню паузы/настроек
+    /// Ставит игру на паузу или возобновляет.
+    /// Открывает меню паузы.
+    /// Открывает меню паузы.
     /// </summary>
     public void PauseHandler()
     {
-        GameManager.instance.TogglePause();
+        GameManager.Instance.TogglePause();
 
         _pauseImage.gameObject.SetActive(!_pauseImage.gameObject.activeSelf);
     }
 
     /// <summary>
-    /// Сохраняет игру
+    /// Обработчик кнопки сохранения игры.
     /// </summary>
     public void SaveHandler()
     {
-        // todo: Сделать сохранение
-
-        GameManager.instance.SaveGame();
+        GameManager.Instance.SaveGame();
 
         Debug.Log("[CanvasManger] SaveHandler");
     }
 
     /// <summary>
-    /// Загружает сохранение
+    /// Обработчик загрузки игры
     /// </summary>
     public void LoadHandler()
     {
-        // todo: Сделать загрузку сохранения
-
-        GameManager.instance.LoadGame();
+        GameManager.Instance.LoadGame();
 
         Debug.Log("[CanvasManger] LoadHandler");
     }
 
     /// <summary>
-    /// Начинает игру и загружает сохранение
+    /// Начинает игру с загруженным сохранением
     /// </summary>
     public void StartGameAndLoadSave()
     {
@@ -108,7 +106,6 @@ public class CanvasManager : Singleton<CanvasManager>
         needLoad = true;
     }
 
-    public bool needLoad { get; set; }
 
     /// <summary>
     /// Обработчик перезапуска игры
@@ -116,15 +113,21 @@ public class CanvasManager : Singleton<CanvasManager>
     public void RestartHandler()
     {
         ActivateHUD(false);
-        GameManager.instance.RestartGame();
+        GameManager.Instance.RestartGame();
+    }
+
+
+    public void OptionsHandler()
+    {
+        RestartHandler();
     }
 
     /// <summary>
-    /// Завершает работу игры
+    /// Обработчик завершения игры
     /// </summary>
     public void QuitHandler()
     {
-        GameManager.instance.QuitGame();
+        GameManager.Instance.QuitGame();
     }
 
     #endregion

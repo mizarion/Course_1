@@ -3,14 +3,14 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
 /// <summary>
-/// Отвечает за обработку ввода
+/// Класс, реализующий обработку пользовательского ввода
 /// </summary>
 public class InputManager : Singleton<InputManager>
 {
-    public LayerMask clickableLayer; // layermask used to isolate raycasts against clickable layers
+    public LayerMask clickableLayer; // layermask используется для изоляции raycast от кликабельных слоев
 
     public Texture2D pointer;   // стандартный курсор
-    public Texture2D target;    // курсор в виде прицел
+    public Texture2D target;    // курсор в виде прицела
     //public Texture2D doorway; // курсор в виде двери
     public Texture2D sword;     // курсор в виде меча
 
@@ -22,7 +22,7 @@ public class InputManager : Singleton<InputManager>
     void Update()
     {
         // Если это начало игры, то данный функционал не требуется
-        if (GameManager.instance.CurrentState == GameState.PREGAME)
+        if (GameManager.Instance.CurrentState == GameState.PREGAME)
         {
             return;
         }
@@ -36,18 +36,6 @@ public class InputManager : Singleton<InputManager>
             {
                 Cursor.SetCursor(sword, new Vector2(16, 16), CursorMode.Auto);
 
-                //// Недостаток - на добегание до места где стоял враг, а не сам враг
-                //if (Input.GetMouseButtonDown(1))
-                //{
-                //    if (Vector3.Distance(hit.point, Player.instance.transform.position) < 3)
-                //    {
-                //        onClickAttackable?.Invoke(hit.collider.gameObject /*.GetComponent<ICharacter>()*/);
-                //    }
-                //    else
-                //    {
-                //        OnClickEnviroment?.Invoke(hit.point);
-                //    }
-                //}
                 if (Input.GetMouseButtonDown(0))
                 {
                     onClickAttackable?.Invoke(hit.collider.gameObject);
@@ -68,14 +56,14 @@ public class InputManager : Singleton<InputManager>
             Cursor.SetCursor(pointer, Vector2.zero, CursorMode.Auto);
         }
 
-
-        if (Input.GetAxis("Mouse ScrollWheel") < 0 && SmoothFollowTarget.instance.offset.magnitude < 30)
+        // Вращение колесика мышки - Приближение/Отдаление камеры
+        if (Input.GetAxis("Mouse ScrollWheel") < 0 && SmoothFollowTarget.Instance.Offset.magnitude < 30)
         {
-            SmoothFollowTarget.instance.offset += SmoothFollowTarget.instance.offset * Time.deltaTime * _ScrollSens;
+            SmoothFollowTarget.Instance.Offset += SmoothFollowTarget.Instance.Offset * Time.deltaTime * _ScrollSens;
         }
-        else if (Input.GetAxis("Mouse ScrollWheel") > 0 && SmoothFollowTarget.instance.offset.magnitude > 10)
+        else if (Input.GetAxis("Mouse ScrollWheel") > 0 && SmoothFollowTarget.Instance.Offset.magnitude > 10)
         {
-            SmoothFollowTarget.instance.offset -= SmoothFollowTarget.instance.offset * Time.deltaTime * _ScrollSens;
+            SmoothFollowTarget.Instance.Offset -= SmoothFollowTarget.Instance.Offset * Time.deltaTime * _ScrollSens;
         }
 
 
@@ -83,27 +71,32 @@ public class InputManager : Singleton<InputManager>
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            CanvasManager.instance.PauseHandler();
+            CanvasManager.Instance.PauseHandler();
         }
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            CanvasManager.instance.RestartHandler();
-        }
+        //if (Input.GetKeyDown(KeyCode.Q))
+        //{
+        //    CanvasManager.Instance.RestartHandler();
+        //}
         if (Input.GetKeyDown(KeyCode.F5))
         {
-            CanvasManager.instance.SaveHandler();
+            CanvasManager.Instance.SaveHandler();
         }
         if (Input.GetKeyDown(KeyCode.F6))
         {
-            CanvasManager.instance.LoadHandler();
+            CanvasManager.Instance.LoadHandler();
         }
         #endregion
     }
 }
 
+/// <summary>
+/// Класс, (наследник UnityEvent<Vector3>) для создание событий с передаваемым типом Vector3.
+/// </summary>
 [System.Serializable]
 public class EventVector3 : UnityEvent<Vector3> { }
 
-
+/// <summary>
+/// Класс, (наследник  UnityEvent<GameObject> для создание событий с передаваемым типом GameObject.
+/// </summary>
 [System.Serializable]
 public class EventGameObject : UnityEvent<GameObject> { }

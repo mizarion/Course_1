@@ -9,25 +9,18 @@ using UnityEngine.EventSystems;
 [System.Serializable]
 public class Player : AbstractCharacter
 {
-    //[SerializeField] GameObject enemy;
-    /*[SerializeField]*/
-    //CanvasManager _canvasManager;
-
-    [Header("Values")]
-    //[SerializeField] float _cameraMoveSens = 5;
-    //[SerializeField] float _movespeed = 3;
-
     [HideInInspector] public static Player instance;
 
     GameObject attackTarget;
 
     private void Awake()
     {
-        InitializeProperties(DataManager.Stats.Player.Health, DataManager.Stats.Player.Manapool, DataManager.Stats.Player.Experience, "Yuusha");
+        InitializeProperties(DataManager.Stats.Player.Health, DataManager.Stats.Player.Manapool, DataManager.Stats.Player.Experience, "Hero");
+
         instance = this;
     }
 
-    void Start()
+    private void Start()
     {
         StartCoroutine(Recovery(5, 5));
     }
@@ -73,20 +66,9 @@ public class Player : AbstractCharacter
 
     public override void Hit()
     {
-        //Debug.Log("Hit");
         agent.isStopped = false;
         StopCoroutine(AttackTarget());
     }
-
-    ///// <summary>
-    ///// Наносит урон переданной цели
-    ///// </summary>
-    ///// <param name="character">атакуемый персонаж</param>
-    //public override void Attack(ICharacter character)
-    //{
-    //    base.Attack(character);
-    //}
-
 
     /// <summary>
     /// Обработчик события атаки
@@ -105,7 +87,7 @@ public class Player : AbstractCharacter
     public override void GetDamage(float damage)
     {
         base.GetDamage(damage);
-        CanvasManager.instance.UpdateHUD();
+        CanvasManager.Instance.UpdateHUD();
     }
 
     /// <summary>
@@ -122,7 +104,7 @@ public class Player : AbstractCharacter
         {
             Health += healRecovery;
             Manapool += manaRecovery;
-            CanvasManager.instance.UpdateHUD();
+            CanvasManager.Instance.UpdateHUD();
             yield return new WaitForSeconds(delay);
         }
     }
@@ -130,7 +112,7 @@ public class Player : AbstractCharacter
 
     public override void Die()
     {
-        // ToDo: обработать смерть
+        // ToDo: обработать смерть героя
 
         Debug.Log($"[Player] Hero: {Name} die");
         //base.Die();
@@ -161,7 +143,6 @@ public class Player : AbstractCharacter
     //        transform.localEulerAngles += Vector3.up * Input.GetAxis("Mouse X") * _cameraMoveSens;
     //    }
 
-    //    // Todo: gravity
     //}
 
     ///// <summary>
@@ -186,12 +167,10 @@ public class Player : AbstractCharacter
     //    {
     //        if (Physics.Raycast(ray, out hit))
     //        {
-    //            // Todo: добавить обработчик полученной цели
     //            Debug.Log(hit.collider.name);
     //        }
     //    }
     //}
 
     #endregion
-
 }

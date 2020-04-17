@@ -50,16 +50,7 @@ namespace DataManager
     /// <summary>
     /// Содержит данные о сценах
     /// </summary>
-    //static class Scenes
-    //{
-    //    // Todo: передалать в enum и отслеживать CurrentScene
-    //    public static readonly int startScene = 0;
-    //    public static readonly int MainGame = 1;
-    //}
-
-
-
-    public enum Scenes // Todo: передалать в enum и отслеживать CurrentScene
+    public enum Scenes
     {
         StartScene = 0,
         MainGame = 1

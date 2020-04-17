@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Интерфейс, дополняющий ICharacter и отвечающий за основную механику врагов.
+/// </summary>
 public interface IEnemy
 {
     ///// <summary>
@@ -13,11 +16,10 @@ public interface IEnemy
     //bool GetAggressive(Vector3 target, float agrRadius = 10);
 
     /// <summary>
-    /// Реализует движение к переданной позиции.
+    /// Реализует перемещение врага к игроку.
     /// </summary>
-    /// <param name="target">Координаты</param>
-    /// <param name="movespeed">Скорость передвижения</param>
+    ///// <param name="target">Координаты</param>
+    ///// <param name="movespeed">Скорость передвижения</param>
     ///// <param name="agrRadius">Дистанция, с которой враг замечает героя и заагривается</param>
-    /// <param name="endAgrRadius">Дистанция, с которой враг теряет героя и агр спадает</param>
-    void Move(Vector3 target, float movespeed = 2, /*float agrRadius = 10,*/ float endAgrRadius = 15);
+    void Move(/*Vector3 target*//*, float movespeed = 2*/);
 }

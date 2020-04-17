@@ -72,11 +72,11 @@
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\Managers\InputManager.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
-    <Compile Include="Assets\Scripts\SmoothFollowTarget.cs" />
     <Compile Include="Assets\Scripts\Utils\AbstractCharacter.cs" />
     <Compile Include="Assets\Scripts\Utils\AbstractEnemy.cs" />
     <Compile Include="Assets\Scripts\Utils\ScrollingText.cs" />
     <Compile Include="Assets\Scripts\Utils\Singleton.cs" />
+    <Compile Include="Assets\Scripts\Utils\SmoothFollowTarget.cs" />
     <Compile Include="Assets\Scripts\Utils\Waypoint.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
