@@ -61,7 +61,7 @@ public class CanvasManager : Singleton<CanvasManager>
     public void StartHandler()
     {
         //ActivateHUD(true);
-
+        _startSceneUI.SetActive(false);
         GameManager.Instance.StartGame();
     }
 

@@ -15,13 +15,15 @@ public abstract class AbstractCharacter : MonoBehaviour, ICharacter
     /// <param name="health">Список значений количества здоровья, соответствующий уровню героя</param>
     /// <param name="mana">Список значений количества маны, соответствующий уровню героя</param>
     /// <param name="experience">Список значений количества опыта, соответствующий уровню героя</param>
+    /// <param name="damages">>Список значений возможного урона, соответствующий уровню героя </param>
     /// <param name="name">Имя персонажа</param>
     /// <param name="lvl">Уровень персонажа</param>
-    protected void InitializeProperties(List<int> health, List<int> mana, List<int> experience, string name, int lvl = 1)
+    protected void InitializeProperties(List<int> health, List<int> mana, List<int> experience, List<int> damages, string name, int lvl = 1)
     {
         _listHp = health;
         _listMp = mana;
         _listExp = experience;
+        _listDmg = damages;
         Level = lvl;
         Health = health[Level];
         Manapool = mana[Level];
@@ -43,7 +45,8 @@ public abstract class AbstractCharacter : MonoBehaviour, ICharacter
     #region Fields & properties
 
     // Компоненты
-    protected NavMeshAgent agent;
+    // Todo: переделать док
+    public NavMeshAgent agent { get; protected set; }
     protected Animator animator;
     //protected Rigidbody rbody;
 
@@ -57,13 +60,14 @@ public abstract class AbstractCharacter : MonoBehaviour, ICharacter
     [SerializeField] float _mana;
     [SerializeField] int _lvl;
     [SerializeField] float _exp;
-    [SerializeField] private float damage = 10;
+    //[SerializeField] private float damage = 10;
     //[SerializeField] float _movespeed = 2;
 
     // списки со значениями 
     protected List<int> _listHp;
     protected List<int> _listMp;
     protected List<int> _listExp;
+    protected List<int> _listDmg;
 
     /// <summary>
     /// Имя персонажа
@@ -98,7 +102,12 @@ public abstract class AbstractCharacter : MonoBehaviour, ICharacter
     public int Level
     {
         get => _lvl;
-        set => _lvl = Mathf.Clamp(value, 1, _listExp.Count - 1);
+        set
+        {
+            _lvl = Mathf.Clamp(value, 1, _listExp.Count - 1);
+            Health = _listHp[_lvl];
+            Manapool = _listMp[_lvl];
+        }
     }
 
     /// <summary>
@@ -121,16 +130,16 @@ public abstract class AbstractCharacter : MonoBehaviour, ICharacter
     /// <summary>
     /// Свойство, отвечающее за урон.
     /// </summary>
-    public float Damage
-    {
-        get => damage;
-        protected set => (damage) = value;
-    }
+    public float Damage => _listDmg[Level];
+    //{
+    //    get => damage;
+    //    protected set => (damage) = value;
+    //}
 
-    /// <summary>
-    /// Свойство, отвечающее за скорость перемещения
-    /// </summary>
-    public float Movespeed { get => agent.speed; protected set => (agent.speed) = value; }
+    ///// <summary>
+    ///// Свойство, отвечающее за скорость перемещения
+    ///// </summary>
+    //public float Movespeed { get => agent.speed; protected set => (agent.speed) = value; }
 
     #endregion
 
@@ -184,8 +193,8 @@ public abstract class AbstractCharacter : MonoBehaviour, ICharacter
     /// <summary>
     /// Обрабатывает смерть персонажа
     /// </summary>
-    public virtual void Die()
+    public virtual void Die(float delay = 0)
     {
-        Destroy(gameObject);
+        Destroy(gameObject, delay);
     }
 }

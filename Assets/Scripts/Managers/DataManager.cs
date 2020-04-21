@@ -17,8 +17,8 @@ namespace DataManager
         {
             public static readonly List<int> Health = new List<int>() { 0, 100, 200, 250, 350, 400 };
             public static readonly List<int> Manapool = new List<int>() { 0, 100, 125, 150, 200, 250 };
-            public static readonly List<int> Experience = new List<int>() { 0, 100, 125, 150, 200, 250 };
-            public static readonly List<int> Damage = new List<int>() { 0, 10, 15, 20, 25, 30 };
+            public static readonly List<int> Experience = new List<int>() { 0, 20, 30, 40, 50, 60 };
+            public static readonly List<int> Damage = new List<int>() { 0, 20, 40, 50, 60, 75 };
         }
 
         /// <summary>
@@ -27,7 +27,7 @@ namespace DataManager
         static class Goblin
         {
             // первый элемент 0 для удобного обращения
-            public static readonly List<int> Health = new List<int>() { 0, 100, 200, 250, 350, 400 };
+            public static readonly List<int> Health = new List<int>() { 0, 50, 60, 70, 85, 100 };
             public static readonly List<int> Manapool = new List<int>() { 0, 100, 125, 150, 200, 250 };
             public static readonly List<int> Experience = new List<int>() { 0, 100, 125, 150, 200, 250 };
             public static readonly List<int> Damage = new List<int>() { 0, 10, 15, 20, 25, 30 };

@@ -7,17 +7,17 @@ using UnityEngine.EventSystems;
 /// </summary>
 public class InputManager : Singleton<InputManager>
 {
-    public LayerMask clickableLayer; // layermask используется для изоляции raycast от кликабельных слоев
+    [SerializeField] LayerMask clickableLayer; // layermask используется для определения кликабельных слоев
 
-    public Texture2D pointer;   // стандартный курсор
-    public Texture2D target;    // курсор в виде прицела
-    //public Texture2D doorway; // курсор в виде двери
-    public Texture2D sword;     // курсор в виде меча
+    [SerializeField] Texture2D pointer;   // стандартный курсор
+    [SerializeField] Texture2D target;    // курсор в виде прицела
+    //public Texture2D doorway;           // курсор в виде двери
+    [SerializeField] Texture2D sword;     // курсор в виде меча
 
-    [SerializeField] float _ScrollSens = 5;
+    [SerializeField] float _scrollSens = 5;     // Чувствительность колесика мышки.
 
-    public EventVector3 OnClickEnviroment;  // Подписчик в эдиторе Hero.MavMeshAgent.destination
-    public EventGameObject onClickAttackable; // 
+    public EventVector3 OnClickEnviroment;      // Событие для перемещения игрока с помощью клика мышки.  // Подписчик в эдиторе Hero.NavMeshAgent.destination
+    public EventGameObject onClickAttackable;   // Событие для атаки врага.
 
     void Update()
     {
@@ -26,6 +26,9 @@ public class InputManager : Singleton<InputManager>
         {
             return;
         }
+
+        // ---------------------
+        #region Нажатие кнопок мыши
 
         // Стреляем лучами по сцене :)
         RaycastHit hit;
@@ -41,11 +44,10 @@ public class InputManager : Singleton<InputManager>
                     onClickAttackable?.Invoke(hit.collider.gameObject);
                 }
             }
-
             else
             {
                 Cursor.SetCursor(target, new Vector2(16, 16), CursorMode.Auto);
-                if (Input.GetMouseButtonDown(1))
+                if (Input.GetMouseButton(1))
                 {
                     OnClickEnviroment?.Invoke(hit.point);
                 }
@@ -56,17 +58,26 @@ public class InputManager : Singleton<InputManager>
             Cursor.SetCursor(pointer, Vector2.zero, CursorMode.Auto);
         }
 
+        #endregion
+        // ---------------------
+
+        // ---------------------
+        #region Вращение колесика мышки
+
         // Вращение колесика мышки - Приближение/Отдаление камеры
         if (Input.GetAxis("Mouse ScrollWheel") < 0 && SmoothFollowTarget.Instance.Offset.magnitude < 30)
         {
-            SmoothFollowTarget.Instance.Offset += SmoothFollowTarget.Instance.Offset * Time.deltaTime * _ScrollSens;
+            SmoothFollowTarget.Instance.Offset += SmoothFollowTarget.Instance.Offset * Time.deltaTime * _scrollSens;
         }
         else if (Input.GetAxis("Mouse ScrollWheel") > 0 && SmoothFollowTarget.Instance.Offset.magnitude > 10)
         {
-            SmoothFollowTarget.Instance.Offset -= SmoothFollowTarget.Instance.Offset * Time.deltaTime * _ScrollSens;
+            SmoothFollowTarget.Instance.Offset -= SmoothFollowTarget.Instance.Offset * Time.deltaTime * _scrollSens;
         }
 
+        #endregion
+        // ---------------------
 
+        // ---------------------
         #region Нажатия клавиш
 
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -85,7 +96,10 @@ public class InputManager : Singleton<InputManager>
         {
             CanvasManager.Instance.LoadHandler();
         }
+
         #endregion
+        // ---------------------
+
     }
 }
 

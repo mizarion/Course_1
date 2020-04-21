@@ -15,6 +15,7 @@ public abstract class AbstractEnemy : AbstractCharacter, IEnemy
     [SerializeField] protected float _agrRadius = 10;       // Радиус, с которого враг замечает героя
     [SerializeField] protected float _attackRadius; //= 2;  // Радиус, с которого враг начинает атаковать героя
     [SerializeField] protected float _attackRate = 1;       // Время необходимое для совершения одной атаки
+    [SerializeField] protected GameObject DieRagdoll;
     //[SerializeField] float _multiplier = 3;
 
     float timer;    // Отсчитывает время прошедшее с предыдущей атаки
@@ -25,12 +26,13 @@ public abstract class AbstractEnemy : AbstractCharacter, IEnemy
     /// <param name="health">Список значений количества здоровья, соответствующий уровню героя</param>
     /// <param name="mana">Список значений количества маны, соответствующий уровню героя</param>
     /// <param name="experience">Список значений количества опыта, соответствующий уровню героя</param>
+    /// <param name="damages">>Список значений возможного урона, соответствующий уровню героя </param>
     /// <param name="name">Имя персонажа</param>
     /// <param name="lvl">Уровень персонажа</param>
     /// <param name="expCost">Получаемое количество опыта за убийство</param>
-    protected void InitializeProperties(List<int> health, List<int> mana, List<int> experience, string name, int lvl = 1, float expCost = 0)
+    protected void InitializeProperties(List<int> health, List<int> mana, List<int> experience, List<int> damages, string name, int lvl = 1, float expCost = 0)
     {
-        base.InitializeProperties(health, mana, experience, name, lvl);
+        base.InitializeProperties(health, mana, experience, damages, name, lvl);
         _expCost = expCost;
 
 
@@ -85,17 +87,21 @@ public abstract class AbstractEnemy : AbstractCharacter, IEnemy
         }
     }
 
-    public override void Die()
+    public override void Die(float delay = 0)
     {
         player.Experience += _expCost;
 
-        // Todo: удалить этот объект и создать на его месте маникен, который визуализирует смерть
+        var inst = Instantiate(DieRagdoll, transform.position, transform.rotation);
 
+        var ragdoll = inst.GetComponent<RagdollScript>();
+        var force = transform.position - player.transform.position;
+        force.Normalize();
+        force.y += 1;
+        var forceMultiplier = Mathf.Clamp(Mathf.Log(player.Level * 1f / Level), .2f, 2);
+        Debug.Log($"forceMultiplier: {forceMultiplier }");
+        ragdoll.StartDeath(force * forceMultiplier, 3);
 
-        //var forceDirection = transform.position - Player.instance.transform.position;
-        //rbody.AddForce(forceDirection.normalized * _multiplier);
-
-        base.Die();
+        base.Die(delay);
     }
 
     private void OnDrawGizmos()

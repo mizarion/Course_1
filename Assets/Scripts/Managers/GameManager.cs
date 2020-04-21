@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 
 /// <summary>
@@ -22,7 +23,7 @@ public class GameManager : Singleton<GameManager>
     /// Текущее состояние игры
     /// </summary>
     public GameState CurrentState { get; private set; }
-    public DataManager.Scenes CurrentScene { get; private set; }
+    //public DataManager.Scenes CurrentScene { get; private set; }
 
 
     void Start()
@@ -32,11 +33,11 @@ public class GameManager : Singleton<GameManager>
         // DontDestroyOnLoad(InputManager.instance.gameObject);
 
         CurrentState = GameState.PREGAME;
-        CurrentScene = DataManager.Scenes.StartScene;
+        //CurrentScene = DataManager.Scenes.StartScene;
     }
 
     /// <summary>
-    /// Применяет и обрабатывает изменение состояния игры
+    /// Изменяет и обрабатывает изменение состояния игры
     /// </summary>
     /// <param name="state">Состояние, в которое переходит</param>
     public void UpdateGameState(GameState state)
@@ -64,30 +65,30 @@ public class GameManager : Singleton<GameManager>
     }
 
 
-    public void UpdateGameScene(DataManager.Scenes newScene)
-    {
-        // Todo: Добавить проверку на предыдущую сцену
-        // Этот метод должен помочь настроить многоуровневость
+    //public void UpdateGameScene(DataManager.Scenes newScene)
+    //{
+    //    // Todo: Добавить проверку на предыдущую сцену
+    //    // Этот метод должен помочь настроить многоуровневость
 
-        var privScene = CurrentScene;
-        CurrentScene = newScene;
+    //    var privScene = CurrentScene;
+    //    CurrentScene = newScene;
 
-        switch (CurrentScene)
-        {
-            case DataManager.Scenes.StartScene:
+    //    switch (CurrentScene)
+    //    {
+    //        case DataManager.Scenes.StartScene:
 
-                break;
-            case DataManager.Scenes.MainGame:
+    //            break;
+    //        case DataManager.Scenes.MainGame:
 
-                break;
-            default:
-                break;
-        }
-    }
+    //            break;
+    //        default:
+    //            break;
+    //    }
+    //}
 
 
     /// <summary>
-    /// Изменяет состояние игры
+    /// Возобновляет/приостанавливает игру
     /// </summary>
     public void TogglePause()
     {
@@ -113,17 +114,17 @@ public class GameManager : Singleton<GameManager>
         loading.completed += Loading_completed;
 
         UpdateGameState(GameState.RUNNING);
-        UpdateGameScene(DataManager.Scenes.MainGame);
+        //UpdateGameScene(DataManager.Scenes.MainGame);
 
     }
 
     /// <summary>
     /// Выполняет необходимые действия после загрузки сцены
     /// </summary>
-    /// <param name="obj"></param>
-    private void Loading_completed(AsyncOperation obj)
+    /// <param name="op">Асинхронная операция</param>
+    private void Loading_completed(AsyncOperation op)
     {
-        if (obj.isDone)
+        if (op.isDone)
         {
             if (CanvasManager.Instance.needLoad)
             {
@@ -136,7 +137,8 @@ public class GameManager : Singleton<GameManager>
 
 
     /// <summary>
-    /// Перезапускает игру
+    /// Перезапускает игру.
+    /// Выгружает текущую сцену, меняя режим интерфейса на стартовое меню.  
     /// </summary>
     public void RestartGame()
     {
@@ -145,10 +147,12 @@ public class GameManager : Singleton<GameManager>
         //AsyncOperation loading = SceneManager.LoadSceneAsync(DataManager.Scenes.startScene);
 
         UpdateGameState(GameState.PREGAME);
-        UpdateGameScene(DataManager.Scenes.MainGame);
+        //UpdateGameScene(DataManager.Scenes.MainGame);
     }
 
-    #region Save & Load
+    //   todo: Задокументировать 
+
+    #region Save & Load     
 
 
     const string position = "position";
@@ -165,6 +169,7 @@ public class GameManager : Singleton<GameManager>
     public void SaveGame()
     {
         // Todo: сохранить массив врагов и настроить сохранение координат персонажа
+        TogglePause();
 
         Player inst = Player.instance;
 
@@ -180,6 +185,7 @@ public class GameManager : Singleton<GameManager>
         SaveTransform(inst.transform, "Player");
         SaveTransform(Camera.main.transform, "Camera");
         Debug.Log("[GameManager] SaveGame");
+        TogglePause();
     }
 
     /// <summary>
@@ -187,6 +193,7 @@ public class GameManager : Singleton<GameManager>
     /// </summary>
     public void LoadGame()
     {
+        TogglePause();
         Player inst = Player.instance;
 
         #region Load player stat
@@ -195,15 +202,20 @@ public class GameManager : Singleton<GameManager>
         inst.Manapool = PlayerPrefs.GetFloat(pathMana);
         inst.Experience = PlayerPrefs.GetFloat(pathExp);
         inst.Level = PlayerPrefs.GetInt(pathLevel);
-
+        CanvasManager.Instance.UpdateHUD();
         #endregion
 
         LoadTransform(inst.transform, "Player");
         LoadTransform(Camera.main.transform, "Camera");
         Debug.Log("[GameManager] LoadGame");
+
+        // Костыль для NavMesh'а
+        inst.agent.gameObject.SetActive(false);
+        inst.agent.gameObject.SetActive(true);
+        inst.agent.ResetPath();
+
+        TogglePause();
     }
-
-
 
     /// <summary>
     /// Сохраняет данные персонажа в transform'е
@@ -215,6 +227,11 @@ public class GameManager : Singleton<GameManager>
         // Сохраняем позицию
         string data = JsonUtility.ToJson(tr.position);
         PlayerPrefs.SetString(position + pathName, data);
+
+        //PlayerPrefs.SetFloat(position + pathName + "x", tr.position.x);
+        //PlayerPrefs.SetFloat(position + pathName + "y", tr.position.y);
+        //PlayerPrefs.SetFloat(position + pathName + "z", tr.position.z);
+
         // сохраняем поворот
         data = JsonUtility.ToJson(tr.rotation);
         PlayerPrefs.SetString(rotation + pathName, data);
@@ -231,6 +248,12 @@ public class GameManager : Singleton<GameManager>
     {
         string data = PlayerPrefs.GetString(position + pathName);
         tr.position = JsonUtility.FromJson<Vector3>(data);
+
+
+        //float pX = PlayerPrefs.GetFloat(position + pathName + "x");
+        //float pY = PlayerPrefs.GetFloat(position + pathName + "y");
+        //float pZ = PlayerPrefs.GetFloat(position + pathName + "z");
+        //tr.position = new Vector3(pX, pY, pZ);
 
         data = PlayerPrefs.GetString(rotation + pathName);
         tr.rotation = JsonUtility.FromJson<Quaternion>(data);

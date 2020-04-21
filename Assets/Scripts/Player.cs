@@ -10,20 +10,21 @@ using UnityEngine.EventSystems;
 public class Player : AbstractCharacter
 {
     [HideInInspector] public static Player instance;
-
+    bool isAttacking;
     GameObject attackTarget;
 
     private void Awake()
     {
-        InitializeProperties(DataManager.Stats.Player.Health, DataManager.Stats.Player.Manapool, DataManager.Stats.Player.Experience, "Hero");
+        InitializeProperties(DataManager.Stats.Player.Health, DataManager.Stats.Player.Manapool, DataManager.Stats.Player.Experience, DataManager.Stats.Player.Damage, "Hero");
 
         instance = this;
-    }
 
-    private void Start()
-    {
         StartCoroutine(Recovery(5, 5));
     }
+
+    //private void Start()
+    //{
+    //}
 
     private void Update()
     {
@@ -68,6 +69,7 @@ public class Player : AbstractCharacter
     {
         agent.isStopped = false;
         StopCoroutine(AttackTarget());
+        isAttacking = false;
     }
 
     /// <summary>
@@ -76,12 +78,16 @@ public class Player : AbstractCharacter
     /// <param name="target">Цель атаки</param>
     public void AttackHandler(GameObject target)
     {
-        attackTarget = target;
-        StartCoroutine(AttackTarget());
+        if (!isAttacking)
+        {
+            isAttacking = true;
+            attackTarget = target;
+            StartCoroutine(AttackTarget());
+        }
     }
 
     /// <summary>
-    /// Получиет урон в размере damage.
+    /// Обрабатывает получение урона в размере damage.
     /// </summary>
     /// <param name="damage">Получаемый урон</param>
     public override void GetDamage(float damage)
@@ -110,7 +116,7 @@ public class Player : AbstractCharacter
     }
 
 
-    public override void Die()
+    public override void Die(float delay = 0)
     {
         // ToDo: обработать смерть героя
 

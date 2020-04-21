@@ -511,10 +511,11 @@ MonoBehaviour:
   _mana: 0
   _lvl: 0
   _exp: 0
-  damage: 10
   _agrRadius: 10
   _attackRadius: 0
   _attackRate: 1
+  DieRagdoll: {fileID: 1749206577710480121, guid: 8dd3acd8b5c5a0b489f055e28f30f398,
+    type: 3}
 --- !u!195 &83084660
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1731,10 +1732,11 @@ MonoBehaviour:
   _mana: 0
   _lvl: 0
   _exp: 0
-  damage: 10
   _agrRadius: 10
   _attackRadius: 0
   _attackRate: 1
+  DieRagdoll: {fileID: 1749206577710480121, guid: 8dd3acd8b5c5a0b489f055e28f30f398,
+    type: 3}
 --- !u!195 &542483206
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1925,10 +1927,11 @@ MonoBehaviour:
   _mana: 0
   _lvl: 0
   _exp: 0
-  damage: 10
   _agrRadius: 10
   _attackRadius: 0
   _attackRate: 1
+  DieRagdoll: {fileID: 1749206577710480121, guid: 8dd3acd8b5c5a0b489f055e28f30f398,
+    type: 3}
 --- !u!195 &589268824
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2252,10 +2255,11 @@ MonoBehaviour:
   _mana: 0
   _lvl: 0
   _exp: 0
-  damage: 10
   _agrRadius: 10
   _attackRadius: 0
   _attackRate: 1
+  DieRagdoll: {fileID: 1749206577710480121, guid: 8dd3acd8b5c5a0b489f055e28f30f398,
+    type: 3}
 --- !u!195 &647162636
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2973,10 +2977,11 @@ MonoBehaviour:
   _mana: 0
   _lvl: 0
   _exp: 0
-  damage: 10
   _agrRadius: 10
   _attackRadius: 0
   _attackRate: 1
+  DieRagdoll: {fileID: 1749206577710480121, guid: 8dd3acd8b5c5a0b489f055e28f30f398,
+    type: 3}
 --- !u!195 &807730060
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3456,7 +3461,7 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 1.0600001, y: 1.0200001, z: 4.8570004}
+  m_Extents: {x: 0.5, y: 0.5, z: 4.8570004}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
@@ -3552,10 +3557,11 @@ MonoBehaviour:
   _mana: 0
   _lvl: 0
   _exp: 0
-  damage: 10
   _agrRadius: 10
   _attackRadius: 0
   _attackRate: 1
+  DieRagdoll: {fileID: 1749206577710480121, guid: 8dd3acd8b5c5a0b489f055e28f30f398,
+    type: 3}
 --- !u!195 &982296894
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3731,10 +3737,11 @@ MonoBehaviour:
   _mana: 0
   _lvl: 0
   _exp: 0
-  damage: 10
   _agrRadius: 10
   _attackRadius: 0
   _attackRate: 1
+  DieRagdoll: {fileID: 1749206577710480121, guid: 8dd3acd8b5c5a0b489f055e28f30f398,
+    type: 3}
 --- !u!195 &1058472931
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4271,10 +4278,11 @@ MonoBehaviour:
   _mana: 0
   _lvl: 0
   _exp: 0
-  damage: 10
   _agrRadius: 10
   _attackRadius: 0
   _attackRate: 1
+  DieRagdoll: {fileID: 1749206577710480121, guid: 8dd3acd8b5c5a0b489f055e28f30f398,
+    type: 3}
 --- !u!195 &1259760642
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4571,10 +4579,11 @@ MonoBehaviour:
   _mana: 0
   _lvl: 0
   _exp: 0
-  damage: 10
   _agrRadius: 10
   _attackRadius: 0
   _attackRate: 1
+  DieRagdoll: {fileID: 1749206577710480121, guid: 8dd3acd8b5c5a0b489f055e28f30f398,
+    type: 3}
 --- !u!195 &1371380874
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -5379,10 +5388,11 @@ MonoBehaviour:
   _mana: 0
   _lvl: 0
   _exp: 0
-  damage: 10
   _agrRadius: 10
   _attackRadius: 0
   _attackRate: 1
+  DieRagdoll: {fileID: 1749206577710480121, guid: 8dd3acd8b5c5a0b489f055e28f30f398,
+    type: 3}
 --- !u!195 &1506879748
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -5514,10 +5524,11 @@ MonoBehaviour:
   _mana: 0
   _lvl: 0
   _exp: 0
-  damage: 10
   _agrRadius: 10
   _attackRadius: 0
   _attackRate: 1
+  DieRagdoll: {fileID: 1749206577710480121, guid: 8dd3acd8b5c5a0b489f055e28f30f398,
+    type: 3}
 --- !u!195 &1534377466
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -5715,10 +5726,11 @@ MonoBehaviour:
   _mana: 0
   _lvl: 0
   _exp: 0
-  damage: 10
   _agrRadius: 10
   _attackRadius: 0
   _attackRate: 1
+  DieRagdoll: {fileID: 1749206577710480121, guid: 8dd3acd8b5c5a0b489f055e28f30f398,
+    type: 3}
 --- !u!195 &1571414796
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -6195,10 +6207,11 @@ MonoBehaviour:
   _mana: 0
   _lvl: 0
   _exp: 0
-  damage: 10
   _agrRadius: 10
   _attackRadius: 0
   _attackRate: 1
+  DieRagdoll: {fileID: 1749206577710480121, guid: 8dd3acd8b5c5a0b489f055e28f30f398,
+    type: 3}
 --- !u!195 &1640640341
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -6424,10 +6437,11 @@ MonoBehaviour:
   _mana: 0
   _lvl: 0
   _exp: 0
-  damage: 10
   _agrRadius: 10
   _attackRadius: 0
   _attackRate: 1
+  DieRagdoll: {fileID: 1749206577710480121, guid: 8dd3acd8b5c5a0b489f055e28f30f398,
+    type: 3}
 --- !u!195 &1654973556
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -6581,7 +6595,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1710145520 stripped
 GameObject:
@@ -6726,10 +6740,11 @@ MonoBehaviour:
   _mana: 0
   _lvl: 0
   _exp: 0
-  damage: 10
   _agrRadius: 10
   _attackRadius: 0
   _attackRate: 1
+  DieRagdoll: {fileID: 1749206577710480121, guid: 8dd3acd8b5c5a0b489f055e28f30f398,
+    type: 3}
 --- !u!195 &1745760050
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -6991,6 +7006,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3188949879777374852}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1787071606
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787071604}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.573077, y: 6.808959, z: 2.323217}
+  m_Center: {x: -2.6121116e-13, y: 0.013481703, z: 1.1616076}
 --- !u!208 &1787071608
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -7449,10 +7477,11 @@ MonoBehaviour:
   _mana: 0
   _lvl: 0
   _exp: 0
-  damage: 10
   _agrRadius: 10
   _attackRadius: 0
   _attackRate: 1
+  DieRagdoll: {fileID: 1749206577710480121, guid: 8dd3acd8b5c5a0b489f055e28f30f398,
+    type: 3}
 --- !u!195 &1902354673
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -8473,6 +8502,28 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0.001, z: 0.647}
   m_TimeToStationary: 0.5
+--- !u!1 &3188949879777374855 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3120338238185109804, guid: 118d2502a380c1a498d974937a59f61f,
+    type: 3}
+  m_PrefabInstance: {fileID: 3188949879777374852}
+  m_PrefabAsset: {fileID: 0}
+--- !u!208 &3188949879777374856
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3188949879777374855}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.2870002, y: 3.4190001, z: 1.154}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 1.154}
+  m_TimeToStationary: 0.5
 --- !u!4 &5803045223635452765
 Transform:
   m_ObjectHideFlags: 0
@@ -8580,10 +8631,11 @@ MonoBehaviour:
   _mana: 0
   _lvl: 0
   _exp: 0
-  damage: 10
   _agrRadius: 10
   _attackRadius: 0
   _attackRate: 1
+  DieRagdoll: {fileID: 1749206577710480121, guid: 8dd3acd8b5c5a0b489f055e28f30f398,
+    type: 3}
 --- !u!136 &5809202618309902777
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9122,10 +9174,11 @@ MonoBehaviour:
   _mana: 0
   _lvl: 0
   _exp: 0
-  damage: 10
   _agrRadius: 10
   _attackRadius: 0
   _attackRate: 1
+  DieRagdoll: {fileID: 1749206577710480121, guid: 8dd3acd8b5c5a0b489f055e28f30f398,
+    type: 3}
 --- !u!1 &7349664122012837870
 GameObject:
   m_ObjectHideFlags: 0
@@ -9231,7 +9284,7 @@ PrefabInstance:
     - target: {fileID: 8621341759945651197, guid: 2fa212bec26429a4b92869eff8ee7610,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8621341759945651197, guid: 2fa212bec26429a4b92869eff8ee7610,
         type: 3}

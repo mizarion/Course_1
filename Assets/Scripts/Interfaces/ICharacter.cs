@@ -21,7 +21,8 @@ public interface ICharacter
     /// <summary>
     /// Обрабатывает смерть персонажа.
     /// </summary>
-    void Die();
+    /// <param name="delay">Задержка до уничтожения объекта</param>
+    void Die(float delay = 0);
 
     /// <summary>
     /// Восполняет здоровье и ману персонажа.
