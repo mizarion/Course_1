@@ -193,8 +193,9 @@ public abstract class AbstractCharacter : MonoBehaviour, ICharacter
     /// <summary>
     /// Обрабатывает смерть персонажа
     /// </summary>
-    public virtual void Die(float delay = 0)
+    public virtual void Die(/*float delay = 0*/)
     {
-        Destroy(gameObject, delay);
+        gameObject.SetActive(false);
+        //Destroy(gameObject, delay);
     }
 }

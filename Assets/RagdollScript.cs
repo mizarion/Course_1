@@ -9,7 +9,6 @@ public class RagdollScript : MonoBehaviour
 
     public void StartDeath(Vector3 force, float liveTime)
     {
-        Debug.Log(force* forceToAdd);
         rbody.AddForce(force * forceToAdd);
         Destroy(gameObject, liveTime);
     }

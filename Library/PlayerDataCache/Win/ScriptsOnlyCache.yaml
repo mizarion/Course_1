@@ -3,6 +3,7 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - CanvasManager
     - CutsceneBoat
+    - EnemyManager
     - GameManager
     - Goblin
     - InputManager
@@ -96,19 +97,21 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11772}
     - Class: 114
-      Script: {instanceID: 12612}
+      Script: {instanceID: 12444}
     - Class: 114
-      Script: {instanceID: 12688}
+      Script: {instanceID: 12614}
     - Class: 114
-      Script: {instanceID: 12944}
+      Script: {instanceID: 12690}
     - Class: 114
-      Script: {instanceID: 12966}
+      Script: {instanceID: 12946}
     - Class: 114
-      Script: {instanceID: 13054}
+      Script: {instanceID: 12968}
     - Class: 114
-      Script: {instanceID: 13090}
+      Script: {instanceID: 13056}
     - Class: 114
-      Script: {instanceID: 83316}
+      Script: {instanceID: 13092}
+    - Class: 114
+      Script: {instanceID: 13242}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 135
@@ -161,13 +164,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12334}
     - Class: 114
-      Script: {instanceID: 12834}
+      Script: {instanceID: 12836}
     - Class: 114
-      Script: {instanceID: 12866}
+      Script: {instanceID: 12868}
     - Class: 114
-      Script: {instanceID: 12908}
+      Script: {instanceID: 12910}
     - Class: 114
-      Script: {instanceID: 13292}
+      Script: {instanceID: 13296}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -575,6 +578,12 @@ ScriptsOnlyBuild:
     className: CinemachineTargetGroup
   - hash:
       serializedVersion: 2
+      Hash: f6692b523b958377842d693a82c95023
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RagdollScript
+  - hash:
+      serializedVersion: 2
       Hash: 5ad4aa237d47ac2bab17bacb672edf7a
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -719,7 +728,7 @@ ScriptsOnlyBuild:
     className: CinemachineVolumeSettings
   - hash:
       serializedVersion: 2
-      Hash: 9b54b9d3950b9d77c682f0df44928247
+      Hash: 52bb1c4bb476745120a6dc31479fd8e3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CanvasManager
@@ -821,6 +830,12 @@ ScriptsOnlyBuild:
     className: Outline
   - hash:
       serializedVersion: 2
+      Hash: 1a727101a4f45749f878c93d1f331c6b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EnemyManager
+  - hash:
+      serializedVersion: 2
       Hash: a63fc1a3b035e5a0b5839cd7f7b3086e
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
@@ -909,14 +924,8 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: f6692b523b958377842d693a82c95023
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: RagdollScript
   platform: 5
   scenePathNames:
   - Assets/Scenes/StartScene.unity
   - Assets/Scenes/PoligonVikings.unity
-  playerPath: C:/Users/mizar/Desktop/Course-1/Prototypes/Built v0.3/Course 1.exe
+  playerPath: C:/Users/mizar/Desktop/Course-1/Prototypes/Build v0.4/Course 1.exe

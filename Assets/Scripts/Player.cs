@@ -22,9 +22,6 @@ public class Player : AbstractCharacter
         StartCoroutine(Recovery(5, 5));
     }
 
-    //private void Start()
-    //{
-    //}
 
     private void Update()
     {
@@ -116,9 +113,11 @@ public class Player : AbstractCharacter
     }
 
 
-    public override void Die(float delay = 0)
+    public override void Die(/*float delay = 0*/)
     {
         // ToDo: обработать смерть героя
+
+        CanvasManager.Instance.DeathHandler();
 
         Debug.Log($"[Player] Hero: {Name} die");
         //base.Die();

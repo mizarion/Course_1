@@ -87,21 +87,21 @@ public abstract class AbstractEnemy : AbstractCharacter, IEnemy
         }
     }
 
-    public override void Die(float delay = 0)
+    public override void Die(/*float delay = 0*/)
     {
         player.Experience += _expCost;
 
+        // Todo: Настроить 
         var inst = Instantiate(DieRagdoll, transform.position, transform.rotation);
 
         var ragdoll = inst.GetComponent<RagdollScript>();
         var force = transform.position - player.transform.position;
         force.Normalize();
-        force.y += 1;
+        force.y += .5f;
         var forceMultiplier = Mathf.Clamp(Mathf.Log(player.Level * 1f / Level), .2f, 2);
-        Debug.Log($"forceMultiplier: {forceMultiplier }");
         ragdoll.StartDeath(force * forceMultiplier, 3);
 
-        base.Die(delay);
+        base.Die(/*delay*/);
     }
 
     private void OnDrawGizmos()
@@ -109,5 +109,12 @@ public abstract class AbstractEnemy : AbstractCharacter, IEnemy
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, _agrRadius);
         Gizmos.DrawWireSphere(transform.position, _attackRadius);
+    }
+
+
+    private void OnEnable()
+    {
+        Health = _listHp[Level];
+        Manapool = _listMp[Level];
     }
 }

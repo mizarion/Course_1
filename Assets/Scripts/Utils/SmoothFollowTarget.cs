@@ -13,7 +13,7 @@ public class SmoothFollowTarget : Singleton<SmoothFollowTarget>
     /// Встроенный метод, который вызывается в конце каждого кадра. 
     /// Используется для перемещения камеры за героем  
     /// </summary>
-    private void LateUpdate()
+    public void LateUpdate()
     {
         if (target == null)
         {

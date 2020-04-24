@@ -23,6 +23,10 @@ public class CanvasManager : Singleton<CanvasManager>
     [SerializeField] Image _expImage;           // Полоска опыта героя
     //[SerializeField] Text _levelText;
 
+    [Header("Players Death")]
+    [SerializeField] Image _DeathPanel;
+
+
     public bool needLoad;                       // отвечает за информирование о необходимости загрузки сохранения 
 
     /// <summary>
@@ -82,7 +86,7 @@ public class CanvasManager : Singleton<CanvasManager>
     /// </summary>
     public void SaveHandler()
     {
-        GameManager.Instance.SaveGame();
+        GameManager.Instance.SaveGame("Saves/Save1");
 
         Debug.Log("[CanvasManger] SaveHandler");
     }
@@ -92,7 +96,11 @@ public class CanvasManager : Singleton<CanvasManager>
     /// </summary>
     public void LoadHandler()
     {
-        GameManager.Instance.LoadGame();
+        GameManager.Instance.LoadGame("Saves/Save1");
+
+        _DeathPanel.gameObject.SetActive(false);
+        _pauseImage.gameObject.SetActive(false);
+        GameManager.Instance.UpdateGameState(GameState.RUNNING);
 
         Debug.Log("[CanvasManger] LoadHandler");
     }
@@ -113,6 +121,7 @@ public class CanvasManager : Singleton<CanvasManager>
     public void RestartHandler()
     {
         ActivateHUD(false);
+        _DeathPanel.gameObject.SetActive(false);
         GameManager.Instance.RestartGame();
     }
 
@@ -120,6 +129,13 @@ public class CanvasManager : Singleton<CanvasManager>
     public void OptionsHandler()
     {
         RestartHandler();
+    }
+
+
+    public void DeathHandler()
+    {
+        _DeathPanel.gameObject.SetActive(true);
+        GameManager.Instance.UpdateGameState(GameState.PAUSED);
     }
 
     /// <summary>
