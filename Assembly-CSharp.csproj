@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\Enemies\Goblin.cs" />
     <Compile Include="Assets\Scripts\Interfaces\ICharacter.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IEnemy.cs" />
+    <Compile Include="Assets\Scripts\Managers\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Managers\CanvasManager.cs" />
     <Compile Include="Assets\Scripts\Managers\DataManager.cs" />
     <Compile Include="Assets\Scripts\Managers\EnemyManager.cs" />

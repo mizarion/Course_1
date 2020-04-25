@@ -15,8 +15,11 @@ public abstract class AbstractEnemy : AbstractCharacter, IEnemy
     [SerializeField] protected float _agrRadius = 10;       // Радиус, с которого враг замечает героя
     [SerializeField] protected float _attackRadius; //= 2;  // Радиус, с которого враг начинает атаковать героя
     [SerializeField] protected float _attackRate = 1;       // Время необходимое для совершения одной атаки
-    [SerializeField] protected GameObject DieRagdoll;
     //[SerializeField] float _multiplier = 3;
+
+    [Header("GameObject")]
+    [SerializeField] protected GameObject DieRagdoll;
+    [SerializeField] protected GameObject _healthBar;
 
     float timer;    // Отсчитывает время прошедшее с предыдущей атаки
 
@@ -49,6 +52,7 @@ public abstract class AbstractEnemy : AbstractCharacter, IEnemy
     protected virtual void FixedUpdate()
     {
         animator.SetFloat("Speed", agent.velocity.magnitude);
+        _healthBar.transform.LookAt(Camera.main.transform);
 
         Move();
     }
@@ -63,6 +67,15 @@ public abstract class AbstractEnemy : AbstractCharacter, IEnemy
     //{
     //    return Vector3.Distance(transform.position, target) < agrRadius;
     //}
+
+    /// <summary>
+    /// Обработчик события 
+    /// </summary>
+    public virtual void Hit()
+    {
+        transform.LookAt(Player.instance.transform);
+        _healthBar.transform.LookAt(Camera.main.transform);
+    }
 
 
     /// <summary>
@@ -111,6 +124,11 @@ public abstract class AbstractEnemy : AbstractCharacter, IEnemy
         Gizmos.DrawWireSphere(transform.position, _attackRadius);
     }
 
+    public override void GetDamage(float damage)
+    {
+        base.GetDamage(damage);
+        _healthBar.transform.localScale = new Vector3(Health / _listHp[Level], transform.localScale.y, transform.localScale.z) / 4;
+    }
 
     private void OnEnable()
     {

@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
@@ -15,6 +14,13 @@ public class CanvasManager : Singleton<CanvasManager>
 
     [Header("Settings")]
     [SerializeField] Image _pauseImage;         // Ссылка на меню паузы
+
+    [Header("Save&Load")]
+    [SerializeField] Image _loadMenu;
+    [SerializeField] Image _saveMenu;
+    [SerializeField] Button _SaveOne;
+    [SerializeField] Button _SaveTwo;
+    [SerializeField] Button _SaveThree;
 
     [Header("HUD")]
     [SerializeField] GameObject HUD;            // Контейнер для объектов пользовательского интерфейса
@@ -54,6 +60,8 @@ public class CanvasManager : Singleton<CanvasManager>
             _pauseImage.gameObject.SetActive(false);
         }
         _startSceneUI.SetActive(!isGameStart);
+        _loadMenu.gameObject.SetActive(false);
+        _saveMenu.gameObject.SetActive(false);
     }
 
 
@@ -77,7 +85,8 @@ public class CanvasManager : Singleton<CanvasManager>
     public void PauseHandler()
     {
         GameManager.Instance.TogglePause();
-
+        _loadMenu.gameObject.SetActive(false);
+        _saveMenu.gameObject.SetActive(false);
         _pauseImage.gameObject.SetActive(!_pauseImage.gameObject.activeSelf);
     }
 
@@ -91,12 +100,14 @@ public class CanvasManager : Singleton<CanvasManager>
         Debug.Log("[CanvasManger] SaveHandler");
     }
 
+    string path;
+
     /// <summary>
     /// Обработчик загрузки игры
     /// </summary>
     public void LoadHandler()
     {
-        GameManager.Instance.LoadGame("Saves/Save1");
+        GameManager.Instance.LoadGame(path);
 
         _DeathPanel.gameObject.SetActive(false);
         _pauseImage.gameObject.SetActive(false);
@@ -105,13 +116,61 @@ public class CanvasManager : Singleton<CanvasManager>
         Debug.Log("[CanvasManger] LoadHandler");
     }
 
+    //public void StartGameAndLoadSave()
+    //{
+    //    StartHandler();
+    //    _loadMenu.gameObject.SetActive(false);
+    //    needLoad = true;
+    //}
+
     /// <summary>
     /// Начинает игру с загруженным сохранением
     /// </summary>
-    public void StartGameAndLoadSave()
+    public void MakeSave(string path)
     {
-        StartHandler();
-        needLoad = true;
+        GameManager.Instance.SaveGame(path);
+        ActivateSaveMenu();
+    }
+
+    public void LoadSave(string path)
+    {
+        this.path = path;
+        ActivateLoadMenu();
+        if (GameManager.Instance.CurrentState == GameState.PREGAME)
+        {
+            needLoad = true;
+            Debug.Log("[CanvasManager] LoadSave");
+            StartHandler();
+        }
+        else
+        {
+            GameManager.Instance.LoadGame(path);
+        }
+        //Debug.Log($"here path: {path}");
+    }
+
+    ///// <summary>
+    ///// Закрывает меню загрузки
+    ///// </summary>
+    //public void CloseLoadMenu()
+    //{
+    //    _loadMenu.gameObject.SetActive(false);
+    //}
+
+    /// <summary>
+    /// Закрывает меню загрузки
+    /// </summary>
+    public void ActivateLoadMenu()
+    {
+        _loadMenu.gameObject.SetActive(!_loadMenu.gameObject.activeSelf);
+    }
+
+    /// <summary>
+    /// Закрывает меню сохранений
+    /// </summary>
+    public void ActivateSaveMenu()
+    {
+        _saveMenu.gameObject.SetActive(!_saveMenu.gameObject.activeSelf);
     }
 
 
@@ -125,13 +184,14 @@ public class CanvasManager : Singleton<CanvasManager>
         GameManager.Instance.RestartGame();
     }
 
-
     public void OptionsHandler()
     {
         RestartHandler();
     }
 
-
+    /// <summary>
+    /// Обработчик меню смерти
+    /// </summary>
     public void DeathHandler()
     {
         _DeathPanel.gameObject.SetActive(true);
@@ -152,4 +212,15 @@ public class CanvasManager : Singleton<CanvasManager>
     {
         Debug.Log("[CanvasManager] Debuger");
     }
+
+    /// <summary>
+    /// Обновляет доступные сохранения
+    /// </summary>
+    public void UpdateSaves()
+    {
+        _SaveOne.gameObject.SetActive(GameManager.Instance.isSaveOneAvailable);
+        _SaveTwo.gameObject.SetActive(GameManager.Instance.isSaveTwoAvailable);
+        _SaveThree.gameObject.SetActive(GameManager.Instance.isSaveThreeAvailable);
+    }
+
 }

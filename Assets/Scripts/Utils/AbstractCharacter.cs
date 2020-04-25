@@ -165,13 +165,7 @@ public abstract class AbstractCharacter : MonoBehaviour, ICharacter
         text.SetTextAndColor(((int)damage).ToString(), _scrollingTextColor);
     }
 
-    /// <summary>
-    /// Обработчик события 
-    /// </summary>
-    public virtual void Hit()
-    {
-        transform.LookAt(Player.instance.transform);
-    }
+
 
     /// <summary>
     /// Восполняет здоровье и ману персонажа через определенный интервал.

@@ -37,20 +37,22 @@ public class GameManager : Singleton<GameManager>
         CurrentState = GameState.PREGAME;
         //CurrentScene = DataManager.Scenes.StartScene;
 
-        // Todo: Debugonly:
-        if (Directory.Exists("Saves"))
-        {
-            Debug.Log("exist Saves");
-            if (Directory.Exists(@"Saves\Save1"))
-            {
-                Debug.Log(@"exist Saves\Save1 ");
-                // Todo: активировать возможность загрузки 
-            }
-        }
-        else
-        {
-            Directory.CreateDirectory("Saves");
-        }
+        //// Todo: Debugonly:
+        //if (Directory.Exists("Saves"))
+        //{
+        //    Debug.Log("exist Saves");
+        //    if (Directory.Exists(@"Saves\Save1"))
+        //    {
+        //        Debug.Log(@"exist Saves\Save1 ");
+        //        // Todo: активировать возможность загрузки 
+        //    }
+        //}
+        //else
+        //{
+        //    Directory.CreateDirectory("Saves");
+        //}
+
+        CheckSaves();
     }
 
     /// <summary>
@@ -130,7 +132,6 @@ public class GameManager : Singleton<GameManager>
 
         UpdateGameState(GameState.RUNNING);
         //UpdateGameScene(DataManager.Scenes.MainGame);
-
     }
 
     /// <summary>
@@ -170,6 +171,31 @@ public class GameManager : Singleton<GameManager>
     #region Save & Load     
 
 
+    public bool isSaveOneAvailable;
+    public bool isSaveTwoAvailable;
+    public bool isSaveThreeAvailable;
+
+    public void CheckSaves()
+    {
+        // Todo: лучше сделать через bool поля 
+        if (File.Exists(@"Saves/Save1/PlayerTransform.json") && File.Exists(@"Saves/Save1/PlayerData.json") && File.Exists(@"Saves/Save1/EnemyTransform.json"))
+        {
+            // CanvasManager.Instance.SaveOne.gameObject.SetActive(true);
+            isSaveOneAvailable = true;
+        }
+        if (File.Exists(@"Saves/Save2/PlayerTransform.json") && File.Exists(@"Saves/Save2/PlayerData.json") && File.Exists(@"Saves/Save2/EnemyTransform.json"))
+        {
+            //CanvasManager.Instance.SaveTwo.gameObject.SetActive(true);
+            isSaveTwoAvailable = true;
+        }
+        if (File.Exists(@"Saves/Save3/PlayerTransform.json") && File.Exists(@"Saves/Save3/PlayerData.json") && File.Exists(@"Saves/Save3/EnemyTransform.json"))
+        {
+            //CanvasManager.Instance.SaveThree.gameObject.SetActive(true);
+            isSaveThreeAvailable = true;
+        }
+        CanvasManager.Instance.UpdateSaves();
+    }
+
     /// <summary>
     /// Сохраняет игру
     /// </summary>
@@ -178,9 +204,9 @@ public class GameManager : Singleton<GameManager>
         UpdateGameState(GameState.PAUSED);
 
         Directory.CreateDirectory(path);
-        string PlayerTransform = path + @"\PT.json";
-        string PlayerPlayer = path + @"\PP.json";
-        string EnemyTransform = path + @"\ET.json";
+        string PlayerTransform = path + @"\PlayerTransform.json";
+        string PlayerPlayer = path + @"\PlayerData.json";
+        string EnemyTransform = path + @"\EnemyTransform.json";
 
         Player player = Player.instance;
 
@@ -211,6 +237,7 @@ public class GameManager : Singleton<GameManager>
             serializer.WriteObject(fs, enemies);
         }
 
+        CheckSaves();
         Debug.Log("[GameManager] SaveGame");
         //UpdateGameState(GameState.RUNNING);
     }
@@ -222,9 +249,9 @@ public class GameManager : Singleton<GameManager>
     {
         UpdateGameState(GameState.PAUSED);
 
-        string PlayerTransform = path + @"\PT.json";
-        string PlayerPlayer = path + @"\PP.json";
-        string EnemyTransform = path + @"\ET.json";
+        string PlayerTransform = path + @"\PlayerTransform.json";
+        string PlayerPlayer = path + @"\PlayerData.json";
+        string EnemyTransform = path + @"\EnemyTransform.json";
 
         if (!File.Exists(PlayerTransform) || !File.Exists(PlayerPlayer) || !File.Exists(EnemyTransform))
         {
@@ -277,7 +304,7 @@ public class GameManager : Singleton<GameManager>
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
-            Application.Quit();
+        Application.Quit();
 #endif
     }
 }

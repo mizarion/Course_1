@@ -62,7 +62,7 @@ public class Player : AbstractCharacter
         StopCoroutine(AttackTarget());
     }
 
-    public override void Hit()
+    public void Hit()
     {
         agent.isStopped = false;
         StopCoroutine(AttackTarget());
