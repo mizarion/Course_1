@@ -6,10 +6,16 @@ using UnityEngine;
 public class EnemyManager : Singleton<EnemyManager>
 {
     #region Object Pooling 
+#pragma warning disable 649
+
     [SerializeField] GameObject enemySample;
+    [SerializeField] Transform[] _spawnPositions;
     [SerializeField] int poolStartLength = 20;
 
+    public List<GameObject> ragdollPool = new List<GameObject>();
     [SerializeField, DataMember] List<GameObject> _pool = new List<GameObject>();
+#pragma warning restore 649
+
     public GameObject GetEnemy
     {
         get
@@ -34,6 +40,8 @@ public class EnemyManager : Singleton<EnemyManager>
         set => (_pool) = value;
     }
 
+
+
     #endregion
 
     protected override void Awake()
@@ -47,4 +55,42 @@ public class EnemyManager : Singleton<EnemyManager>
         }
     }
 
+    public void DestroyAllRagdolls()
+    {
+        foreach (var item in ragdollPool)
+        {
+            if (item != null)
+            {
+                Destroy(item);
+            }
+        }
+    }
+
+    public void StartNewWawe(int count = 5)
+    {
+        StartCoroutine(SpawnNewEnemies(count));
+    }
+
+    IEnumerator SpawnNewEnemies(int count)
+    {
+        //for (int j = 0; j < count; j++)
+        //{
+        for (int i = 0; i < count; i++)
+        {
+            yield return new WaitForSeconds(Random.Range(.5f, 2));
+            var AbsEnemy = GetEnemy.GetComponent<AbstractEnemy>();
+            AbsEnemy.agent.SetDestination(Player.instance.transform.position);
+            //AbsEnemy.Level = j;
+            Vector3 position;
+            do
+            {
+                position = _spawnPositions[Random.Range(0, _spawnPositions.Length)].position;
+            } while (Vector3.Distance(Player.instance.transform.position, position) < 20);
+            AbsEnemy.transform.position = position;
+            //AbsEnemy.transform.localScale = Vector3.one * Mathf.Log(AbsEnemy.Level + 1);
+        }
+        //yield return new WaitForSeconds(2);
+        //}
+
+    }
 }

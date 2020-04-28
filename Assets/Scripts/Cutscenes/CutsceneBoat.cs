@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class CutsceneBoat : MonoBehaviour
 {
+#pragma warning disable 649
+
     [SerializeField] GameObject cutscene;
     //[SerializeField] GameObject trigger;
     [SerializeField] GameObject hero;
     [SerializeField] GameObject boatFBX;
     [SerializeField] GameObject boatM;
+
+#pragma warning restore 649
 
     void Start()
     {

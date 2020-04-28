@@ -6,6 +6,7 @@ using UnityEngine.UI;
 /// </summary>
 public class CanvasManager : Singleton<CanvasManager>
 {
+#pragma warning disable 649
     [Header("StartScene")]
     [SerializeField] GameObject _startSceneUI;   // Контейнер для объектов стартового меню
     //[SerializeField] Image _load;
@@ -18,22 +19,31 @@ public class CanvasManager : Singleton<CanvasManager>
     [Header("Save&Load")]
     [SerializeField] Image _loadMenu;
     [SerializeField] Image _saveMenu;
-    [SerializeField] Button _SaveOne;
-    [SerializeField] Button _SaveTwo;
-    [SerializeField] Button _SaveThree;
+    //[SerializeField] Button _SaveOne;
+    //[SerializeField] Button _SaveTwo;
+    //[SerializeField] Button _SaveThree;
+    public SaveSlotButton loadOne;
+    public SaveSlotButton loadTwo;
+    public SaveSlotButton loadThree;
+    public SaveSlotButton saveOne;
+    public SaveSlotButton saveTwo;
+    public SaveSlotButton saveThree;
 
     [Header("HUD")]
     [SerializeField] GameObject HUD;            // Контейнер для объектов пользовательского интерфейса
     [SerializeField] Image _healthImage;        // Полоска здоровья героя
     [SerializeField] Image _manaImage;          // Полоска маны героя
-    [SerializeField] Image _expImage;           // Полоска опыта героя
-    //[SerializeField] Text _levelText;
+    [SerializeField] Image _expImage;           // Полоска опыта героя'
+    [SerializeField] Text _lvlText;
+    [SerializeField] Text _messageText;
 
     [Header("Players Death")]
     [SerializeField] Image _DeathPanel;
 
+    [HideInInspector] public bool needLoad;                       // отвечает за информирование о необходимости загрузки сохранения 
+    [HideInInspector] public string path;
 
-    public bool needLoad;                       // отвечает за информирование о необходимости загрузки сохранения 
+#pragma  warning restore 649
 
     /// <summary>
     /// Обновляет значения _healthImage, _manaImage, _expImage
@@ -42,24 +52,30 @@ public class CanvasManager : Singleton<CanvasManager>
     {
         Player player = Player.instance;
         int lvl = player.Level;
+
         _healthImage.fillAmount = player.Health / DataManager.Stats.Player.Health[lvl];
         _manaImage.fillAmount = player.Manapool / DataManager.Stats.Player.Manapool[lvl];
         _expImage.fillAmount = player.Experience / DataManager.Stats.Player.Experience[lvl];
+        _lvlText.text = "Level: " + player.Level.ToString();
+    }
+
+    public void UpdateMessage(string message)
+    {
+        _messageText.text = message;
     }
 
     /// <summary>
-    /// Переключает режим интерфейса. 
-    /// Из стартового в игровой режим и обратно
+    /// Включает / выключает элементы интерфейса. 
     /// </summary>
     /// <param name="isGameStart">Это начало игры?</param>
-    public void ActivateHUD(bool isGameStart)
+    /// <param name="showPauseMenu">Показать меню паузы</param>
+    /// <param name="showDeathMenu">Показать меню смерти</param>
+    public void ActivateHUD(bool isGameStart, bool showPauseMenu = false, bool showDeathMenu = false)
     {
         HUD.SetActive(isGameStart);
-        if (!isGameStart && _pauseImage.gameObject.activeSelf)
-        {
-            _pauseImage.gameObject.SetActive(false);
-        }
         _startSceneUI.SetActive(!isGameStart);
+        _pauseImage.gameObject.SetActive(showPauseMenu);
+        _DeathPanel.gameObject.SetActive(showDeathMenu);
         _loadMenu.gameObject.SetActive(false);
         _saveMenu.gameObject.SetActive(false);
     }
@@ -85,35 +101,36 @@ public class CanvasManager : Singleton<CanvasManager>
     public void PauseHandler()
     {
         GameManager.Instance.TogglePause();
-        _loadMenu.gameObject.SetActive(false);
-        _saveMenu.gameObject.SetActive(false);
-        _pauseImage.gameObject.SetActive(!_pauseImage.gameObject.activeSelf);
+        //_loadMenu.gameObject.SetActive(false);
+        //_saveMenu.gameObject.SetActive(false);
+        //_pauseImage.gameObject.SetActive(!_pauseImage.gameObject.activeSelf);
+        ActivateHUD(true, !_pauseImage.gameObject.activeSelf);
     }
 
-    /// <summary>
-    /// Обработчик кнопки сохранения игры.
-    /// </summary>
-    public void SaveHandler()
-    {
-        GameManager.Instance.SaveGame("Saves/Save1");
+    ///// <summary>
+    ///// Обработчик кнопки сохранения игры.
+    ///// </summary>
+    //public void SaveHandler()
+    //{
+    //    GameManager.Instance.SaveGame("Saves/Save1");
 
-        Debug.Log("[CanvasManger] SaveHandler");
-    }
+    //    Debug.Log("[CanvasManger] SaveHandler");
+    //}
 
-    string path;
+
 
     /// <summary>
     /// Обработчик загрузки игры
     /// </summary>
     public void LoadHandler()
     {
-        GameManager.Instance.LoadGame(path);
+        //GameManager.Instance.LoadGame(path);
 
-        _DeathPanel.gameObject.SetActive(false);
-        _pauseImage.gameObject.SetActive(false);
-        GameManager.Instance.UpdateGameState(GameState.RUNNING);
+        //_DeathPanel.gameObject.SetActive(false);
+        //_pauseImage.gameObject.SetActive(false);
+        //GameManager.Instance.UpdateGameState(GameState.RUNNING);
 
-        Debug.Log("[CanvasManger] LoadHandler");
+        //Debug.Log("[CanvasManger] LoadHandler");
     }
 
     //public void StartGameAndLoadSave()
@@ -126,9 +143,10 @@ public class CanvasManager : Singleton<CanvasManager>
     /// <summary>
     /// Начинает игру с загруженным сохранением
     /// </summary>
-    public void MakeSave(string path)
+    public void MakeSave(SaveSlotButton button)
     {
-        GameManager.Instance.SaveGame(path);
+        //GameManager.Instance.SaveGame(path);
+        GameManager.Instance.SaveGame(button);
         ActivateSaveMenu();
     }
 
@@ -136,7 +154,7 @@ public class CanvasManager : Singleton<CanvasManager>
     {
         this.path = path;
         ActivateLoadMenu();
-        if (GameManager.Instance.CurrentState == GameState.PREGAME)
+        if (GameManager.Instance.CurrentState == GameState.Pregame)
         {
             needLoad = true;
             Debug.Log("[CanvasManager] LoadSave");
@@ -144,6 +162,7 @@ public class CanvasManager : Singleton<CanvasManager>
         }
         else
         {
+            ActivateHUD(true, true);
             GameManager.Instance.LoadGame(path);
         }
         //Debug.Log($"here path: {path}");
@@ -180,7 +199,6 @@ public class CanvasManager : Singleton<CanvasManager>
     public void RestartHandler()
     {
         ActivateHUD(false);
-        _DeathPanel.gameObject.SetActive(false);
         GameManager.Instance.RestartGame();
     }
 
@@ -195,7 +213,8 @@ public class CanvasManager : Singleton<CanvasManager>
     public void DeathHandler()
     {
         _DeathPanel.gameObject.SetActive(true);
-        GameManager.Instance.UpdateGameState(GameState.PAUSED);
+        GameManager.Instance.UpdateGameState(GameState.Death);
+        //Debug.Log(GameManager.Instance.CurrentState);
     }
 
     /// <summary>
@@ -218,9 +237,12 @@ public class CanvasManager : Singleton<CanvasManager>
     /// </summary>
     public void UpdateSaves()
     {
-        _SaveOne.gameObject.SetActive(GameManager.Instance.isSaveOneAvailable);
-        _SaveTwo.gameObject.SetActive(GameManager.Instance.isSaveTwoAvailable);
-        _SaveThree.gameObject.SetActive(GameManager.Instance.isSaveThreeAvailable);
-    }
+        loadOne.gameObject.SetActive(GameManager.Instance.isSaveOneAvailable);
+        loadTwo.gameObject.SetActive(GameManager.Instance.isSaveTwoAvailable);
+        loadThree.gameObject.SetActive(GameManager.Instance.isSaveThreeAvailable);
 
+        saveOne.UpdateText();
+        saveTwo.UpdateText();
+        saveThree.UpdateText();
+    }
 }

@@ -7,10 +7,10 @@ using UnityEngine.AI;
 /// Абстрактный класс, дополняющий AbstractCharacter, реализуя базовый функционал врага
 /// </summary>
 [RequireComponent(typeof(NavMeshAgent))]
-public abstract class AbstractEnemy : AbstractCharacter, IEnemy
+public abstract class AbstractEnemy : AbstractCharacter/*, IEnemy*/
 {
     protected Player player;    //Ссылка на главного героя
-    protected float _expCost;    // Получаемый опыт за убийство этого врага
+    protected float _expMultiplier;    // Получаемый опыт за убийство этого врага
 
     [SerializeField] protected float _agrRadius = 10;       // Радиус, с которого враг замечает героя
     [SerializeField] protected float _attackRadius; //= 2;  // Радиус, с которого враг начинает атаковать героя
@@ -19,7 +19,7 @@ public abstract class AbstractEnemy : AbstractCharacter, IEnemy
 
     [Header("GameObject")]
     [SerializeField] protected GameObject DieRagdoll;
-    [SerializeField] protected GameObject _healthBar;
+    [SerializeField] protected GameObject healthBar;
 
     float timer;    // Отсчитывает время прошедшее с предыдущей атаки
 
@@ -32,16 +32,17 @@ public abstract class AbstractEnemy : AbstractCharacter, IEnemy
     /// <param name="damages">>Список значений возможного урона, соответствующий уровню героя </param>
     /// <param name="name">Имя персонажа</param>
     /// <param name="lvl">Уровень персонажа</param>
-    /// <param name="expCost">Получаемое количество опыта за убийство</param>
-    protected void InitializeProperties(List<int> health, List<int> mana, List<int> experience, List<int> damages, string name, int lvl = 1, float expCost = 0)
+    /// <param name="expMultiplier">Множитель получаемого количества опыта за убийство</param>
+    protected void InitializeProperties(List<int> health, List<int> mana, List<int> experience, List<int> damages, string name, int lvl = 1, float expMultiplier = 1)
     {
         base.InitializeProperties(health, mana, experience, damages, name, lvl);
-        _expCost = expCost;
+        _expMultiplier = expMultiplier;
 
 
         agent.stoppingDistance += .5f;
         _attackRadius = agent.stoppingDistance + .5f;
 
+        healthBar = GetComponentInChildren<SpriteRenderer>().gameObject;
     }
 
     protected virtual void Start()
@@ -52,8 +53,8 @@ public abstract class AbstractEnemy : AbstractCharacter, IEnemy
     protected virtual void FixedUpdate()
     {
         animator.SetFloat("Speed", agent.velocity.magnitude);
-        _healthBar.transform.LookAt(Camera.main.transform);
 
+        healthBar.transform.LookAt(Camera.main.transform);
         Move();
     }
 
@@ -74,7 +75,7 @@ public abstract class AbstractEnemy : AbstractCharacter, IEnemy
     public virtual void Hit()
     {
         transform.LookAt(Player.instance.transform);
-        _healthBar.transform.LookAt(Camera.main.transform);
+        healthBar.transform.LookAt(Camera.main.transform);
     }
 
 
@@ -102,11 +103,12 @@ public abstract class AbstractEnemy : AbstractCharacter, IEnemy
 
     public override void Die(/*float delay = 0*/)
     {
-        player.Experience += _expCost;
-
+        player.Experience += _expMultiplier * Level;
+        CanvasManager.Instance.UpdateHUD();
+        GameManager.Instance.DeathCounter++;
         // Todo: Настроить 
         var inst = Instantiate(DieRagdoll, transform.position, transform.rotation);
-
+        EnemyManager.Instance.ragdollPool.Add(inst);
         var ragdoll = inst.GetComponent<RagdollScript>();
         var force = transform.position - player.transform.position;
         force.Normalize();
@@ -127,12 +129,15 @@ public abstract class AbstractEnemy : AbstractCharacter, IEnemy
     public override void GetDamage(float damage)
     {
         base.GetDamage(damage);
-        _healthBar.transform.localScale = new Vector3(Health / _listHp[Level], transform.localScale.y, transform.localScale.z) / 4;
+        healthBar.transform.localScale = new Vector3(Health / _listHp[Level], transform.localScale.y, transform.localScale.z) / 4;
     }
 
-    private void OnEnable()
+    public void OnEnable()
     {
+        //Health = Health < 1 ? _listHp[Level] : Health;
+        //Manapool = Manapool < 1 ? _listMp[Level] : Manapool;
         Health = _listHp[Level];
         Manapool = _listMp[Level];
+        healthBar.transform.localScale = new Vector3(Health / _listHp[Level], transform.localScale.y, transform.localScale.z) / 4;
     }
 }

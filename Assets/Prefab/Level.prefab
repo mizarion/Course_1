@@ -1,5 +1,833 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &44028561
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 44028562}
+  - component: {fileID: 44028565}
+  - component: {fileID: 44028564}
+  - component: {fileID: 44028563}
+  m_Layer: 0
+  m_Name: Cube (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 8
+  m_IsActive: 1
+--- !u!4 &44028562
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44028561}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -10, y: -0.35, z: -25}
+  m_LocalScale: {x: 10, y: 1, z: 10}
+  m_Children: []
+  m_Father: {fileID: 3310263259475132971}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &44028565
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44028561}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &44028564
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44028561}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials: []
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &44028563
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44028561}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &541759571
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 541759572}
+  - component: {fileID: 541759575}
+  - component: {fileID: 541759574}
+  - component: {fileID: 541759573}
+  m_Layer: 0
+  m_Name: Cube (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 8
+  m_IsActive: 0
+--- !u!4 &541759572
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541759571}
+  m_LocalRotation: {x: 0.08715578, y: -0, z: -0, w: 0.9961947}
+  m_LocalPosition: {x: 0, y: 1, z: -35}
+  m_LocalScale: {x: 10, y: 1, z: 10}
+  m_Children: []
+  m_Father: {fileID: 3310263259475132971}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
+--- !u!33 &541759575
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541759571}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &541759574
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541759571}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials: []
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &541759573
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541759571}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &776991633
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 776991634}
+  - component: {fileID: 776991637}
+  - component: {fileID: 776991636}
+  - component: {fileID: 776991635}
+  m_Layer: 0
+  m_Name: Dock (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 8
+  m_IsActive: 1
+--- !u!4 &776991634
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776991633}
+  m_LocalRotation: {x: -0, y: -0.20787938, z: -0, w: 0.9781545}
+  m_LocalPosition: {x: -69.36, y: 0.017, z: 138.6882}
+  m_LocalScale: {x: 3.3962865, y: 1, z: 8.17474}
+  m_Children: []
+  m_Father: {fileID: 5438889108981684602}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -23.996, z: 0}
+--- !u!33 &776991637
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776991633}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &776991636
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776991633}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials: []
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &776991635
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776991633}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &928229131
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 928229132}
+  - component: {fileID: 928229135}
+  - component: {fileID: 928229134}
+  - component: {fileID: 928229133}
+  m_Layer: 0
+  m_Name: Dock (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 8
+  m_IsActive: 1
+--- !u!4 &928229132
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928229131}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.806, y: 0.03, z: 38.247}
+  m_LocalScale: {x: 3.0498652, y: 1, z: 14.741285}
+  m_Children: []
+  m_Father: {fileID: 3310263259475132971}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &928229135
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928229131}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &928229134
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928229131}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials: []
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &928229133
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928229131}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1355556677
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1355556678}
+  - component: {fileID: 1355556681}
+  - component: {fileID: 1355556680}
+  - component: {fileID: 1355556679}
+  m_Layer: 0
+  m_Name: Cube (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 8
+  m_IsActive: 0
+--- !u!4 &1355556678
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355556677}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -30, y: 0, z: -15}
+  m_LocalScale: {x: 10, y: 1, z: 10}
+  m_Children: []
+  m_Father: {fileID: 3310263259475132971}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1355556681
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355556677}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1355556680
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355556677}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials: []
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &1355556679
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355556677}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1411060444
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1411060445}
+  - component: {fileID: 1411060448}
+  - component: {fileID: 1411060447}
+  - component: {fileID: 1411060446}
+  m_Layer: 0
+  m_Name: Cube (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 8
+  m_IsActive: 1
+--- !u!4 &1411060445
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411060444}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -20, y: 0, z: -25}
+  m_LocalScale: {x: 10, y: 1, z: 10}
+  m_Children: []
+  m_Father: {fileID: 3310263259475132971}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1411060448
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411060444}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1411060447
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411060444}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials: []
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &1411060446
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411060444}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1619553038
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1619553039}
+  - component: {fileID: 1619553042}
+  - component: {fileID: 1619553041}
+  - component: {fileID: 1619553040}
+  m_Layer: 0
+  m_Name: Dock
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 8
+  m_IsActive: 1
+--- !u!4 &1619553039
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619553038}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.85, y: 0.017, z: 40.8647}
+  m_LocalScale: {x: 3.3962865, y: 1, z: 16.056723}
+  m_Children: []
+  m_Father: {fileID: 3310263259475132971}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1619553042
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619553038}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1619553041
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619553038}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials: []
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &1619553040
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619553038}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1785255473
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1785255474}
+  - component: {fileID: 1785255477}
+  - component: {fileID: 1785255476}
+  - component: {fileID: 1785255475}
+  m_Layer: 0
+  m_Name: City cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 8
+  m_IsActive: 1
+--- !u!4 &1785255474
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785255473}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.159, y: -0.35, z: 7.821}
+  m_LocalScale: {x: 57.662167, y: 1, z: 57.04519}
+  m_Children: []
+  m_Father: {fileID: 3310263259475132971}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1785255477
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785255473}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1785255476
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785255473}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials: []
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &1785255475
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785255473}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1907659680
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1907659681}
+  - component: {fileID: 1907659684}
+  - component: {fileID: 1907659683}
+  - component: {fileID: 1907659682}
+  m_Layer: 0
+  m_Name: Cube (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 8
+  m_IsActive: 0
+--- !u!4 &1907659681
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907659680}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -30, y: 0, z: -25}
+  m_LocalScale: {x: 10, y: 1, z: 10}
+  m_Children: []
+  m_Father: {fileID: 3310263259475132971}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1907659684
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907659680}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1907659683
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907659680}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials: []
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &1907659682
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907659680}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &56263139806071077
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,6 +918,7 @@ GameObject:
   - component: {fileID: 3334115810189483729}
   - component: {fileID: 6323707356223251905}
   - component: {fileID: 1649350885792418002}
+  - component: {fileID: 1494854092}
   m_Layer: 0
   m_Name: SM_Bld_Base_Door_01_Snow3
   m_TagString: Untagged
@@ -160,6 +989,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1494854092
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57641887768155099}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.479, y: 2.5900002, z: 1.299}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.0050000004, z: 1.24}
+  m_TimeToStationary: 0.5
 --- !u!1 &81255569312427228
 GameObject:
   m_ObjectHideFlags: 0
@@ -1198,6 +2043,7 @@ GameObject:
   - component: {fileID: 1229471218681357593}
   - component: {fileID: 7184812633918218795}
   - component: {fileID: 7478220294757102735}
+  - component: {fileID: 159026715}
   m_Layer: 0
   m_Name: SM_Bld_Base_Long_02_Snow_199
   m_TagString: Untagged
@@ -1273,6 +2119,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &159026715
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233737015929373854}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.2870002, y: 3.404, z: 1.1620001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.013, z: 1.1620001}
+  m_TimeToStationary: 0.5
 --- !u!1 &247102259322111902
 GameObject:
   m_ObjectHideFlags: 0
@@ -1284,6 +2146,7 @@ GameObject:
   - component: {fileID: 3652972049976037877}
   - component: {fileID: 827488489947765961}
   - component: {fileID: 2888515561124735193}
+  - component: {fileID: 137254446}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_Large_01_Snow32
   m_TagString: Untagged
@@ -1352,6 +2215,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &137254446
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247102259322111902}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.314, y: 1.8780001, z: 1.8360001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.0050000004, z: 0.032}
+  m_TimeToStationary: 0.5
 --- !u!1 &251384580064497845
 GameObject:
   m_ObjectHideFlags: 0
@@ -1758,6 +2637,7 @@ GameObject:
   - component: {fileID: 3094581572486489992}
   - component: {fileID: 704765001083133259}
   - component: {fileID: 7247502320512550384}
+  - component: {fileID: 1993123939}
   m_Layer: 0
   m_Name: SM_Prop_Log_01_Snow2
   m_TagString: Untagged
@@ -1826,6 +2706,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1993123939
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318997066488396738}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.064, y: 0.609, z: 0.647}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.001, z: 0.647}
+  m_TimeToStationary: 0.5
 --- !u!1 &325412787765016123
 GameObject:
   m_ObjectHideFlags: 0
@@ -1995,6 +2891,7 @@ GameObject:
   - component: {fileID: 6217095749595900217}
   - component: {fileID: 570141202258678386}
   - component: {fileID: 2616255410372857079}
+  - component: {fileID: 135981219}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_03_Snow8
   m_TagString: Untagged
@@ -2063,6 +2960,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &135981219
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328526441236824274}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.87700003, y: 0.117000006, z: 0.859}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.002, z: 0.859}
+  m_TimeToStationary: 0.5
 --- !u!1 &328889875274640289
 GameObject:
   m_ObjectHideFlags: 0
@@ -2074,6 +2987,7 @@ GameObject:
   - component: {fileID: 840724120033164512}
   - component: {fileID: 3959415153597693008}
   - component: {fileID: 5317049416680098630}
+  - component: {fileID: 1135114258}
   m_Layer: 0
   m_Name: SM_Env_Tree_Pine_01_Snow2_618
   m_TagString: Untagged
@@ -2142,6 +3056,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1135114258
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328889875274640289}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.716, y: 0.75600004, z: 1.8230001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.001, y: -0.001, z: 1.6810001}
+  m_TimeToStationary: 0.5
 --- !u!1 &336805836169737190
 GameObject:
   m_ObjectHideFlags: 0
@@ -2785,6 +3715,7 @@ GameObject:
   - component: {fileID: 3453005269779283215}
   - component: {fileID: 615372072866391403}
   - component: {fileID: 5888831249707085765}
+  - component: {fileID: 1603133340}
   m_Layer: 0
   m_Name: SM_Bld_Base_Door_3
   m_TagString: Untagged
@@ -2855,6 +3786,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1603133340
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430108413369883140}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.479, y: 2.546, z: 1.245}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 1.245}
+  m_TimeToStationary: 0.5
 --- !u!1 &437981406461610044
 GameObject:
   m_ObjectHideFlags: 0
@@ -3577,6 +4524,7 @@ GameObject:
   - component: {fileID: 7516650564177343732}
   - component: {fileID: 2920659821142758096}
   - component: {fileID: 5864820773616357748}
+  - component: {fileID: 1895191434}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_Large_01_Snow8
   m_TagString: Untagged
@@ -3645,6 +4593,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1895191434
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535800432276928645}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.314, y: 1.8780001, z: 1.8360001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.0050000004, z: 0.032}
+  m_TimeToStationary: 0.5
 --- !u!1 &551305268085041059
 GameObject:
   m_ObjectHideFlags: 0
@@ -3735,6 +4699,7 @@ GameObject:
   - component: {fileID: 5076473431960829184}
   - component: {fileID: 1584031516056282578}
   - component: {fileID: 295863549069393752}
+  - component: {fileID: 2095806677}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_Large_01_Snow28
   m_TagString: Untagged
@@ -3803,6 +4768,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &2095806677
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563930494277637710}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.314, y: 1.8780001, z: 1.8360001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.0050000004, z: 0.032}
+  m_TimeToStationary: 0.5
 --- !u!1 &598746182611816209
 GameObject:
   m_ObjectHideFlags: 0
@@ -5078,6 +6059,7 @@ GameObject:
   - component: {fileID: 6828651028078613378}
   - component: {fileID: 7963825719934500569}
   - component: {fileID: 4072206614760492273}
+  - component: {fileID: 462995959}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_Large_01_Snow2
   m_TagString: Untagged
@@ -5146,6 +6128,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &462995959
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888793614184304044}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.314, y: 1.8780001, z: 1.8360001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.0050000004, z: 0.032}
+  m_TimeToStationary: 0.5
 --- !u!1 &898262977432795630
 GameObject:
   m_ObjectHideFlags: 0
@@ -6029,6 +7027,7 @@ GameObject:
   - component: {fileID: 1188098993930625837}
   - component: {fileID: 1816546554155252057}
   - component: {fileID: 2233428534857074809}
+  - component: {fileID: 570883010}
   m_Layer: 0
   m_Name: SM_Bld_Base_Long_Door_02_Snow5
   m_TagString: Untagged
@@ -6098,6 +7097,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &570883010
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 977764865948970319}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.2870002, y: 3.4190001, z: 1.154}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 1.154}
+  m_TimeToStationary: 0.5
 --- !u!1 &978566931797335787
 GameObject:
   m_ObjectHideFlags: 0
@@ -6109,6 +7124,7 @@ GameObject:
   - component: {fileID: 1747996118427543023}
   - component: {fileID: 61920635424713864}
   - component: {fileID: 3829678697623292584}
+  - component: {fileID: 1903954057}
   m_Layer: 0
   m_Name: SM_Bld_Base_Long_Door_02_162
   m_TagString: Untagged
@@ -6186,6 +7202,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1903954057
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978566931797335787}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.2870002, y: 3.4190001, z: 1.13}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 1.13}
+  m_TimeToStationary: 0.5
 --- !u!1 &1027611965784262614
 GameObject:
   m_ObjectHideFlags: 0
@@ -6197,6 +7229,7 @@ GameObject:
   - component: {fileID: 519125571266205855}
   - component: {fileID: 2955225335990494051}
   - component: {fileID: 5141019798708955629}
+  - component: {fileID: 2023003115}
   m_Layer: 0
   m_Name: SM_Bld_Base_Long_Door_01_Snow4
   m_TagString: Untagged
@@ -6266,6 +7299,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &2023003115
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027611965784262614}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.479, y: 3.7140002, z: 1.299}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 1.24}
+  m_TimeToStationary: 0.5
 --- !u!1 &1033642810943292588
 GameObject:
   m_ObjectHideFlags: 0
@@ -6514,6 +7563,7 @@ GameObject:
   - component: {fileID: 1299440374911270918}
   - component: {fileID: 5893654042041147814}
   - component: {fileID: 4438738889258800824}
+  - component: {fileID: 1870897469}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Stick_01_Snow8
   m_TagString: Untagged
@@ -6582,6 +7632,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1870897469
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085276253174814692}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.6320001, y: 0.113000005, z: 0.60300004}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -1.5150001, y: 0.003, z: 0.65900004}
+  m_TimeToStationary: 0.5
 --- !u!1 &1102558972288611356
 GameObject:
   m_ObjectHideFlags: 0
@@ -7225,6 +8291,7 @@ GameObject:
   - component: {fileID: 6640124134096523749}
   - component: {fileID: 6107831866757062463}
   - component: {fileID: 4617551028954939709}
+  - component: {fileID: 1028909675}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_01_Snow_462
   m_TagString: Untagged
@@ -7293,6 +8360,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1028909675
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185316823365968203}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.97900003, y: 0.117000006, z: 0.86200005}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.003, z: 0.86200005}
+  m_TimeToStationary: 0.5
 --- !u!1 &1205908808794237366
 GameObject:
   m_ObjectHideFlags: 0
@@ -7782,6 +8865,7 @@ GameObject:
   - component: {fileID: 460626441798004156}
   - component: {fileID: 5978961307387805995}
   - component: {fileID: 4018140542903547468}
+  - component: {fileID: 1112620340}
   m_Layer: 0
   m_Name: SM_Bld_Guard_Tower_4
   m_TagString: Untagged
@@ -7850,6 +8934,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1112620340
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300622524341240975}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.807, y: 1.8030001, z: 4.0010004}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 4.0010004}
+  m_TimeToStationary: 0.5
 --- !u!1 &1322321223440971728
 GameObject:
   m_ObjectHideFlags: 0
@@ -8019,6 +9119,7 @@ GameObject:
   - component: {fileID: 4624321609370341501}
   - component: {fileID: 6721690029997669455}
   - component: {fileID: 9072789646865063835}
+  - component: {fileID: 370568343}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_03_Snow6
   m_TagString: Untagged
@@ -8087,6 +9188,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &370568343
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348065745991192574}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.87700003, y: 0.117000006, z: 0.859}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.002, z: 0.859}
+  m_TimeToStationary: 0.5
 --- !u!1 &1375605570408655301
 GameObject:
   m_ObjectHideFlags: 0
@@ -8651,6 +9768,7 @@ GameObject:
   - component: {fileID: 7599515390182003397}
   - component: {fileID: 3361397482608029876}
   - component: {fileID: 4113419200806017257}
+  - component: {fileID: 1430274277}
   m_Layer: 0
   m_Name: SM_Bld_Base_Long_Door_02_Snow4_268
   m_TagString: Untagged
@@ -8720,6 +9838,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1430274277
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457909367408059589}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.2870002, y: 3.4190001, z: 1.154}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 1.154}
+  m_TimeToStationary: 0.5
 --- !u!1 &1497304905209269331
 GameObject:
   m_ObjectHideFlags: 0
@@ -9047,6 +10181,7 @@ GameObject:
   - component: {fileID: 5888800243097804694}
   - component: {fileID: 3420484055947722295}
   - component: {fileID: 3132086940593549526}
+  - component: {fileID: 1621268935}
   m_Layer: 0
   m_Name: SM_Bld_Wharf_01_Snow_278
   m_TagString: Untagged
@@ -9115,6 +10250,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1621268935
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556115493130625108}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 4.551, y: 4.5880003, z: 2.0070002}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.38200003}
+  m_TimeToStationary: 0.5
 --- !u!1 &1564767122051854741
 GameObject:
   m_ObjectHideFlags: 0
@@ -9126,6 +10277,7 @@ GameObject:
   - component: {fileID: 9046576731023348534}
   - component: {fileID: 3511530950565857760}
   - component: {fileID: 8602374248778830656}
+  - component: {fileID: 1251045093}
   m_Layer: 0
   m_Name: SM_Prop_Spikes_4
   m_TagString: Untagged
@@ -9194,6 +10346,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1251045093
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564767122051854741}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.655, y: 0.8, z: 0.85800004}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.85800004}
+  m_TimeToStationary: 0.5
 --- !u!1 &1567811227892041350
 GameObject:
   m_ObjectHideFlags: 0
@@ -9600,6 +10768,7 @@ GameObject:
   - component: {fileID: 757264153943906200}
   - component: {fileID: 6775351153244926656}
   - component: {fileID: 1904876112301031692}
+  - component: {fileID: 1544373752}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_02_Snow_465
   m_TagString: Untagged
@@ -9668,6 +10837,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1544373752
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603109017818878092}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.97900003, y: 0.11800001, z: 0.85400003}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.003, z: 0.85400003}
+  m_TimeToStationary: 0.5
 --- !u!1 &1611775487504078179
 GameObject:
   m_ObjectHideFlags: 0
@@ -9931,7 +11116,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1676214210636205119}
   m_LocalRotation: {x: -0.6830126, y: -0.18301326, z: -0.18301326, w: 0.6830126}
-  m_LocalPosition: {x: -2.0458977, y: -0.07904678, z: 10.969598}
+  m_LocalPosition: {x: -2.0458977, y: -0.25, z: 10.969598}
   m_LocalScale: {x: 0.273589, y: 0.273589, z: 0.49634415}
   m_Children: []
   m_Father: {fileID: 8517320247983370863}
@@ -10074,6 +11259,7 @@ GameObject:
   - component: {fileID: 4841586290050411172}
   - component: {fileID: 3978241122413492542}
   - component: {fileID: 4467406255462593735}
+  - component: {fileID: 1877523758}
   m_Layer: 0
   m_Name: SM_Env_Tree_Pine_Large_01_Snow2_621
   m_TagString: Untagged
@@ -10089,7 +11275,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1676552558712533145}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 22.8, y: 0.099999994, z: 18.3}
+  m_LocalPosition: {x: 22.8, y: 0.099999994, z: 19.564}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8517320247983370863}
@@ -10142,6 +11328,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1877523758
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676552558712533145}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.0600001, y: 1.0200001, z: 4.8570004}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.001, y: 0, z: 4.4230003}
+  m_TimeToStationary: 0.5
 --- !u!1 &1682083197716551338
 GameObject:
   m_ObjectHideFlags: 0
@@ -10706,6 +11908,7 @@ GameObject:
   - component: {fileID: 4045239639245318147}
   - component: {fileID: 5263546871120979534}
   - component: {fileID: 4111691279898661506}
+  - component: {fileID: 1425995224}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_03_Snow_468
   m_TagString: Untagged
@@ -10774,6 +11977,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1425995224
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778105922886331562}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.87700003, y: 0.117000006, z: 0.859}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.002, z: 0.859}
+  m_TimeToStationary: 0.5
 --- !u!1 &1784711982056083468
 GameObject:
   m_ObjectHideFlags: 0
@@ -10785,6 +12004,7 @@ GameObject:
   - component: {fileID: 3236172667589020270}
   - component: {fileID: 1681233445504398658}
   - component: {fileID: 1727538161579968471}
+  - component: {fileID: 952779448}
   m_Layer: 0
   m_Name: SM_Bld_Base_Door_01_Snow4
   m_TagString: Untagged
@@ -10854,6 +12074,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &952779448
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784711982056083468}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.479, y: 2.5900002, z: 1.299}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.0050000004, z: 1.24}
+  m_TimeToStationary: 0.5
 --- !u!1 &1791367264325864282
 GameObject:
   m_ObjectHideFlags: 0
@@ -11023,6 +12259,7 @@ GameObject:
   - component: {fileID: 4532040736330138986}
   - component: {fileID: 5671464403529372921}
   - component: {fileID: 2861582224185616125}
+  - component: {fileID: 1710145524}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_Large_01_Snow19
   m_TagString: Untagged
@@ -11091,6 +12328,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1710145524
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1828234329238093623}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.314, y: 1.8780001, z: 1.8360001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.0050000004, z: 0.032}
+  m_TimeToStationary: 0.5
 --- !u!1 &1828416491799017891
 GameObject:
   m_ObjectHideFlags: 0
@@ -11102,6 +12355,7 @@ GameObject:
   - component: {fileID: 1435353641363229188}
   - component: {fileID: 3451793925115008714}
   - component: {fileID: 3826606350306679238}
+  - component: {fileID: 49114495}
   m_Layer: 0
   m_Name: SM_Prop_Logs_01_Snow2_480
   m_TagString: Untagged
@@ -11170,6 +12424,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &49114495
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1828416491799017891}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.56600004, y: 0.83800006, z: 0.505}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.462}
+  m_TimeToStationary: 0.5
 --- !u!1 &1835435985048100498
 GameObject:
   m_ObjectHideFlags: 0
@@ -11260,6 +12530,7 @@ GameObject:
   - component: {fileID: 6526931105446689374}
   - component: {fileID: 7171970821909982295}
   - component: {fileID: 3629374470741242364}
+  - component: {fileID: 1624960918}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_Large_01_Snow36
   m_TagString: Untagged
@@ -11328,6 +12599,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1624960918
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850106034338680047}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.314, y: 1.8780001, z: 1.8360001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.0050000004, z: 0.032}
+  m_TimeToStationary: 0.5
 --- !u!1 &1866025838518592986
 GameObject:
   m_ObjectHideFlags: 0
@@ -11339,6 +12626,7 @@ GameObject:
   - component: {fileID: 615783154126461077}
   - component: {fileID: 7324659662459424992}
   - component: {fileID: 5220909387958339615}
+  - component: {fileID: 387845074}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_Large_01_Snow24
   m_TagString: Untagged
@@ -11407,6 +12695,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &387845074
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866025838518592986}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.314, y: 1.8780001, z: 1.8360001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.0050000004, z: 0.032}
+  m_TimeToStationary: 0.5
 --- !u!1 &1867903038107633727
 GameObject:
   m_ObjectHideFlags: 0
@@ -11817,8 +13121,8 @@ GameObject:
   m_Name: SM_Prop_Village_Entrance_01_Snow2_332
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &2437439198535038529
 Transform:
@@ -11892,6 +13196,7 @@ GameObject:
   - component: {fileID: 5836933559492314439}
   - component: {fileID: 4261807473411007345}
   - component: {fileID: 425735335568001186}
+  - component: {fileID: 577966160}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_01_Snow7
   m_TagString: Untagged
@@ -11960,6 +13265,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &577966160
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918932644512002108}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.97900003, y: 0.117000006, z: 0.86200005}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.003, z: 0.86200005}
+  m_TimeToStationary: 0.5
 --- !u!1 &1929861835782581798
 GameObject:
   m_ObjectHideFlags: 0
@@ -12208,6 +13529,7 @@ GameObject:
   - component: {fileID: 2875929725558691448}
   - component: {fileID: 3503736438365194034}
   - component: {fileID: 1274778542300765734}
+  - component: {fileID: 2005053717}
   m_Layer: 0
   m_Name: SM_Bld_Base_Door_01_187
   m_TagString: Untagged
@@ -12278,6 +13600,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &2005053717
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956979911440003441}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.479, y: 2.546, z: 1.245}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 1.245}
+  m_TimeToStationary: 0.5
 --- !u!1 &1962506569921946350
 GameObject:
   m_ObjectHideFlags: 0
@@ -12447,6 +13785,7 @@ GameObject:
   - component: {fileID: 7334125283680487757}
   - component: {fileID: 6520341565346997786}
   - component: {fileID: 1648780713592325769}
+  - component: {fileID: 655067696}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_Large_01_Snow_93
   m_TagString: Untagged
@@ -12515,6 +13854,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &655067696
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977006983631984254}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.314, y: 1.8780001, z: 1.8360001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.0050000004, z: 0.032}
+  m_TimeToStationary: 0.5
 --- !u!1 &1977496265789881612
 GameObject:
   m_ObjectHideFlags: 0
@@ -12843,6 +14198,7 @@ GameObject:
   - component: {fileID: 3311716003203436223}
   - component: {fileID: 2998139212508987993}
   - component: {fileID: 3715285817979958956}
+  - component: {fileID: 970057163}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_Large_01_Snow35
   m_TagString: Untagged
@@ -12911,6 +14267,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &970057163
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045702324719073234}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.314, y: 1.8780001, z: 1.8360001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.0050000004, z: 0.032}
+  m_TimeToStationary: 0.5
 --- !u!1 &2061216245717216414
 GameObject:
   m_ObjectHideFlags: 0
@@ -13475,6 +14847,7 @@ GameObject:
   - component: {fileID: 2941749602085448567}
   - component: {fileID: 5783491833176108482}
   - component: {fileID: 3334527391157726575}
+  - component: {fileID: 2090726795}
   m_Layer: 0
   m_Name: SM_Prop_Spikes_6
   m_TagString: Untagged
@@ -13543,6 +14916,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &2090726795
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111300428305623878}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.655, y: 0.8, z: 0.85800004}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.85800004}
+  m_TimeToStationary: 0.5
 --- !u!1 &2146498895816670733
 GameObject:
   m_ObjectHideFlags: 0
@@ -13554,6 +14943,7 @@ GameObject:
   - component: {fileID: 7631997057496197876}
   - component: {fileID: 2685017376886204945}
   - component: {fileID: 14581394628811702}
+  - component: {fileID: 1613385053}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_03_Snow3
   m_TagString: Untagged
@@ -13622,6 +15012,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1613385053
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146498895816670733}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.87700003, y: 0.117000006, z: 0.859}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.002, z: 0.859}
+  m_TimeToStationary: 0.5
 --- !u!1 &2149139408443535329
 GameObject:
   m_ObjectHideFlags: 0
@@ -13712,6 +15118,7 @@ GameObject:
   - component: {fileID: 8840813034411129696}
   - component: {fileID: 6758359760967053320}
   - component: {fileID: 7074477932510926598}
+  - component: {fileID: 1862191584}
   m_Layer: 0
   m_Name: SM_Bld_Base_Long_Door_02_Snow2
   m_TagString: Untagged
@@ -13780,6 +15187,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1862191584
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2169312655920198485}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.2870002, y: 3.4190001, z: 1.154}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 1.154}
+  m_TimeToStationary: 0.5
 --- !u!1 &2180293956497460709
 GameObject:
   m_ObjectHideFlags: 0
@@ -14186,6 +15609,7 @@ GameObject:
   - component: {fileID: 1765493201051036630}
   - component: {fileID: 2691779358401446267}
   - component: {fileID: 4637106135136776012}
+  - component: {fileID: 1417427283}
   m_Layer: 0
   m_Name: SM_Bld_BoatHouse_01_Snow2
   m_TagString: Untagged
@@ -14254,6 +15678,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1417427283
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2271356648720442559}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 4.004, y: 5.4, z: 4.6520004}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 2.841}
+  m_TimeToStationary: 0.5
 --- !u!1 &2272204166292228749
 GameObject:
   m_ObjectHideFlags: 0
@@ -14502,12 +15942,13 @@ GameObject:
   - component: {fileID: 8953154008995715909}
   - component: {fileID: 4956136658671394307}
   - component: {fileID: 2344443673080012783}
+  - component: {fileID: 37863666}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_Large_01_Snow17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &8953154008995715909
 Transform:
@@ -14570,6 +16011,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &37863666
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2313194912283866992}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.314, y: 1.8780001, z: 1.8360001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.0050000004, z: 0.032}
+  m_TimeToStationary: 0.5
 --- !u!1 &2334571327722842162
 GameObject:
   m_ObjectHideFlags: 0
@@ -14581,6 +16038,7 @@ GameObject:
   - component: {fileID: 8685413018271158474}
   - component: {fileID: 7479395177896979597}
   - component: {fileID: 7961724728044068104}
+  - component: {fileID: 2028779976}
   m_Layer: 0
   m_Name: SM_Bld_Guard_Tower_2
   m_TagString: Untagged
@@ -14649,6 +16107,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &2028779976
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2334571327722842162}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.807, y: 1.8030001, z: 4.0010004}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 4.0010004}
+  m_TimeToStationary: 0.5
 --- !u!1 &2337014194488342528
 GameObject:
   m_ObjectHideFlags: 0
@@ -15608,6 +17082,7 @@ GameObject:
   - component: {fileID: 5703262062428213727}
   - component: {fileID: 7919131580678816817}
   - component: {fileID: 6470041811406965018}
+  - component: {fileID: 472174478}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_Large_01_Snow6
   m_TagString: Untagged
@@ -15676,6 +17151,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &472174478
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2472019852292001519}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.314, y: 1.8780001, z: 1.8360001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.0050000004, z: 0.032}
+  m_TimeToStationary: 0.5
 --- !u!1 &2474218303141779532
 GameObject:
   m_ObjectHideFlags: 0
@@ -16161,6 +17652,7 @@ GameObject:
   - component: {fileID: 5761838049850784617}
   - component: {fileID: 5504220407223772132}
   - component: {fileID: 8847789381270169154}
+  - component: {fileID: 1635334826}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Stick_01_Snow6
   m_TagString: Untagged
@@ -16229,6 +17721,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1635334826
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2531234039599842341}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.6320001, y: 0.113000005, z: 0.60300004}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -1.5150001, y: 0.003, z: 0.65900004}
+  m_TimeToStationary: 0.5
 --- !u!1 &2536398782196280111
 GameObject:
   m_ObjectHideFlags: 0
@@ -17109,6 +18617,7 @@ GameObject:
   - component: {fileID: 5245607903716741997}
   - component: {fileID: 7515795863370767538}
   - component: {fileID: 1267560038710805143}
+  - component: {fileID: 224406947}
   m_Layer: 0
   m_Name: SM_Bld_Base_Long_Door_01_Snow_132
   m_TagString: Untagged
@@ -17179,6 +18688,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &224406947
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2683197907147544793}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.479, y: 3.7140002, z: 1.299}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 1.24}
+  m_TimeToStationary: 0.5
 --- !u!1 &2688279301052272419
 GameObject:
   m_ObjectHideFlags: 0
@@ -17506,6 +19031,7 @@ GameObject:
   - component: {fileID: 5777208279872085830}
   - component: {fileID: 1939897631331776487}
   - component: {fileID: 738675879352369576}
+  - component: {fileID: 759441829}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_03_Snow5
   m_TagString: Untagged
@@ -17574,6 +19100,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &759441829
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2758737714657840363}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.87700003, y: 0.117000006, z: 0.859}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.002, z: 0.859}
+  m_TimeToStationary: 0.5
 --- !u!1 &2763692476799307651
 GameObject:
   m_ObjectHideFlags: 0
@@ -17901,6 +19443,7 @@ GameObject:
   - component: {fileID: 839400225200305636}
   - component: {fileID: 5755534674286205447}
   - component: {fileID: 4762545655487442638}
+  - component: {fileID: 258559958}
   m_Layer: 0
   m_Name: SM_Bld_Base_Long_Door_2
   m_TagString: Untagged
@@ -17971,6 +19514,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &258559958
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2820074656527269816}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.479, y: 3.6640003, z: 1.245}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 1.245}
+  m_TimeToStationary: 0.5
 --- !u!1 &2823611117548689551
 GameObject:
   m_ObjectHideFlags: 0
@@ -17982,6 +19541,7 @@ GameObject:
   - component: {fileID: 7013110722963755652}
   - component: {fileID: 5970109649843938421}
   - component: {fileID: 8450077329637575357}
+  - component: {fileID: 17333764}
   m_Layer: 0
   m_Name: SM_Bld_Base_Long_Door_01_Snow2_145
   m_TagString: Untagged
@@ -18052,6 +19612,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &17333764
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2823611117548689551}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.479, y: 3.7140002, z: 1.299}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 1.24}
+  m_TimeToStationary: 0.5
 --- !u!1 &2829728266340303785
 GameObject:
   m_ObjectHideFlags: 0
@@ -18063,6 +19639,7 @@ GameObject:
   - component: {fileID: 2698576628926160244}
   - component: {fileID: 5098490857505324041}
   - component: {fileID: 2695158666289860802}
+  - component: {fileID: 182311993}
   m_Layer: 0
   m_Name: SM_Bld_Base_Door_198
   m_TagString: Untagged
@@ -18133,6 +19710,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &182311993
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2829728266340303785}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.479, y: 2.546, z: 1.245}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 1.245}
+  m_TimeToStationary: 0.5
 --- !u!1 &2831959166130007189
 GameObject:
   m_ObjectHideFlags: 0
@@ -18381,6 +19974,7 @@ GameObject:
   - component: {fileID: 2515792464860759126}
   - component: {fileID: 8026274730748983256}
   - component: {fileID: 8909256203630434687}
+  - component: {fileID: 815485178}
   m_Layer: 0
   m_Name: SM_Bld_BoatHouse_01_Snow_37
   m_TagString: Untagged
@@ -18449,6 +20043,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &815485178
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2861613961032463548}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 4.004, y: 5.4, z: 4.6520004}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 2.841}
+  m_TimeToStationary: 0.5
 --- !u!1 &2863880943479665422
 GameObject:
   m_ObjectHideFlags: 0
@@ -18618,6 +20228,7 @@ GameObject:
   - component: {fileID: 2991090403958364921}
   - component: {fileID: 9067042057258058167}
   - component: {fileID: 466542441691675677}
+  - component: {fileID: 627157899}
   m_Layer: 0
   m_Name: SM_Env_Tree_Pine_03_Snow_612
   m_TagString: Untagged
@@ -18686,6 +20297,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &627157899
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2875788895631205136}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.61800003, y: 0.61600006, z: 1.5890001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.001, y: -0.001, z: 1.4280001}
+  m_TimeToStationary: 0.5
 --- !u!1 &2885544821653800250
 GameObject:
   m_ObjectHideFlags: 0
@@ -18776,6 +20403,7 @@ GameObject:
   - component: {fileID: 8599987939738178508}
   - component: {fileID: 7615251038837716440}
   - component: {fileID: 8282867242108767148}
+  - component: {fileID: 515170849}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_Large_01_Snow14
   m_TagString: Untagged
@@ -18844,6 +20472,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &515170849
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2918953389839286569}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.314, y: 1.8780001, z: 1.8360001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.0050000004, z: 0.032}
+  m_TimeToStationary: 0.5
 --- !u!1 &2920284500653960747
 GameObject:
   m_ObjectHideFlags: 0
@@ -19645,6 +21289,7 @@ GameObject:
   - component: {fileID: 7635660360348152542}
   - component: {fileID: 7514011887106084318}
   - component: {fileID: 856703951916657254}
+  - component: {fileID: 3188949879777374856}
   m_Layer: 0
   m_Name: SM_Bld_Base_Long_Door_02_Snow3
   m_TagString: Untagged
@@ -19713,6 +21358,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &3188949879777374856
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3120338238185109804}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.2870002, y: 3.4190001, z: 1.154}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 1.154}
+  m_TimeToStationary: 0.5
 --- !u!1 &3133820476337180982
 GameObject:
   m_ObjectHideFlags: 0
@@ -19724,6 +21385,7 @@ GameObject:
   - component: {fileID: 4183277651900174940}
   - component: {fileID: 9188500793023140469}
   - component: {fileID: 2464723514878672220}
+  - component: {fileID: 1393978309}
   m_Layer: 0
   m_Name: SM_Prop_Spikes_9
   m_TagString: Untagged
@@ -19792,6 +21454,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1393978309
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3133820476337180982}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.655, y: 0.8, z: 0.85800004}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.85800004}
+  m_TimeToStationary: 0.5
 --- !u!1 &3143093290694279812
 GameObject:
   m_ObjectHideFlags: 0
@@ -19961,6 +21639,7 @@ GameObject:
   - component: {fileID: 4580634386930859010}
   - component: {fileID: 1558124426819194519}
   - component: {fileID: 9123102631288932319}
+  - component: {fileID: 194121534}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_01_Snow6
   m_TagString: Untagged
@@ -20029,6 +21708,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &194121534
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3161138341507492162}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.97900003, y: 0.117000006, z: 0.86200005}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.003, z: 0.86200005}
+  m_TimeToStationary: 0.5
 --- !u!1 &3164801848149349406
 GameObject:
   m_ObjectHideFlags: 0
@@ -20277,6 +21972,7 @@ GameObject:
   - component: {fileID: 7330498265726117475}
   - component: {fileID: 1301880039287837000}
   - component: {fileID: 2008434230505863233}
+  - component: {fileID: 2002643869}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Stick_01_Snow7
   m_TagString: Untagged
@@ -20345,6 +22041,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &2002643869
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3211388973860847639}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.6320001, y: 0.113000005, z: 0.60300004}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -1.5150001, y: 0.003, z: 0.65900004}
+  m_TimeToStationary: 0.5
 --- !u!1 &3240118117535898903
 GameObject:
   m_ObjectHideFlags: 0
@@ -20356,6 +22068,7 @@ GameObject:
   - component: {fileID: 1350494199082802981}
   - component: {fileID: 3505508674668793168}
   - component: {fileID: 2707710611326289971}
+  - component: {fileID: 2017814102}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_03_Snow2
   m_TagString: Untagged
@@ -20424,6 +22137,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &2017814102
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3240118117535898903}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.87700003, y: 0.117000006, z: 0.859}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.002, z: 0.859}
+  m_TimeToStationary: 0.5
 --- !u!1 &3242382677746877916
 GameObject:
   m_ObjectHideFlags: 0
@@ -20830,6 +22559,7 @@ GameObject:
   - component: {fileID: 7528624895242370016}
   - component: {fileID: 42173921755375129}
   - component: {fileID: 8636590865946092233}
+  - component: {fileID: 2009008990}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_Large_01_Snow30
   m_TagString: Untagged
@@ -20898,6 +22628,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &2009008990
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3300507895939361865}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.314, y: 1.8780001, z: 1.8360001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.0050000004, z: 0.032}
+  m_TimeToStationary: 0.5
 --- !u!1 &3311757540814400862
 GameObject:
   m_ObjectHideFlags: 0
@@ -21146,6 +22892,7 @@ GameObject:
   - component: {fileID: 94083814967355908}
   - component: {fileID: 8543154253181641668}
   - component: {fileID: 7085405498997133455}
+  - component: {fileID: 2020555173}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_Large_01_Snow4
   m_TagString: Untagged
@@ -21214,6 +22961,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &2020555173
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3354869044502011362}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.314, y: 1.8780001, z: 1.8360001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.0050000004, z: 0.032}
+  m_TimeToStationary: 0.5
 --- !u!1 &3372268345006833743
 GameObject:
   m_ObjectHideFlags: 0
@@ -21936,6 +23699,7 @@ GameObject:
   - component: {fileID: 5974533179479584388}
   - component: {fileID: 7137425951055022813}
   - component: {fileID: 2770875395138806114}
+  - component: {fileID: 777875063}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Stick_01_Snow12
   m_TagString: Untagged
@@ -22004,6 +23768,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &777875063
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3463673923956391343}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.6320001, y: 0.113000005, z: 0.60300004}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -1.5150001, y: 0.003, z: 0.65900004}
+  m_TimeToStationary: 0.5
 --- !u!1 &3463935436266270136
 GameObject:
   m_ObjectHideFlags: 0
@@ -22252,6 +24032,7 @@ GameObject:
   - component: {fileID: 3990113914967242719}
   - component: {fileID: 2533394075491232321}
   - component: {fileID: 5911742305365350884}
+  - component: {fileID: 1581922890}
   m_Layer: 0
   m_Name: SM_Env_Tree_Pine_01_Snow5_759
   m_TagString: Untagged
@@ -22320,6 +24101,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1581922890
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3488703393011425296}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 1.8230001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.001, y: -0.001, z: 1.6810001}
+  m_TimeToStationary: 0.5
 --- !u!1 &3490112344171168407
 GameObject:
   m_ObjectHideFlags: 0
@@ -22884,6 +24681,7 @@ GameObject:
   - component: {fileID: 9200228339473452951}
   - component: {fileID: 5169288010748913875}
   - component: {fileID: 3979414458933268849}
+  - component: {fileID: 1889402133}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_Large_01_Snow7
   m_TagString: Untagged
@@ -22952,6 +24750,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1889402133
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3563152843293108200}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.314, y: 1.8780001, z: 1.8360001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.0050000004, z: 0.032}
+  m_TimeToStationary: 0.5
 --- !u!1 &3576990997732110701
 GameObject:
   m_ObjectHideFlags: 0
@@ -22963,6 +24777,7 @@ GameObject:
   - component: {fileID: 6251988536167390902}
   - component: {fileID: 1788151818773833307}
   - component: {fileID: 3098410555687129927}
+  - component: {fileID: 3188949879777374854}
   m_Layer: 0
   m_Name: SM_Prop_Log_01_Snow_426
   m_TagString: Untagged
@@ -23031,6 +24846,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &3188949879777374854
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3576990997732110701}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.064, y: 0.609, z: 0.647}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.001, z: 0.647}
+  m_TimeToStationary: 0.5
 --- !u!1 &3596352795662583340
 GameObject:
   m_ObjectHideFlags: 0
@@ -23753,6 +25584,7 @@ GameObject:
   - component: {fileID: 6252401982631703128}
   - component: {fileID: 3264132475880529211}
   - component: {fileID: 4892659178636950565}
+  - component: {fileID: 225960015}
   m_Layer: 0
   m_Name: SM_Env_Tree_Pine_Large_01_Snow_601
   m_TagString: Untagged
@@ -23821,6 +25653,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &225960015
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3695601863366954196}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 4.8570004}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 4.4230003}
+  m_TimeToStationary: 0.5
 --- !u!1 &3725998904643185841
 GameObject:
   m_ObjectHideFlags: 0
@@ -23832,6 +25680,7 @@ GameObject:
   - component: {fileID: 9040825561578700282}
   - component: {fileID: 6105147442594833316}
   - component: {fileID: 8462648128395876723}
+  - component: {fileID: 2045942740}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_01_Snow4
   m_TagString: Untagged
@@ -23900,6 +25749,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &2045942740
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3725998904643185841}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.97900003, y: 0.117000006, z: 0.86200005}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.003, z: 0.86200005}
+  m_TimeToStationary: 0.5
 --- !u!1 &3731123782127635100
 GameObject:
   m_ObjectHideFlags: 0
@@ -24859,6 +26724,7 @@ GameObject:
   - component: {fileID: 5862997566755211628}
   - component: {fileID: 2771965667368244955}
   - component: {fileID: 4363809895403034084}
+  - component: {fileID: 1234327630}
   m_Layer: 0
   m_Name: SM_Env_Tree_Pine_01_Snow4_640
   m_TagString: Untagged
@@ -24927,6 +26793,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1234327630
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3815257270805014292}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.716, y: 0.75600004, z: 1.8230001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.001, y: -0.001, z: 1.6810001}
+  m_TimeToStationary: 0.5
 --- !u!1 &3822406670512678756
 GameObject:
   m_ObjectHideFlags: 0
@@ -24938,6 +26820,7 @@ GameObject:
   - component: {fileID: 4941599544728907142}
   - component: {fileID: 8620922576098450981}
   - component: {fileID: 7774608327468413023}
+  - component: {fileID: 1448488979}
   m_Layer: 0
   m_Name: SM_Bld_Base_Door_01_Snow5
   m_TagString: Untagged
@@ -25007,6 +26890,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1448488979
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3822406670512678756}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.479, y: 2.5900002, z: 1.299}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.0050000004, z: 1.24}
+  m_TimeToStationary: 0.5
 --- !u!1 &3834825204678109715
 GameObject:
   m_ObjectHideFlags: 0
@@ -25639,6 +27538,45 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &3907864390220050163
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3310263259475132971}
+  m_Layer: 0
+  m_Name: City1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3310263259475132971
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3907864390220050163}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8332754108077087989}
+  - {fileID: 44028562}
+  - {fileID: 541759572}
+  - {fileID: 1411060445}
+  - {fileID: 1907659681}
+  - {fileID: 1355556678}
+  - {fileID: 1785255474}
+  - {fileID: 1619553039}
+  - {fileID: 928229132}
+  m_Father: {fileID: 343311493957926365}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3921705080358387903
 GameObject:
   m_ObjectHideFlags: 0
@@ -25966,6 +27904,7 @@ GameObject:
   - component: {fileID: 8129906828560522466}
   - component: {fileID: 1665284349156775059}
   - component: {fileID: 129519362214194003}
+  - component: {fileID: 1437059452}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_Large_01_Snow21
   m_TagString: Untagged
@@ -26034,6 +27973,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1437059452
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3973539926467427445}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.314, y: 1.8780001, z: 1.8360001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.0050000004, z: 0.032}
+  m_TimeToStationary: 0.5
 --- !u!1 &3982441562439119323
 GameObject:
   m_ObjectHideFlags: 0
@@ -26124,6 +28079,7 @@ GameObject:
   - component: {fileID: 894761091222923021}
   - component: {fileID: 7484859547521121766}
   - component: {fileID: 4024449174332144639}
+  - component: {fileID: 520967832}
   m_Layer: 0
   m_Name: SM_Prop_Spikes_8
   m_TagString: Untagged
@@ -26192,6 +28148,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &520967832
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4002773726457451554}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.655, y: 0.8, z: 0.85800004}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.85800004}
+  m_TimeToStationary: 0.5
 --- !u!1 &4017172152042328791
 GameObject:
   m_ObjectHideFlags: 0
@@ -26440,6 +28412,7 @@ GameObject:
   - component: {fileID: 997411792810325696}
   - component: {fileID: 252634563221465681}
   - component: {fileID: 7198615468730744400}
+  - component: {fileID: 1791186772}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_02_Snow5
   m_TagString: Untagged
@@ -26508,6 +28481,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1791186772
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4049346098724751373}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.97900003, y: 0.11800001, z: 0.85400003}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.003, z: 0.85400003}
+  m_TimeToStationary: 0.5
 --- !u!1 &4058038451268310529
 GameObject:
   m_ObjectHideFlags: 0
@@ -26677,6 +28666,7 @@ GameObject:
   - component: {fileID: 3876472933225647330}
   - component: {fileID: 3876903760438568459}
   - component: {fileID: 1041488684239541103}
+  - component: {fileID: 600021517}
   m_Layer: 0
   m_Name: SM_Prop_Spikes_2
   m_TagString: Untagged
@@ -26745,6 +28735,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &600021517
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4069688440823719589}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.655, y: 0.8, z: 0.85800004}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.85800004}
+  m_TimeToStationary: 0.5
 --- !u!1 &4109412414461547240
 GameObject:
   m_ObjectHideFlags: 0
@@ -26756,6 +28762,7 @@ GameObject:
   - component: {fileID: 3581055472874137633}
   - component: {fileID: 6104579832632772356}
   - component: {fileID: 5856801163070985068}
+  - component: {fileID: 216079302}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_02_Snow7
   m_TagString: Untagged
@@ -26824,6 +28831,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &216079302
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4109412414461547240}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.97900003, y: 0.11800001, z: 0.85400003}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.003, z: 0.85400003}
+  m_TimeToStationary: 0.5
 --- !u!1 &4131343474291100030
 GameObject:
   m_ObjectHideFlags: 0
@@ -26914,6 +28937,7 @@ GameObject:
   - component: {fileID: 60938087472258142}
   - component: {fileID: 5348196284673512887}
   - component: {fileID: 3537569755244596773}
+  - component: {fileID: 699918980}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_02_Snow8
   m_TagString: Untagged
@@ -26982,6 +29006,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &699918980
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4160861856086667743}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.97900003, y: 0.11800001, z: 0.85400003}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.003, z: 0.85400003}
+  m_TimeToStationary: 0.5
 --- !u!1 &4170109284357028540
 GameObject:
   m_ObjectHideFlags: 0
@@ -27546,12 +29586,13 @@ GameObject:
   - component: {fileID: 4103662311576130610}
   - component: {fileID: 514528482536133611}
   - component: {fileID: 1954501869210700584}
+  - component: {fileID: 194328281}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_Large_01_Snow20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &4103662311576130610
 Transform:
@@ -27614,6 +29655,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &194328281
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4270409056750491229}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.314, y: 1.8780001, z: 1.8360001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.0050000004, z: 0.032}
+  m_TimeToStationary: 0.5
 --- !u!1 &4277845441982571897
 GameObject:
   m_ObjectHideFlags: 0
@@ -27625,6 +29682,7 @@ GameObject:
   - component: {fileID: 2917177509465495968}
   - component: {fileID: 7302142986190744533}
   - component: {fileID: 3240878652336194246}
+  - component: {fileID: 296487377}
   m_Layer: 0
   m_Name: SM_Prop_Spikes_7
   m_TagString: Untagged
@@ -27693,6 +29751,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &296487377
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4277845441982571897}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.655, y: 0.8, z: 0.85800004}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.85800004}
+  m_TimeToStationary: 0.5
 --- !u!1 &4278911175523199608
 GameObject:
   m_ObjectHideFlags: 0
@@ -27783,6 +29857,7 @@ GameObject:
   - component: {fileID: 2803159841202602864}
   - component: {fileID: 1584658637443760872}
   - component: {fileID: 3130698041078728250}
+  - component: {fileID: 1723739639}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_Large_01_Snow25
   m_TagString: Untagged
@@ -27851,6 +29926,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1723739639
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4300508844471588975}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.314, y: 1.8780001, z: 1.8360001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.0050000004, z: 0.032}
+  m_TimeToStationary: 0.5
 --- !u!1 &4323094364240138968
 GameObject:
   m_ObjectHideFlags: 0
@@ -27862,6 +29953,7 @@ GameObject:
   - component: {fileID: 6994688219832112673}
   - component: {fileID: 7941621138514693967}
   - component: {fileID: 8615835100435934025}
+  - component: {fileID: 1812447678}
   m_Layer: 0
   m_Name: SM_Bld_Base_Long_Door_01_Snow7
   m_TagString: Untagged
@@ -27932,6 +30024,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1812447678
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4323094364240138968}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.479, y: 3.7140002, z: 1.299}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 1.24}
+  m_TimeToStationary: 0.5
 --- !u!1 &4333768407128817188
 GameObject:
   m_ObjectHideFlags: 0
@@ -28180,6 +30288,7 @@ GameObject:
   - component: {fileID: 2206105923965936089}
   - component: {fileID: 3419298316760589044}
   - component: {fileID: 8630626864403909303}
+  - component: {fileID: 55021438}
   m_Layer: 0
   m_Name: SM_Env_Tree_Pine_03_Snow4
   m_TagString: Untagged
@@ -28248,6 +30357,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &55021438
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4371798672871343704}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.05, y: 0.05, z: 1.5890001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 1.4280001}
+  m_TimeToStationary: 0.5
 --- !u!1 &4378522048719063227
 GameObject:
   m_ObjectHideFlags: 0
@@ -28259,6 +30384,7 @@ GameObject:
   - component: {fileID: 1731216890147832815}
   - component: {fileID: 5220295255264826870}
   - component: {fileID: 3926663135601706495}
+  - component: {fileID: 176491909}
   m_Layer: 0
   m_Name: SM_Bld_Base_Long_Door_01_Snow6
   m_TagString: Untagged
@@ -28329,6 +30455,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &176491909
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4378522048719063227}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.479, y: 3.7140002, z: 1.299}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 1.24}
+  m_TimeToStationary: 0.5
 --- !u!1 &4380340225231375264
 GameObject:
   m_ObjectHideFlags: 0
@@ -28577,6 +30719,8 @@ GameObject:
   - component: {fileID: 4407421681219557710}
   - component: {fileID: 1965888454943564877}
   - component: {fileID: 7974625234053630546}
+  - component: {fileID: 1787071606}
+  - component: {fileID: 1787071608}
   m_Layer: 0
   m_Name: SM_Bld_Base_Long_02_Snow3
   m_TagString: Untagged
@@ -28592,7 +30736,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4396811358668122644}
   m_LocalRotation: {x: 0.0000006590988, y: 0.7071068, z: 0.7071068, w: -0.0000006590988}
-  m_LocalPosition: {x: -15.599965, y: 0, z: -9.299996}
+  m_LocalPosition: {x: -15.61, y: 0, z: -9.299996}
   m_LocalScale: {x: 1.2500001, y: 1.2499999, z: 1.2499999}
   m_Children:
   - {fileID: 7635660360348152542}
@@ -28649,6 +30793,35 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &1787071606
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4396811358668122644}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.573077, y: 6.808959, z: 2.323217}
+  m_Center: {x: -2.6121116e-13, y: 0.013481703, z: 1.1616076}
+--- !u!208 &1787071608
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4396811358668122644}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.2870002, y: 3.404, z: 1.1620001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.013, z: 1.1620001}
+  m_TimeToStationary: 0.5
 --- !u!1 &4404192986563557680
 GameObject:
   m_ObjectHideFlags: 0
@@ -29292,6 +31465,7 @@ GameObject:
   - component: {fileID: 5186232879373476216}
   - component: {fileID: 1712942091438812610}
   - component: {fileID: 1300848920739797544}
+  - component: {fileID: 1515836567}
   m_Layer: 0
   m_Name: SM_Bld_Base_Long_Door_01_207
   m_TagString: Untagged
@@ -29362,6 +31536,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1515836567
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4531000446090241259}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.479, y: 3.6640003, z: 1.245}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 1.245}
+  m_TimeToStationary: 0.5
 --- !u!1 &4547800518996075530
 GameObject:
   m_ObjectHideFlags: 0
@@ -29927,12 +32117,13 @@ GameObject:
   - component: {fileID: 7478051187891052847}
   - component: {fileID: 4765046111800963843}
   - component: {fileID: 949220340265341916}
+  - component: {fileID: 4712611}
   m_Layer: 0
   m_Name: SM_Bld_Wharf_01_Snow2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &7478051187891052847
 Transform:
@@ -29995,6 +32186,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &4712611
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4629980086723367332}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 4.551, y: 4.5880003, z: 2.0070002}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.38200003}
+  m_TimeToStationary: 0.5
 --- !u!1 &4636158872462455897
 GameObject:
   m_ObjectHideFlags: 0
@@ -30480,6 +32687,7 @@ GameObject:
   - component: {fileID: 2982466636259715544}
   - component: {fileID: 7414401093246109870}
   - component: {fileID: 7521543989012323718}
+  - component: {fileID: 1260120776}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_Large_01_Snow27
   m_TagString: Untagged
@@ -30548,6 +32756,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1260120776
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4695128980883309863}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.314, y: 1.8780001, z: 1.8360001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.0050000004, z: 0.032}
+  m_TimeToStationary: 0.5
 --- !u!1 &4696177135801436593
 GameObject:
   m_ObjectHideFlags: 0
@@ -31823,6 +34047,7 @@ GameObject:
   - component: {fileID: 6514802032492725374}
   - component: {fileID: 3392757209730425814}
   - component: {fileID: 8787290727330730215}
+  - component: {fileID: 858698155}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Stick_01_Snow4
   m_TagString: Untagged
@@ -31891,6 +34116,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &858698155
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4847583672670912988}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.6320001, y: 0.113000005, z: 0.60300004}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -1.5150001, y: 0.003, z: 0.65900004}
+  m_TimeToStationary: 0.5
 --- !u!1 &4849787705464820953
 GameObject:
   m_ObjectHideFlags: 0
@@ -32060,6 +34301,7 @@ GameObject:
   - component: {fileID: 9121349507012678754}
   - component: {fileID: 6699318282518249268}
   - component: {fileID: 477728068123467912}
+  - component: {fileID: 355586165}
   m_Layer: 0
   m_Name: SM_Bld_Base_Door_01_Snow6
   m_TagString: Untagged
@@ -32130,6 +34372,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &355586165
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4889187901547283756}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.479, y: 2.5900002, z: 1.299}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.0050000004, z: 1.24}
+  m_TimeToStationary: 0.5
 --- !u!1 &4891566333495880886
 GameObject:
   m_ObjectHideFlags: 0
@@ -32141,6 +34399,7 @@ GameObject:
   - component: {fileID: 5111549644110251006}
   - component: {fileID: 8351656272776396827}
   - component: {fileID: 6745875085699524230}
+  - component: {fileID: 245115110}
   m_Layer: 0
   m_Name: SM_Bld_Guard_Tower_01_Snow_85
   m_TagString: Untagged
@@ -32209,6 +34468,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &245115110
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4891566333495880886}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.807, y: 1.8030001, z: 4.0080004}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 4.0080004}
+  m_TimeToStationary: 0.5
 --- !u!1 &4905544950979744101
 GameObject:
   m_ObjectHideFlags: 0
@@ -32220,6 +34495,7 @@ GameObject:
   - component: {fileID: 9188757773974823039}
   - component: {fileID: 6177489160222752161}
   - component: {fileID: 3325953099642377710}
+  - component: {fileID: 1790546367}
   m_Layer: 0
   m_Name: SM_Bld_Guard_Tower_01_153
   m_TagString: Untagged
@@ -32288,6 +34564,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1790546367
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4905544950979744101}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.807, y: 1.8030001, z: 4.0010004}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 4.0010004}
+  m_TimeToStationary: 0.5
 --- !u!1 &4908040179683784311
 GameObject:
   m_ObjectHideFlags: 0
@@ -32726,6 +35018,7 @@ GameObject:
   - component: {fileID: 2388374080980441552}
   - component: {fileID: 1137243457517360946}
   - component: {fileID: 1776383198809820735}
+  - component: {fileID: 2003643342}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_03_Snow4
   m_TagString: Untagged
@@ -32794,6 +35087,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &2003643342
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4978088069722137434}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.87700003, y: 0.117000006, z: 0.859}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.002, z: 0.859}
+  m_TimeToStationary: 0.5
 --- !u!1 &4978661195324646458
 GameObject:
   m_ObjectHideFlags: 0
@@ -33279,6 +35588,7 @@ GameObject:
   - component: {fileID: 4864976850583585327}
   - component: {fileID: 7542980026724020864}
   - component: {fileID: 558437469932840292}
+  - component: {fileID: 1562586675}
   m_Layer: 0
   m_Name: SM_Bld_Guard_Tower_01_Snow7
   m_TagString: Untagged
@@ -33347,6 +35657,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1562586675
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5057530328664392650}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.807, y: 1.8030001, z: 4.0080004}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 4.0080004}
+  m_TimeToStationary: 0.5
 --- !u!1 &5061253510896319355
 GameObject:
   m_ObjectHideFlags: 0
@@ -33674,6 +36000,7 @@ GameObject:
   - component: {fileID: 532693456431668700}
   - component: {fileID: 1961703999678009869}
   - component: {fileID: 5575886245565404563}
+  - component: {fileID: 934065022}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_Large_01_Snow3
   m_TagString: Untagged
@@ -33742,6 +36069,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &934065022
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5098242478297536862}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.314, y: 1.8780001, z: 1.8360001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.0050000004, z: 0.032}
+  m_TimeToStationary: 0.5
 --- !u!1 &5108067200993041908
 GameObject:
   m_ObjectHideFlags: 0
@@ -34467,6 +36810,7 @@ GameObject:
   - component: {fileID: 6425424101191696654}
   - component: {fileID: 2259069360732277079}
   - component: {fileID: 1913610428655167683}
+  - component: {fileID: 881717010}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_Large_01_Snow15
   m_TagString: Untagged
@@ -34535,6 +36879,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &881717010
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5225783918163248693}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.314, y: 1.8780001, z: 1.8360001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.0050000004, z: 0.032}
+  m_TimeToStationary: 0.5
 --- !u!1 &5251925322444214934
 GameObject:
   m_ObjectHideFlags: 0
@@ -35020,6 +37380,7 @@ GameObject:
   - component: {fileID: 1674899732070187676}
   - component: {fileID: 3051209673336730517}
   - component: {fileID: 8779158020516131516}
+  - component: {fileID: 1997511294}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_Large_01_Snow31
   m_TagString: Untagged
@@ -35088,6 +37449,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1997511294
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5321543820970538976}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.314, y: 1.8780001, z: 1.8360001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.0050000004, z: 0.032}
+  m_TimeToStationary: 0.5
 --- !u!1 &5328353233596401296
 GameObject:
   m_ObjectHideFlags: 0
@@ -35731,6 +38108,7 @@ GameObject:
   - component: {fileID: 8450090237724147597}
   - component: {fileID: 3782697567359335284}
   - component: {fileID: 4428748216459130035}
+  - component: {fileID: 142725841}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_02_Snow3
   m_TagString: Untagged
@@ -35799,6 +38177,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &142725841
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5466292030400181312}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.97900003, y: 0.11800001, z: 0.85400003}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.003, z: 0.85400003}
+  m_TimeToStationary: 0.5
 --- !u!1 &5478058748079976861
 GameObject:
   m_ObjectHideFlags: 0
@@ -35968,6 +38362,7 @@ GameObject:
   - component: {fileID: 7782230439118779813}
   - component: {fileID: 8357649297734943478}
   - component: {fileID: 489125694289496811}
+  - component: {fileID: 1673291325}
   m_Layer: 0
   m_Name: SM_Env_Tree_Pine_01_Snow_605
   m_TagString: Untagged
@@ -36036,6 +38431,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1673291325
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5516729378830419398}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.716, y: 0.75600004, z: 1.8230001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.001, y: -0.001, z: 1.6810001}
+  m_TimeToStationary: 0.5
 --- !u!1 &5519654450142790430
 GameObject:
   m_ObjectHideFlags: 0
@@ -36205,6 +38616,7 @@ GameObject:
   - component: {fileID: 2386315992402758489}
   - component: {fileID: 1030220917830057213}
   - component: {fileID: 4162959784794465298}
+  - component: {fileID: 2055596913}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_02_Snow6
   m_TagString: Untagged
@@ -36273,6 +38685,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &2055596913
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5524071283551577721}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.97900003, y: 0.11800001, z: 0.85400003}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.003, z: 0.85400003}
+  m_TimeToStationary: 0.5
 --- !u!1 &5528159952559953608
 GameObject:
   m_ObjectHideFlags: 0
@@ -36363,6 +38791,7 @@ GameObject:
   - component: {fileID: 4646122372058712665}
   - component: {fileID: 2830713531622517136}
   - component: {fileID: 4227501988962593966}
+  - component: {fileID: 834235121}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_Large_01_Snow33
   m_TagString: Untagged
@@ -36431,6 +38860,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &834235121
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5534285267221621726}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.314, y: 1.8780001, z: 1.8360001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.0050000004, z: 0.032}
+  m_TimeToStationary: 0.5
 --- !u!1 &5535645298291426755
 GameObject:
   m_ObjectHideFlags: 0
@@ -36442,6 +38887,7 @@ GameObject:
   - component: {fileID: 3950453624340373548}
   - component: {fileID: 3488235139885143860}
   - component: {fileID: 6702347768679645795}
+  - component: {fileID: 145404800}
   m_Layer: 0
   m_Name: SM_Bld_Guard_Tower_01_Snow5
   m_TagString: Untagged
@@ -36510,6 +38956,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &145404800
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5535645298291426755}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.807, y: 1.8030001, z: 4.0080004}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 4.0080004}
+  m_TimeToStationary: 0.5
 --- !u!1 &5539616889792850037
 GameObject:
   m_ObjectHideFlags: 0
@@ -36916,6 +39378,7 @@ GameObject:
   - component: {fileID: 7455372387376378735}
   - component: {fileID: 5781163958037859879}
   - component: {fileID: 2174322941139497308}
+  - component: {fileID: 1045499186}
   m_Layer: 0
   m_Name: SM_Prop_Rock_Circle_01_Snow2_538
   m_TagString: Untagged
@@ -36984,6 +39447,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1045499186
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5565878646643563231}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.299, y: 1.2880001, z: 0.523}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.42400002}
+  m_TimeToStationary: 0.5
 --- !u!1 &5572322875787423976
 GameObject:
   m_ObjectHideFlags: 0
@@ -37706,6 +40185,7 @@ GameObject:
   - component: {fileID: 5468513861557908962}
   - component: {fileID: 4380125617036301410}
   - component: {fileID: 6083180541995498549}
+  - component: {fileID: 352570289}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Stick_01_Snow_445
   m_TagString: Untagged
@@ -37774,6 +40254,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &352570289
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5790522896256076602}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.6320001, y: 0.113000005, z: 0.60300004}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -1.5150001, y: 0.003, z: 0.65900004}
+  m_TimeToStationary: 0.5
 --- !u!1 &5809146820856649900
 GameObject:
   m_ObjectHideFlags: 0
@@ -37864,6 +40360,7 @@ GameObject:
   - component: {fileID: 6194607732609272561}
   - component: {fileID: 8999205093370350952}
   - component: {fileID: 7688805412908551301}
+  - component: {fileID: 2081014737}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Stick_01_Snow11
   m_TagString: Untagged
@@ -37932,6 +40429,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &2081014737
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5822744743237999636}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.6320001, y: 0.113000005, z: 0.60300004}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -1.5150001, y: 0.003, z: 0.65900004}
+  m_TimeToStationary: 0.5
 --- !u!1 &5828087227070166174
 GameObject:
   m_ObjectHideFlags: 0
@@ -38259,6 +40772,7 @@ GameObject:
   - component: {fileID: 8084053925833466297}
   - component: {fileID: 3259119974175614384}
   - component: {fileID: 5812402645087575845}
+  - component: {fileID: 706503241}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_Large_01_Snow29
   m_TagString: Untagged
@@ -38327,6 +40841,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &706503241
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5867155896074086912}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.314, y: 1.8780001, z: 1.8360001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.0050000004, z: 0.032}
+  m_TimeToStationary: 0.5
 --- !u!1 &5902176473763705281
 GameObject:
   m_ObjectHideFlags: 0
@@ -38496,6 +41026,7 @@ GameObject:
   - component: {fileID: 4085515794449224768}
   - component: {fileID: 4613113380255681804}
   - component: {fileID: 6150897137897536644}
+  - component: {fileID: 1575500285}
   m_Layer: 0
   m_Name: SM_Bld_Base_Long_Door_02_Snow_205
   m_TagString: Untagged
@@ -38564,6 +41095,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1575500285
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5929935448902756460}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.2870002, y: 3.4190001, z: 1.154}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 1.154}
+  m_TimeToStationary: 0.5
 --- !u!1 &5952790445926771812
 GameObject:
   m_ObjectHideFlags: 0
@@ -38891,6 +41438,7 @@ GameObject:
   - component: {fileID: 5323765328504743168}
   - component: {fileID: 1861974010498926211}
   - component: {fileID: 3977361294343727587}
+  - component: {fileID: 410556161}
   m_Layer: 0
   m_Name: SM_Prop_Boat_Build_01_Snow_82
   m_TagString: Untagged
@@ -38959,6 +41507,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &410556161
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5972532474421975724}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.5, y: 4, z: 1.3510001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 1.3510001}
+  m_TimeToStationary: 0.5
 --- !u!1 &5977866563243985263
 GameObject:
   m_ObjectHideFlags: 0
@@ -39444,6 +42008,7 @@ GameObject:
   - component: {fileID: 3533923625770757650}
   - component: {fileID: 8024825572273405383}
   - component: {fileID: 6525561325590767030}
+  - component: {fileID: 1970135809}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Stick_01_Snow9
   m_TagString: Untagged
@@ -39512,6 +42077,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1970135809
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6022263697438166926}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.6320001, y: 0.113000005, z: 0.60300004}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -1.5150001, y: 0.003, z: 0.65900004}
+  m_TimeToStationary: 0.5
 --- !u!1 &6115572136344301969
 GameObject:
   m_ObjectHideFlags: 0
@@ -39602,6 +42183,7 @@ GameObject:
   - component: {fileID: 1806864479938500312}
   - component: {fileID: 1696573147673336789}
   - component: {fileID: 3764852931223485962}
+  - component: {fileID: 660474969}
   m_Layer: 0
   m_Name: SM_Prop_Spikes_3
   m_TagString: Untagged
@@ -39670,6 +42252,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &660474969
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6121520295256565445}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.655, y: 0.8, z: 0.85800004}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.85800004}
+  m_TimeToStationary: 0.5
 --- !u!1 &6137715994226975876
 GameObject:
   m_ObjectHideFlags: 0
@@ -39843,8 +42441,8 @@ GameObject:
   m_Name: SM_Prop_Spikes_01_Snow_663
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &3431336886446316474
 Transform:
@@ -40550,6 +43148,7 @@ GameObject:
   - component: {fileID: 8674786331841677356}
   - component: {fileID: 2325971337572990127}
   - component: {fileID: 4776210152429247693}
+  - component: {fileID: 11270476}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_02_Snow2
   m_TagString: Untagged
@@ -40618,6 +43217,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &11270476
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6283648247914565107}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.97900003, y: 0.11800001, z: 0.85400003}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.003, z: 0.85400003}
+  m_TimeToStationary: 0.5
 --- !u!1 &6284251988972747432
 GameObject:
   m_ObjectHideFlags: 0
@@ -40866,6 +43481,7 @@ GameObject:
   - component: {fileID: 7827451857388767244}
   - component: {fileID: 8893116647953521397}
   - component: {fileID: 3763008323221196963}
+  - component: {fileID: 1601556762}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Stick_01_Snow10
   m_TagString: Untagged
@@ -40934,6 +43550,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1601556762
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6306984285699533735}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.6320001, y: 0.113000005, z: 0.60300004}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -1.5150001, y: 0.003, z: 0.65900004}
+  m_TimeToStationary: 0.5
 --- !u!1 &6314868899140016518
 GameObject:
   m_ObjectHideFlags: 0
@@ -41104,6 +43736,7 @@ GameObject:
   - component: {fileID: 8734455065220472108}
   - component: {fileID: 6993735849367672234}
   - component: {fileID: 7262688291377923334}
+  - component: {fileID: 1578876502}
   m_Layer: 0
   m_Name: SM_Bld_Guard_Tower_3
   m_TagString: Untagged
@@ -41172,6 +43805,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1578876502
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6318846430919100730}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.807, y: 1.8030001, z: 4.0010004}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 4.0010004}
+  m_TimeToStationary: 0.5
 --- !u!1 &6338201005244711867
 GameObject:
   m_ObjectHideFlags: 0
@@ -41262,6 +43911,7 @@ GameObject:
   - component: {fileID: 7105987545444219752}
   - component: {fileID: 5948633364120403762}
   - component: {fileID: 8875587933264985675}
+  - component: {fileID: 1193996058}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_Large_01_Snow34
   m_TagString: Untagged
@@ -41330,6 +43980,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1193996058
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6352300469854258677}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.314, y: 1.8780001, z: 1.8360001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.0050000004, z: 0.032}
+  m_TimeToStationary: 0.5
 --- !u!1 &6353673948279971657
 GameObject:
   m_ObjectHideFlags: 0
@@ -41341,6 +44007,7 @@ GameObject:
   - component: {fileID: 5437911637501297327}
   - component: {fileID: 2559800369414797268}
   - component: {fileID: 4751602917746388898}
+  - component: {fileID: 385802970}
   m_Layer: 0
   m_Name: SM_Bld_Base_Long_02_Snow2_246
   m_TagString: Untagged
@@ -41416,6 +44083,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &385802970
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6353673948279971657}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.2870002, y: 3.404, z: 1.1620001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.013, z: 1.1620001}
+  m_TimeToStationary: 0.5
 --- !u!1 &6356096271902479531
 GameObject:
   m_ObjectHideFlags: 0
@@ -41506,6 +44189,7 @@ GameObject:
   - component: {fileID: 5877718311781519270}
   - component: {fileID: 8130743665032021246}
   - component: {fileID: 8422059762629511134}
+  - component: {fileID: 1418169824}
   m_Layer: 0
   m_Name: SM_Bld_Guard_Tower_01_Snow2
   m_TagString: Untagged
@@ -41574,6 +44258,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1418169824
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6365625693620220622}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.807, y: 1.8030001, z: 4.0080004}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 4.0080004}
+  m_TimeToStationary: 0.5
 --- !u!1 &6371357599471324436
 GameObject:
   m_ObjectHideFlags: 0
@@ -41664,6 +44364,7 @@ GameObject:
   - component: {fileID: 8828476172513612304}
   - component: {fileID: 5051876558011481245}
   - component: {fileID: 6798112824198383549}
+  - component: {fileID: 1717911579}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_Large_01_Snow11
   m_TagString: Untagged
@@ -41732,6 +44433,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1717911579
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6411887635173962650}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.314, y: 1.8780001, z: 1.8360001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.0050000004, z: 0.032}
+  m_TimeToStationary: 0.5
 --- !u!1 &6412029749283149565
 GameObject:
   m_ObjectHideFlags: 0
@@ -41743,6 +44460,7 @@ GameObject:
   - component: {fileID: 82426622248161441}
   - component: {fileID: 8705862114762524109}
   - component: {fileID: 3191554150388598644}
+  - component: {fileID: 788070771}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_01_Snow8
   m_TagString: Untagged
@@ -41811,6 +44529,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &788070771
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6412029749283149565}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.97900003, y: 0.117000006, z: 0.86200005}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.003, z: 0.86200005}
+  m_TimeToStationary: 0.5
 --- !u!1 &6421586888598625969
 GameObject:
   m_ObjectHideFlags: 0
@@ -42928,6 +45662,7 @@ GameObject:
   - component: {fileID: 4551666689679632805}
   - component: {fileID: 8007536120601887693}
   - component: {fileID: 332481198740480396}
+  - component: {fileID: 965471678}
   m_Layer: 0
   m_Name: SM_Env_Tree_Pine_Large_01_Snow3_637
   m_TagString: Untagged
@@ -42996,6 +45731,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &965471678
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6604652029478416729}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 4.8570004}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.001, y: 0, z: 4.4230003}
+  m_TimeToStationary: 0.5
 --- !u!1 &6606812009425534316
 GameObject:
   m_ObjectHideFlags: 0
@@ -43244,6 +45995,7 @@ GameObject:
   - component: {fileID: 3430128570598725213}
   - component: {fileID: 1694685324648315885}
   - component: {fileID: 1729973363257756395}
+  - component: {fileID: 128590743}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Stick_01_Snow5
   m_TagString: Untagged
@@ -43312,6 +46064,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &128590743
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6623041174103790360}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.6320001, y: 0.113000005, z: 0.60300004}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -1.5150001, y: 0.003, z: 0.65900004}
+  m_TimeToStationary: 0.5
 --- !u!1 &6623872219232492366
 GameObject:
   m_ObjectHideFlags: 0
@@ -43323,6 +46091,7 @@ GameObject:
   - component: {fileID: 3593854019673210153}
   - component: {fileID: 7712969660237076026}
   - component: {fileID: 1409105760827558815}
+  - component: {fileID: 44189003}
   m_Layer: 0
   m_Name: SM_Env_Tree_Pine_01_Snow3_630
   m_TagString: Untagged
@@ -43391,6 +46160,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &44189003
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6623872219232492366}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.05, y: 0.05, z: 1.8230001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 1.6810001}
+  m_TimeToStationary: 0.5
 --- !u!1 &6624326459670275513
 GameObject:
   m_ObjectHideFlags: 0
@@ -43880,8 +46665,8 @@ GameObject:
   m_Name: SM_Prop_Spikes_01_Snow2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &7917575556433598230
 Transform:
@@ -43955,6 +46740,7 @@ GameObject:
   - component: {fileID: 6388637045572184397}
   - component: {fileID: 3695770099694110923}
   - component: {fileID: 6551873335986250228}
+  - component: {fileID: 1257345163}
   m_Layer: 0
   m_Name: SM_Bld_Base_Long_Door_01_Snow3
   m_TagString: Untagged
@@ -44024,6 +46810,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1257345163
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6732487037074703008}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.479, y: 3.7140002, z: 1.299}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 1.24}
+  m_TimeToStationary: 0.5
 --- !u!1 &6735428008097649420
 GameObject:
   m_ObjectHideFlags: 0
@@ -46179,6 +48981,7 @@ GameObject:
   - component: {fileID: 7995872525264867721}
   - component: {fileID: 6455579894163248257}
   - component: {fileID: 2378409463655659651}
+  - component: {fileID: 89116189}
   m_Layer: 0
   m_Name: SM_Prop_Boat_Broken_01_Snow_355
   m_TagString: Untagged
@@ -46247,6 +49050,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &89116189
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7025308825525311544}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.238, y: 4.51, z: 1.169}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.011000001}
+  m_TimeToStationary: 0.5
 --- !u!1 &7026432055923742220
 GameObject:
   m_ObjectHideFlags: 0
@@ -46574,12 +49393,13 @@ GameObject:
   - component: {fileID: 5281416801035141109}
   - component: {fileID: 8946255554793992307}
   - component: {fileID: 4962530806161485201}
+  - component: {fileID: 770809023}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_Large_01_Snow16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &5281416801035141109
 Transform:
@@ -46642,6 +49462,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &770809023
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7061904760770165172}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.314, y: 1.8780001, z: 1.8360001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.0050000004, z: 0.032}
+  m_TimeToStationary: 0.5
 --- !u!1 &7071906224232478654
 GameObject:
   m_ObjectHideFlags: 0
@@ -47838,6 +50674,7 @@ GameObject:
   - component: {fileID: 898298496235403679}
   - component: {fileID: 4157101831137117697}
   - component: {fileID: 1521430787100926733}
+  - component: {fileID: 2052335024}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_Large_01_Snow5
   m_TagString: Untagged
@@ -47906,6 +50743,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &2052335024
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7237004760959554383}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.314, y: 1.8780001, z: 1.8360001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.0050000004, z: 0.032}
+  m_TimeToStationary: 0.5
 --- !u!1 &7239499080030336478
 GameObject:
   m_ObjectHideFlags: 0
@@ -48075,6 +50928,7 @@ GameObject:
   - component: {fileID: 1071392904904790665}
   - component: {fileID: 4422183394601650580}
   - component: {fileID: 7097840978692060002}
+  - component: {fileID: 1160766240}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_Large_01_Snow13
   m_TagString: Untagged
@@ -48143,6 +50997,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1160766240
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7262749293428692535}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.314, y: 1.8780001, z: 1.8360001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.0050000004, z: 0.032}
+  m_TimeToStationary: 0.5
 --- !u!1 &7271916193423718133
 GameObject:
   m_ObjectHideFlags: 0
@@ -48154,6 +51024,7 @@ GameObject:
   - component: {fileID: 3821659433615462209}
   - component: {fileID: 2482733911763325748}
   - component: {fileID: 8696310476493705035}
+  - component: {fileID: 1332175553}
   m_Layer: 0
   m_Name: SM_Bld_BoatHouse_02_Snow_196
   m_TagString: Untagged
@@ -48222,6 +51093,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1332175553
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7271916193423718133}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 4.004, y: 5.4, z: 4.6450005}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 2.835}
+  m_TimeToStationary: 0.5
 --- !u!1 &7285455181049001232
 GameObject:
   m_ObjectHideFlags: 0
@@ -48233,6 +51120,7 @@ GameObject:
   - component: {fileID: 2299877737166062604}
   - component: {fileID: 9222614785516576711}
   - component: {fileID: 1617325816967428923}
+  - component: {fileID: 1011974333}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_01_Snow5
   m_TagString: Untagged
@@ -48301,6 +51189,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1011974333
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7285455181049001232}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.97900003, y: 0.117000006, z: 0.86200005}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.003, z: 0.86200005}
+  m_TimeToStationary: 0.5
 --- !u!1 &7287166321484336386
 GameObject:
   m_ObjectHideFlags: 0
@@ -48312,6 +51216,7 @@ GameObject:
   - component: {fileID: 2995376284197136594}
   - component: {fileID: 2230007027813148143}
   - component: {fileID: 7132597854839252271}
+  - component: {fileID: 1929103977}
   m_Layer: 0
   m_Name: SM_Prop_Spikes_11
   m_TagString: Untagged
@@ -48380,6 +51285,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1929103977
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7287166321484336386}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.655, y: 0.8, z: 0.85800004}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.85800004}
+  m_TimeToStationary: 0.5
 --- !u!1 &7292080064374060926
 GameObject:
   m_ObjectHideFlags: 0
@@ -48470,6 +51391,7 @@ GameObject:
   - component: {fileID: 1668112126734370612}
   - component: {fileID: 177759505643639704}
   - component: {fileID: 6293673041185844382}
+  - component: {fileID: 658560383}
   m_Layer: 0
   m_Name: SM_Bld_Stall_Cover_01_Snow_385
   m_TagString: Untagged
@@ -48538,6 +51460,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &658560383
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7295461836790211077}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.6990001, y: 1.171, z: 1.7530001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.001, z: 1.7530001}
+  m_TimeToStationary: 0.5
 --- !u!1 &7309006841220413914
 GameObject:
   m_ObjectHideFlags: 0
@@ -48944,6 +51882,7 @@ GameObject:
   - component: {fileID: 3149286439396514543}
   - component: {fileID: 3331175239813241524}
   - component: {fileID: 7733817294902247260}
+  - component: {fileID: 1899995794}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_Large_01_Snow22
   m_TagString: Untagged
@@ -49012,6 +51951,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1899995794
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7358647026280521317}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.314, y: 1.8780001, z: 1.8360001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.0050000004, z: 0.032}
+  m_TimeToStationary: 0.5
 --- !u!1 &7366262164288975226
 GameObject:
   m_ObjectHideFlags: 0
@@ -49339,6 +52294,7 @@ GameObject:
   - component: {fileID: 3933780980896870501}
   - component: {fileID: 8720605798421314628}
   - component: {fileID: 8310958104222289719}
+  - component: {fileID: 1311328259}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_Large_01_Snow12
   m_TagString: Untagged
@@ -49407,6 +52363,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1311328259
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7390232889076092651}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.314, y: 1.8780001, z: 1.8360001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.0050000004, z: 0.032}
+  m_TimeToStationary: 0.5
 --- !u!1 &7407168666038126640
 GameObject:
   m_ObjectHideFlags: 0
@@ -49813,6 +52785,7 @@ GameObject:
   - component: {fileID: 8130725774250118695}
   - component: {fileID: 7117432653233919121}
   - component: {fileID: 6096882376949587320}
+  - component: {fileID: 75437762}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_01_Snow2
   m_TagString: Untagged
@@ -49881,6 +52854,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &75437762
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7455476530236507235}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.97900003, y: 0.117000006, z: 0.86200005}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.003, z: 0.86200005}
+  m_TimeToStationary: 0.5
 --- !u!1 &7477852650198003939
 GameObject:
   m_ObjectHideFlags: 0
@@ -49892,6 +52881,7 @@ GameObject:
   - component: {fileID: 6692399430811081504}
   - component: {fileID: 2466140586004935380}
   - component: {fileID: 8389712229608403083}
+  - component: {fileID: 1907463374}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Stick_01_Snow13
   m_TagString: Untagged
@@ -49960,6 +52950,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1907463374
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7477852650198003939}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.6320001, y: 0.113000005, z: 0.60300004}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -1.5150001, y: 0.003, z: 0.65900004}
+  m_TimeToStationary: 0.5
 --- !u!1 &7513891695351015062
 GameObject:
   m_ObjectHideFlags: 0
@@ -50050,6 +53056,7 @@ GameObject:
   - component: {fileID: 2145556814428625728}
   - component: {fileID: 3618624913419838751}
   - component: {fileID: 4845972603117871147}
+  - component: {fileID: 543832396}
   m_Layer: 0
   m_Name: SM_Bld_Guard_Tower_01_Snow3
   m_TagString: Untagged
@@ -50118,6 +53125,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &543832396
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7519145585289832251}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.807, y: 1.8030001, z: 4.0080004}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 4.0080004}
+  m_TimeToStationary: 0.5
 --- !u!1 &7520753285962024206
 GameObject:
   m_ObjectHideFlags: 0
@@ -50524,6 +53547,7 @@ GameObject:
   - component: {fileID: 5293687494540344123}
   - component: {fileID: 5362048439661829648}
   - component: {fileID: 6721937713574399909}
+  - component: {fileID: 1580519591}
   m_Layer: 0
   m_Name: SM_Prop_Fish_Rack_02_Snow_388
   m_TagString: Untagged
@@ -50592,6 +53616,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1580519591
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7571702281199998086}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.7, y: 0.83500004, z: 1.047}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.008, z: 1.047}
+  m_TimeToStationary: 0.5
 --- !u!1 &7594955501327035252
 GameObject:
   m_ObjectHideFlags: 0
@@ -51856,6 +54896,7 @@ GameObject:
   - component: {fileID: 1019309377278587365}
   - component: {fileID: 8960223835690832711}
   - component: {fileID: 8478553166385894548}
+  - component: {fileID: 2010307302}
   m_Layer: 0
   m_Name: SM_Env_Tree_Pine_03_Snow3_633
   m_TagString: Untagged
@@ -51924,6 +54965,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &2010307302
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7664494858519642623}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.05, y: 0.05, z: 1.5890001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 1.4280001}
+  m_TimeToStationary: 0.5
 --- !u!1 &7675970741148048078
 GameObject:
   m_ObjectHideFlags: 0
@@ -52489,6 +55546,7 @@ GameObject:
   - component: {fileID: 3037605912990656837}
   - component: {fileID: 4437186085378801429}
   - component: {fileID: 5039324741955327309}
+  - component: {fileID: 1424964797}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_02_Snow4
   m_TagString: Untagged
@@ -52557,6 +55615,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1424964797
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7753999929536354416}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.97900003, y: 0.11800001, z: 0.85400003}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.003, z: 0.85400003}
+  m_TimeToStationary: 0.5
 --- !u!1 &7758849540158296843
 GameObject:
   m_ObjectHideFlags: 0
@@ -52647,6 +55721,7 @@ GameObject:
   - component: {fileID: 4270679907034717740}
   - component: {fileID: 7781428590482554400}
   - component: {fileID: 8700768653939558072}
+  - component: {fileID: 1649973811}
   m_Layer: 0
   m_Name: SM_Bld_Base_Door_01_Snow2
   m_TagString: Untagged
@@ -52716,6 +55791,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1649973811
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7759580954804948049}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.479, y: 2.5900002, z: 1.299}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.0050000004, z: 1.24}
+  m_TimeToStationary: 0.5
 --- !u!1 &7765009827932339854
 GameObject:
   m_ObjectHideFlags: 0
@@ -52727,6 +55818,7 @@ GameObject:
   - component: {fileID: 8522853333129765763}
   - component: {fileID: 7996202016835094957}
   - component: {fileID: 4163192155330776349}
+  - component: {fileID: 354988222}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_Large_01_Snow26
   m_TagString: Untagged
@@ -52795,6 +55887,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &354988222
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7765009827932339854}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.314, y: 1.8780001, z: 1.8360001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.0050000004, z: 0.032}
+  m_TimeToStationary: 0.5
 --- !u!1 &7771205074503383737
 GameObject:
   m_ObjectHideFlags: 0
@@ -52806,6 +55914,7 @@ GameObject:
   - component: {fileID: 9000562694332895199}
   - component: {fileID: 2637132507748576890}
   - component: {fileID: 9029526939409848238}
+  - component: {fileID: 841705561}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_Large_01_Snow10
   m_TagString: Untagged
@@ -52874,6 +55983,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &841705561
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7771205074503383737}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.314, y: 1.8780001, z: 1.8360001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.0050000004, z: 0.032}
+  m_TimeToStationary: 0.5
 --- !u!1 &7799109868071349660
 GameObject:
   m_ObjectHideFlags: 0
@@ -52885,6 +56010,7 @@ GameObject:
   - component: {fileID: 5329955515221165358}
   - component: {fileID: 3760765757829163491}
   - component: {fileID: 1489436411965238964}
+  - component: {fileID: 670822800}
   m_Layer: 0
   m_Name: SM_Prop_Wagon_01_Snow_492
   m_TagString: Untagged
@@ -52900,7 +56026,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7799109868071349660}
   m_LocalRotation: {x: -0.68198127, y: 0.18681966, z: 0.18681966, w: 0.68198127}
-  m_LocalPosition: {x: 7.132046, y: 0, z: 8.77294}
+  m_LocalPosition: {x: 6.72, y: 0, z: 8.77294}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8517320247983370863}
@@ -52953,6 +56079,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &670822800
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7799109868071349660}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.6, y: 1.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.5}
+  m_TimeToStationary: 0.5
 --- !u!1 &7800216027532396249
 GameObject:
   m_ObjectHideFlags: 0
@@ -53042,7 +56184,7 @@ GameObject:
   m_Component:
   - component: {fileID: 343311493957926365}
   m_Layer: 0
-  m_Name: Colliders
+  m_Name: 'Collision / walkable '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53059,7 +56201,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 8332754108077087989}
+  - {fileID: 3310263259475132971}
+  - {fileID: 5438889108981684602}
   m_Father: {fileID: 8255908971333709199}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -54496,6 +57639,7 @@ GameObject:
   - component: {fileID: 8561828829957611305}
   - component: {fileID: 8833066112101226227}
   - component: {fileID: 5283996665010869600}
+  - component: {fileID: 2003547}
   m_Layer: 0
   m_Name: SM_Prop_Rock_Totem_01_Snow_501
   m_TagString: Untagged
@@ -54564,6 +57708,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &2003547
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8110895277395206332}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.2950001, y: 0.5, z: 1.7260001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 1.7260001}
+  m_TimeToStationary: 0.5
 --- !u!1 &8127427106057828966
 GameObject:
   m_ObjectHideFlags: 0
@@ -55760,6 +58920,7 @@ GameObject:
   - component: {fileID: 2171460640336497537}
   - component: {fileID: 6490891445704491191}
   - component: {fileID: 2469179081927971648}
+  - component: {fileID: 1280254601}
   m_Layer: 0
   m_Name: SM_Bld_Base_Long_Door_01_Snow5
   m_TagString: Untagged
@@ -55829,6 +58990,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1280254601
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8281922109425916800}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.479, y: 3.7140002, z: 1.299}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 1.24}
+  m_TimeToStationary: 0.5
 --- !u!1 &8298120717970295062
 GameObject:
   m_ObjectHideFlags: 0
@@ -55919,12 +59096,13 @@ GameObject:
   - component: {fileID: 6101206156562837800}
   - component: {fileID: 8558507280602129751}
   - component: {fileID: 7555569063264499573}
+  - component: {fileID: 1446506204}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_Large_01_Snow18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &6101206156562837800
 Transform:
@@ -55987,6 +59165,53 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1446506204
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8301027983650123352}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.314, y: 1.8780001, z: 1.8360001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.0050000004, z: 0.032}
+  m_TimeToStationary: 0.5
+--- !u!1 &8333727531896047818
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5438889108981684602}
+  m_Layer: 0
+  m_Name: City2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5438889108981684602
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8333727531896047818}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 776991634}
+  m_Father: {fileID: 343311493957926365}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8370554457228106674
 GameObject:
   m_ObjectHideFlags: 0
@@ -55998,6 +59223,7 @@ GameObject:
   - component: {fileID: 2920639878502860746}
   - component: {fileID: 6244696982274465901}
   - component: {fileID: 2337111796693462292}
+  - component: {fileID: 146873955}
   m_Layer: 0
   m_Name: SM_Bld_Base_Door_01_Snow_171
   m_TagString: Untagged
@@ -56068,6 +59294,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &146873955
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8370554457228106674}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.479, y: 2.5900002, z: 1.299}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.0050000004, z: 1.24}
+  m_TimeToStationary: 0.5
 --- !u!1 &8398085328303486488
 GameObject:
   m_ObjectHideFlags: 0
@@ -56316,12 +59558,13 @@ GameObject:
   - component: {fileID: 3825347765290481607}
   - component: {fileID: 3448218090317508232}
   - component: {fileID: 7767964519588574400}
+  - component: {fileID: 1752154623}
   m_Layer: 0
   m_Name: SM_Bld_Guard_Tower_01_Snow4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &3825347765290481607
 Transform:
@@ -56384,6 +59627,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1752154623
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8468198209832402182}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.807, y: 1.8030001, z: 4.0080004}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 4.0080004}
+  m_TimeToStationary: 0.5
 --- !u!1 &8472970300094340396
 GameObject:
   m_ObjectHideFlags: 0
@@ -56711,6 +59970,7 @@ GameObject:
   - component: {fileID: 5300118444469801285}
   - component: {fileID: 8746508418481624431}
   - component: {fileID: 5069362801351735224}
+  - component: {fileID: 1564003882}
   m_Layer: 0
   m_Name: SM_Prop_Spikes_5
   m_TagString: Untagged
@@ -56779,6 +60039,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1564003882
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8569821853206386108}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.655, y: 0.8, z: 0.85800004}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.85800004}
+  m_TimeToStationary: 0.5
 --- !u!1 &8586229145186457897
 GameObject:
   m_ObjectHideFlags: 0
@@ -56805,11 +60081,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8586229145186457897}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -24.05}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.5, z: -25}
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_Children: []
-  m_Father: {fileID: 343311493957926365}
+  m_Father: {fileID: 3310263259475132971}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5823100122952068372
@@ -56827,8 +60103,8 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8586229145186457897}
-  m_Enabled: 0
-  m_CastShadows: 1
+  m_Enabled: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -56837,8 +60113,7 @@ MeshRenderer:
   m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_Materials: []
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -57752,6 +61027,7 @@ GameObject:
   - component: {fileID: 4354440150861750203}
   - component: {fileID: 8050242320200886240}
   - component: {fileID: 312265348000377295}
+  - component: {fileID: 1543242878}
   m_Layer: 0
   m_Name: SM_Prop_Spikes_01_216
   m_TagString: Untagged
@@ -57820,6 +61096,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1543242878
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8753768439706934369}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.57, y: 0.805, z: 0.85800004}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.85800004}
+  m_TimeToStationary: 0.5
 --- !u!1 &8754748061633158486
 GameObject:
   m_ObjectHideFlags: 0
@@ -57831,6 +61123,7 @@ GameObject:
   - component: {fileID: 65944174310681175}
   - component: {fileID: 8499493123694616552}
   - component: {fileID: 9135728566615541200}
+  - component: {fileID: 1426200509}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_03_Snow7
   m_TagString: Untagged
@@ -57899,6 +61192,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1426200509
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8754748061633158486}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.87700003, y: 0.117000006, z: 0.859}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.002, z: 0.859}
+  m_TimeToStationary: 0.5
 --- !u!1 &8765543805319407544
 GameObject:
   m_ObjectHideFlags: 0
@@ -58780,6 +62089,7 @@ GameObject:
   - component: {fileID: 3531216759472411282}
   - component: {fileID: 2862006421827469225}
   - component: {fileID: 2126845685343587841}
+  - component: {fileID: 1094094859}
   m_Layer: 0
   m_Name: SM_Prop_Spikes_10
   m_TagString: Untagged
@@ -58848,6 +62158,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1094094859
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8892678700061450706}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.655, y: 0.8, z: 0.85800004}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.85800004}
+  m_TimeToStationary: 0.5
 --- !u!1 &8902186870079549341
 GameObject:
   m_ObjectHideFlags: 0
@@ -59017,6 +62343,7 @@ GameObject:
   - component: {fileID: 7871609206425230424}
   - component: {fileID: 1991432541929945196}
   - component: {fileID: 5971519425046990278}
+  - component: {fileID: 521157855}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_01_Snow3
   m_TagString: Untagged
@@ -59085,6 +62412,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &521157855
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8928774117281867599}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.97900003, y: 0.117000006, z: 0.86200005}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.003, z: 0.86200005}
+  m_TimeToStationary: 0.5
 --- !u!1 &8933822515723884430
 GameObject:
   m_ObjectHideFlags: 0
@@ -59096,6 +62439,7 @@ GameObject:
   - component: {fileID: 6772675891177356630}
   - component: {fileID: 8913535572804399092}
   - component: {fileID: 527388144273089415}
+  - component: {fileID: 1331005672}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_Large_01_Snow23
   m_TagString: Untagged
@@ -59164,6 +62508,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1331005672
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8933822515723884430}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.314, y: 1.8780001, z: 1.8360001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.0050000004, z: 0.032}
+  m_TimeToStationary: 0.5
 --- !u!1 &8949542316839746456
 GameObject:
   m_ObjectHideFlags: 0
@@ -59729,6 +63089,7 @@ GameObject:
   - component: {fileID: 408448364958802733}
   - component: {fileID: 2009129912274209058}
   - component: {fileID: 3145539294247770019}
+  - component: {fileID: 1628026253}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wood_Large_01_Snow9
   m_TagString: Untagged
@@ -59797,6 +63158,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &1628026253
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9058464228438847873}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.314, y: 1.8780001, z: 1.8360001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.0050000004, z: 0.032}
+  m_TimeToStationary: 0.5
 --- !u!1 &9078572616027648448
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,0 +1,8 @@
+{
+    "CurrentState": 2,
+    "isSaveOneAvailable": false,
+    "isSaveTwoAvailable": false,
+    "isSaveThreeAvailable": false,
+    "_deathCounter": 0,
+    "canTeleport": false
+}

@@ -7,6 +7,8 @@ using UnityEngine.EventSystems;
 /// </summary>
 public class InputManager : Singleton<InputManager>
 {
+#pragma warning disable 649
+
     [SerializeField] LayerMask clickableLayer; // layermask используется для определения кликабельных слоев
 
     [SerializeField] Texture2D pointer;   // стандартный курсор
@@ -19,10 +21,12 @@ public class InputManager : Singleton<InputManager>
     public EventVector3 OnClickEnviroment;      // Событие для перемещения игрока с помощью клика мышки.  // Подписчик в эдиторе Hero.NavMeshAgent.destination
     public EventGameObject onClickAttackable;   // Событие для атаки врага.
 
+#pragma warning restore 649
+
     void Update()
     {
-        // Если это начало игры, то данный функционал не требуется
-        if (GameManager.Instance.CurrentState == GameState.PREGAME)
+        // Если это начало игры или смерть, то данный функционал не требуется
+        if (GameManager.Instance.CurrentState == GameState.Pregame || GameManager.Instance.CurrentState == GameState.Death)
         {
             return;
         }
@@ -35,7 +39,7 @@ public class InputManager : Singleton<InputManager>
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 50, clickableLayer.value) && !EventSystem.current.IsPointerOverGameObject())
         {
             // Если объект содержит интерфейс IEnemy - значит это враг, которого можно атаковать
-            if (hit.collider.GetComponent(typeof(IEnemy)) != null /*|| hit.collider.CompareTag("Enemy")*/)
+            if (hit.collider.GetComponent(typeof(AbstractEnemy)) != null /*|| hit.collider.CompareTag("Enemy")*/)
             {
                 Cursor.SetCursor(sword, new Vector2(16, 16), CursorMode.Auto);
 
@@ -88,14 +92,14 @@ public class InputManager : Singleton<InputManager>
         //{
         //    CanvasManager.Instance.RestartHandler();
         //}
-        if (Input.GetKeyDown(KeyCode.F5))
-        {
-            CanvasManager.Instance.SaveHandler();
-        }
-        if (Input.GetKeyDown(KeyCode.F6))
-        {
-            CanvasManager.Instance.LoadHandler();
-        }
+        //if (Input.GetKeyDown(KeyCode.F5))
+        //{
+        //    CanvasManager.Instance.SaveHandler();
+        //}
+        //if (Input.GetKeyDown(KeyCode.F6))
+        //{
+        //    CanvasManager.Instance.LoadHandler();
+        //}
 
         #endregion
         // ---------------------

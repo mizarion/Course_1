@@ -5,7 +5,11 @@ using UnityEngine;
 
 public class AudioManager : Singleton<AudioManager>
 {
+#pragma warning disable 649
+
     [SerializeField] AudioClip[] Clips;
+
+#pragma warning restore 649
 
     AudioSource _audioSource;
 
@@ -63,12 +67,12 @@ public class AudioManager : Singleton<AudioManager>
         //if (_audioSource.isPlaying)
         //{
         //_audioSource.PlayDelayed(10);
-        Debug.Log("play");
+        //Debug.Log("play");
         //}
         //else
         //{
         // Играет не зависимо от чего (использовать для единоразовых звуков)
-        _audioSource.PlayOneShot(Clips[i]);
+        //_audioSource.PlayOneShot(Clips[i]);
         //}
     }
 

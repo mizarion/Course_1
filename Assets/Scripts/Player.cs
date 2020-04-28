@@ -59,7 +59,7 @@ public class Player : AbstractCharacter
         transform.LookAt(attackTarget.transform);
         //animator.SetTrigger("Attack");
         Attack(attackTarget.GetComponent<ICharacter>());
-        StopCoroutine(AttackTarget());
+        //StopCoroutine(AttackTarget());
     }
 
     public void Hit()

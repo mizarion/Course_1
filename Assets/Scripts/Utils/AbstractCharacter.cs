@@ -44,6 +44,8 @@ public abstract class AbstractCharacter : MonoBehaviour, ICharacter
 
     #region Fields & properties
 
+#pragma warning disable 649
+
     // Компоненты
     // Todo: переделать док
     public NavMeshAgent agent { get; protected set; }
@@ -62,6 +64,8 @@ public abstract class AbstractCharacter : MonoBehaviour, ICharacter
     [SerializeField] float _exp;
     //[SerializeField] private float damage = 10;
     //[SerializeField] float _movespeed = 2;
+
+#pragma warning restore 649
 
     // списки со значениями 
     protected List<int> _listHp;

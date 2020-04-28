@@ -101,7 +101,8 @@ MonoBehaviour:
   _attackRate: 1
   DieRagdoll: {fileID: 1749206577710480121, guid: 8dd3acd8b5c5a0b489f055e28f30f398,
     type: 3}
-  _healthBar: {fileID: 5515415425092484416}
+  healthBar: {fileID: 4664395673828848274, guid: 2f4d8e9d12e845b48b7befdfba8b01a0,
+    type: 3}
 --- !u!136 &2023486343897619220
 CapsuleCollider:
   m_ObjectHideFlags: 0
