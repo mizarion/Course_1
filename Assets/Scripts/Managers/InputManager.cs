@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
@@ -36,7 +37,7 @@ public class InputManager : Singleton<InputManager>
 
         // Стреляем лучами по сцене :)
         RaycastHit hit;
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 50, clickableLayer.value) && !EventSystem.current.IsPointerOverGameObject())
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 70, clickableLayer.value) && !EventSystem.current.IsPointerOverGameObject())
         {
             // Если объект содержит интерфейс IEnemy - значит это враг, которого можно атаковать
             if (hit.collider.GetComponent(typeof(AbstractEnemy)) != null /*|| hit.collider.CompareTag("Enemy")*/)
@@ -80,7 +81,7 @@ public class InputManager : Singleton<InputManager>
 
         #endregion
         // ---------------------
-
+        
         // ---------------------
         #region Нажатия клавиш
 
@@ -88,18 +89,14 @@ public class InputManager : Singleton<InputManager>
         {
             CanvasManager.Instance.PauseHandler();
         }
-        //if (Input.GetKeyDown(KeyCode.Q))
-        //{
-        //    CanvasManager.Instance.RestartHandler();
-        //}
-        //if (Input.GetKeyDown(KeyCode.F5))
-        //{
-        //    CanvasManager.Instance.SaveHandler();
-        //}
-        //if (Input.GetKeyDown(KeyCode.F6))
-        //{
-        //    CanvasManager.Instance.LoadHandler();
-        //}
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            SkillsManager.Instance.FirstSkill();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            SkillsManager.Instance.SecondSkill();
+        }
 
         #endregion
         // ---------------------

@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/StartScene.unity
     guid: 1bdae21a398eb7a48a189671a743b665
   - enabled: 1
-    path: Assets/Scenes/PoligonVikings.unity
+    path: Assets/Scenes/Village/PoligonVikings.unity
     guid: b05f5df9a55e3b442b977f6635e4080f
+  - enabled: 1
+    path: Assets/Scenes/Dungeon Scene/Level1.unity
+    guid: 4191ec84e7e45534f850fb7b6c9f4862
   m_configObjects: {}

@@ -1,17 +1,38 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.EventSystems;
 
 /// <summary>
 /// Класс, реализующий игрока
 /// </summary>
 [System.Serializable]
-public class Player : AbstractCharacter
+public class Player : AbstractCharacter, System.ICloneable
 {
     [HideInInspector] public static Player instance;
     bool isAttacking;
     GameObject attackTarget;
+
+    public override int Level
+    {
+        get => base.Level;
+        set
+        {
+            base.Level = value;
+            if (value == 3)
+            {
+                GameManager.Instance.avaibleFirstSkill = true;
+                CanvasManager.Instance.Skill1.gameObject.SetActive(true);
+            }
+            if (value == 6)
+            {
+                GameManager.Instance.avaibleSecondSkill = true;
+                CanvasManager.Instance.Skill2.gameObject.SetActive(true);
+            }
+        }
+    }
 
     private void Awake()
     {
@@ -22,18 +43,32 @@ public class Player : AbstractCharacter
         StartCoroutine(Recovery(5, 5));
     }
 
-
-    private void Update()
+    private void FixedUpdate()
     {
         animator.SetFloat("Speed", agent.velocity.magnitude);
+    }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            //int damage = 10;
-            //GetDamage(damage);
-            Debug.Log($"health:{Health}");
-            Debug.Log($"Exp: {Experience += 10}");
-        }
+    /// <summary>
+    /// Класс, служащий для сохранения данных героя
+    /// </summary>
+    public class PlayerData
+    {
+        public float Health;
+        public float Manapool;
+        public int Level;
+        public float Experience;
+    }
+
+    /// <summary>
+    /// Обрабатывает сохраненные данные
+    /// </summary>
+    /// <param name="data">Сохраненные данные</param>
+    public void ApplyPlayerData(PlayerData data)
+    {
+        this.Level = data.Level;
+        this.Health = data.Health;
+        this.Manapool = data.Manapool;
+        this.Experience = data.Experience;
     }
 
     /// <summary>
@@ -51,17 +86,15 @@ public class Player : AbstractCharacter
             agent.destination = attackTarget.transform.position;
             yield return null;
         }
-
-        agent.isStopped = true;
-
         // Todo: Донастроить
-
+        agent.isStopped = true;
         transform.LookAt(attackTarget.transform);
-        //animator.SetTrigger("Attack");
         Attack(attackTarget.GetComponent<ICharacter>());
-        //StopCoroutine(AttackTarget());
     }
 
+    /// <summary>
+    /// Обработчик события завершения атаки
+    /// </summary>
     public void Hit()
     {
         agent.isStopped = false;
@@ -97,85 +130,48 @@ public class Player : AbstractCharacter
     /// Восполняет здоровье и ману персонажа.
     /// Переопределение: Обновляет HUD
     /// </summary>
-    /// <param name="healRecovery">Скорость восстановления здоровья</param>
-    /// <param name="manaRecovery">Скорость восстановления маны</param>
+    /// <param name="healRecovery">Множитель скорости восстановления здоровья</param>
+    /// <param name="manaRecovery">Множитель скорости восстановления маны</param>
     /// <param name="delay">Задержка между лечениями</param>
     /// <returns></returns>
-    public override IEnumerator Recovery(float healRecovery = 5, float manaRecovery = 5, float delay = 1)
+    public override IEnumerator Recovery(float healRecovery = 1, float manaRecovery = 1, float delay = 0.1f)
     {
+        yield return null;
         while (true)
         {
-            Health += healRecovery;
-            Manapool += manaRecovery;
+            Health += healRecovery * _listHp[Level] / 1000;
+            Manapool += manaRecovery * _listMp[Level] / 1000;
             CanvasManager.Instance.UpdateHUD();
             yield return new WaitForSeconds(delay);
         }
     }
 
-
+    /// <summary>
+    /// Обработчик смерти героя
+    /// </summary>
     public override void Die(/*float delay = 0*/)
     {
-        // ToDo: обработать смерть героя
-
         CanvasManager.Instance.DeathHandler();
-
-        Debug.Log($"[Player] Hero: {Name} die");
-        //base.Die();
     }
 
-    #region Legacy
+    /// <summary>
+    /// Клонирует данные героя
+    /// </summary>
+    /// <returns></returns>
+    public object Clone()
+    {
+        return new PlayerData() { Health = this.Health, Manapool = this.Manapool, Level = this.Level, Experience = this.Experience }; ;
+    }
 
-    //void FixedUpdate()
-    //{
-    //    Move();
-    //}
-
-    //private void LateUpdate()
-    //{
-    //    RotateCamera();
-    //}
-
-    ///// <summary>
-    ///// Отвечает за движение персонажа
-    ///// </summary>
-    //void Move()
-    //{
-    //    Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized;
-    //    transform.Translate(direction * Time.fixedDeltaTime * _movespeed);
-
-    //    //if (Input.GetMouseButton(1))
-    //    {
-    //        transform.localEulerAngles += Vector3.up * Input.GetAxis("Mouse X") * _cameraMoveSens;
-    //    }
-
-    //}
-
-    ///// <summary>
-    ///// Отвечает за поворот камеры
-    ///// </summary>
-    //void RotateCamera()
-    //{
-    //    //Vector3 direction = new Vector3(-Input.GetAxis("Mouse Y"), Input.GetAxis("Mouse X"), 0);
-    //    Vector3 direction = new Vector3(-Input.GetAxis("Mouse Y"), 0, 0);
-    //    _camera.transform.localEulerAngles += direction;// * Time.deltaTime;
-    //}
-
-    ///// <summary>
-    ///// Обрабатывает нажатие левой клавишы мыши на цели
-    ///// </summary>
-    //void TakeTarget()
-    //{
-    //    Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
-    //    Debug.DrawRay(transform.position, ray.direction * 20);
-    //    RaycastHit hit;
-    //    if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
-    //    {
-    //        if (Physics.Raycast(ray, out hit))
-    //        {
-    //            Debug.Log(hit.collider.name);
-    //        }
-    //    }
-    //}
-
-    #endregion
+    /// <summary>
+    /// Завершает все корутины и после возобновляет Recovery
+    /// </summary>
+    /// <returns></returns>
+    public IEnumerator ResetRotine()
+    {
+        Hit();
+        StopAllCoroutines();
+        yield return null;
+        StartCoroutine(Recovery(5, 5));
+    }
 }

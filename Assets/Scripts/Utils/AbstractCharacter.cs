@@ -24,7 +24,7 @@ public abstract class AbstractCharacter : MonoBehaviour, ICharacter
         _listMp = mana;
         _listExp = experience;
         _listDmg = damages;
-        Level = lvl;
+        //Level = _lvl == 0 ? lvl : _lvl;
         Health = health[Level];
         Manapool = mana[Level];
         Name = name;
@@ -47,7 +47,6 @@ public abstract class AbstractCharacter : MonoBehaviour, ICharacter
 #pragma warning disable 649
 
     // Компоненты
-    // Todo: переделать док
     public NavMeshAgent agent { get; protected set; }
     protected Animator animator;
     //protected Rigidbody rbody;
@@ -62,8 +61,6 @@ public abstract class AbstractCharacter : MonoBehaviour, ICharacter
     [SerializeField] float _mana;
     [SerializeField] int _lvl;
     [SerializeField] float _exp;
-    //[SerializeField] private float damage = 10;
-    //[SerializeField] float _movespeed = 2;
 
 #pragma warning restore 649
 
@@ -81,7 +78,7 @@ public abstract class AbstractCharacter : MonoBehaviour, ICharacter
     /// <summary>
     /// Свойство, отвечающее за здоровье
     /// </summary>
-    public float Health
+    public virtual float Health
     {
         get => _health;
         set
@@ -103,7 +100,7 @@ public abstract class AbstractCharacter : MonoBehaviour, ICharacter
     /// <summary>
     /// Свойство, отвечающее за уровень.
     /// </summary>
-    public int Level
+    public virtual int Level
     {
         get => _lvl;
         set
@@ -135,15 +132,7 @@ public abstract class AbstractCharacter : MonoBehaviour, ICharacter
     /// Свойство, отвечающее за урон.
     /// </summary>
     public float Damage => _listDmg[Level];
-    //{
-    //    get => damage;
-    //    protected set => (damage) = value;
-    //}
 
-    ///// <summary>
-    ///// Свойство, отвечающее за скорость перемещения
-    ///// </summary>
-    //public float Movespeed { get => agent.speed; protected set => (agent.speed) = value; }
 
     #endregion
 
@@ -153,7 +142,7 @@ public abstract class AbstractCharacter : MonoBehaviour, ICharacter
     /// <param name="character">Цель атаки</param>
     public virtual void Attack(ICharacter character)
     {
-        character.GetDamage(Random.Range(Damage / 2, Damage));
+        character?.GetDamage(Random.Range(Damage / 2, Damage));
 
         animator.SetTrigger("Attack");
     }
@@ -168,7 +157,6 @@ public abstract class AbstractCharacter : MonoBehaviour, ICharacter
         var text = Instantiate(_scrollingText, transform.position, Quaternion.identity, _scrollingTextContainer);
         text.SetTextAndColor(((int)damage).ToString(), _scrollingTextColor);
     }
-
 
 
     /// <summary>
@@ -191,9 +179,8 @@ public abstract class AbstractCharacter : MonoBehaviour, ICharacter
     /// <summary>
     /// Обрабатывает смерть персонажа
     /// </summary>
-    public virtual void Die(/*float delay = 0*/)
+    public virtual void Die()
     {
         gameObject.SetActive(false);
-        //Destroy(gameObject, delay);
     }
 }

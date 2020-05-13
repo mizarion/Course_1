@@ -21,8 +21,7 @@ public interface ICharacter
     /// <summary>
     /// Обрабатывает смерть персонажа.
     /// </summary>
-    /// <param name="delay">Задержка до уничтожения объекта</param>
-    void Die(/*float delay = 0*/);
+    void Die();
 
     /// <summary>
     /// Восполняет здоровье и ману персонажа.
@@ -33,6 +32,4 @@ public interface ICharacter
     /// <returns></returns>
     IEnumerator Recovery(float healRecovery = 5, float manaRecovery = 5, float delay = 1);
 }
-
-//ICharacter GetTargetToAttack();
 

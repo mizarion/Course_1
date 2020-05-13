@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Json;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UIElements;
 
 /// <summary>
 /// Игровые состояния
@@ -20,6 +22,16 @@ public enum GameState
 }
 
 /// <summary>
+/// Содержит данные о сценах
+/// </summary>
+public enum Scenes
+{
+    StartScene = 0,
+    MainGame = 1,
+    Dungeon = 2
+}
+
+/// <summary>
 /// Отвечает за главную логику игры
 /// </summary>
 public class GameManager : Singleton<GameManager>
@@ -27,9 +39,9 @@ public class GameManager : Singleton<GameManager>
     /// <summary>
     /// Текущее состояние игры
     /// </summary>
-    public GameState CurrentState /*{ get; private set; }*/ ;
+    public GameState CurrentState;
 
-    //public DataManager.Scenes CurrentScene { get; private set; }
+    public Scenes CurrentScene;
 
     [HideInInspector] public bool isSaveOneAvailable;
     [HideInInspector] public bool isSaveTwoAvailable;
@@ -38,19 +50,28 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] int _deathCounter;
 
     public bool canTeleport;
+    public bool canEnterInDungeon;
+
+    public bool avaibleFirstSkill;
+    public bool avaibleSecondSkill;
 
     public int DeathCounter
     {
-        get => _deathCounter; set
+        get => _deathCounter;
+        set
         {
             _deathCounter = value;
             if (_deathCounter == 10)
             {
-                EnemyManager.Instance.StartNewWawe(5);
+                EnemyManager.Instance.StartNewWawe(10, 4);
             }
-            if (_deathCounter == 15)
+            else if (_deathCounter == 20)
             {
                 canTeleport = true;
+            }
+            else if (_deathCounter == 30)
+            {
+                canEnterInDungeon = true;
             }
         }
     }
@@ -59,25 +80,10 @@ public class GameManager : Singleton<GameManager>
     {
         DontDestroyOnLoad(gameObject);
         DontDestroyOnLoad(CanvasManager.Instance.gameObject);
-        // DontDestroyOnLoad(InputManager.instance.gameObject);
+        DontDestroyOnLoad(AudioManager.Instance.gameObject);
 
         CurrentState = GameState.Pregame;
-        //CurrentScene = DataManager.Scenes.StartScene;
-
-        //// Todo: Debugonly:
-        //if (Directory.Exists("Saves"))
-        //{
-        //    Debug.Log("exist Saves");
-        //    if (Directory.Exists(@"Saves\Save1"))
-        //    {
-        //        Debug.Log(@"exist Saves\Save1 ");
-        //        // Todo: активировать возможность загрузки 
-        //    }
-        //}
-        //else
-        //{
-        //    Directory.CreateDirectory("Saves");
-        //}
+        CurrentScene = Scenes.StartScene;
 
         CheckSaves();
     }
@@ -88,9 +94,7 @@ public class GameManager : Singleton<GameManager>
     /// <param name="state">Состояние, в которое переходит</param>
     public void UpdateGameState(GameState state)
     {
-        //GameState privState = CurrentState;
         CurrentState = state;
-        //Debug.Log($"cur state:{CurrentState}, privState: {privState}");
         switch (CurrentState)
         {
             case GameState.Pregame:
@@ -111,28 +115,28 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
+    /// <summary>
+    /// Обрабатывает ограничение fps
+    /// </summary>
+    /// <param name="count">Максимальное количество FPS</param>
+    public void LimitFPS(int count)
+    {
+        Application.targetFrameRate = count;
+    }
 
-    //public void UpdateGameScene(DataManager.Scenes newScene)
-    //{
-    //    // Todo: Добавить проверку на предыдущую сцену
-    //    // Этот метод должен помочь настроить многоуровневость
-
-    //    var privScene = CurrentScene;
-    //    CurrentScene = newScene;
-
-    //    switch (CurrentScene)
-    //    {
-    //        case DataManager.Scenes.StartScene:
-
-    //            break;
-    //        case DataManager.Scenes.MainGame:
-
-    //            break;
-    //        default:
-    //            break;
-    //    }
-    //}
-
+    /// <summary>
+    /// Сбрасывает данные GameManager
+    /// </summary>
+    void ResetGameManager()
+    {
+        _deathCounter = 0;
+        canTeleport = false;
+        canEnterInDungeon = false;
+        avaibleFirstSkill = false;
+        avaibleSecondSkill = false;
+        CanvasManager.Instance.Skill1.gameObject.SetActive(false);
+        CanvasManager.Instance.Skill2.gameObject.SetActive(false);
+    }
 
     /// <summary>
     /// Возобновляет/приостанавливает игру
@@ -149,38 +153,83 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-
     /// <summary>
     /// Начинает игру, загружая главную сцену
     /// </summary>
     public void StartGame()
     {
-        //AsyncOperation loading = SceneManager.LoadSceneAsync(DataManager.Scenes.MainGame); //, LoadSceneMode.Additive);
-        AsyncOperation loading = SceneManager.LoadSceneAsync(/*"PoligonVikings"*/ (int)DataManager.Scenes.MainGame, LoadSceneMode.Additive);
+        if (CanvasManager.Instance.needLoad)
+        {
+            using (StreamReader sr = new StreamReader(CanvasManager.Instance.path + @"\CurrentLevel.json"))
+            {
+                CurrentScene = JsonUtility.FromJson<Scenes>(sr.ReadToEnd());
+            }
+        }
+        else
+        {
+            CurrentScene = Scenes.MainGame;
+        }
 
-        loading.completed += Loading_completed;
-
-        UpdateGameState(GameState.Running);
-        //UpdateGameScene(DataManager.Scenes.MainGame);
-    }
-
-    /// <summary>
-    /// Выполняет необходимые действия после загрузки сцены
-    /// </summary>
-    /// <param name="op">Асинхронная операция</param>
-    private void Loading_completed(AsyncOperation op)
-    {
-        if (op.isDone)
+        SceneManager.LoadSceneAsync((int)CurrentScene, LoadSceneMode.Additive).completed += delegate (AsyncOperation op)
         {
             if (CanvasManager.Instance.needLoad)
             {
-                //CanvasManager.Instance.LoadHandler();
                 LoadGame(CanvasManager.Instance.path);
-                UpdateGameState(GameState.Running);
+
                 CanvasManager.Instance.needLoad = false;
             }
-            CanvasManager.Instance.ActivateHUD(true);
+            else
+            {
+                CanvasManager.Instance.ShowStory();
+                ResetGameManager();
+            }
+            CanvasManager.Instance.ActivateUI(showHUD: true);
+            UpdateGameState(GameState.Running);
+        };
+    }
+
+    /// <summary>
+    /// Обрабатывает переход между игровыми сценами, с загрузкой необходимых данных
+    /// </summary>
+    /// <param name="newScene">Новая сцена</param>
+    /// <param name="changeLocation">Это загрузка или переход в новую локацию?</param>
+    public void ChangeScene(Scenes newScene, bool changeLocation = false)
+    {
+        TogglePause();
+
+        if (CurrentScene == Scenes.StartScene)
+        {
+            SceneManager.LoadSceneAsync((int)newScene, LoadSceneMode.Additive).completed += delegate (AsyncOperation obj2)
+            {
+                CurrentScene = newScene;
+                if (CanvasManager.Instance.needLoad)
+                {
+                    LoadGame(CanvasManager.Instance.path);
+                    CanvasManager.Instance.needLoad = false;
+                }
+            };
         }
+        else
+        {
+            Player.PlayerData playerData = Player.instance.Clone() as Player.PlayerData;
+            SceneManager.UnloadSceneAsync((int)CurrentScene).completed += delegate (AsyncOperation obj)
+            {
+                SceneManager.LoadSceneAsync((int)newScene, LoadSceneMode.Additive).completed += delegate (AsyncOperation obj2)
+                {
+                    CurrentScene = newScene;
+                    if (changeLocation)
+                    {
+                        Player.instance.ApplyPlayerData(playerData);
+                    }
+                    else  //(CanvasManager.Instance.needLoad)   // тут желательно проверить, но вроде и так работает
+                    {
+                        LoadGame(CanvasManager.Instance.path);
+                        CanvasManager.Instance.needLoad = false;
+                    }
+                };
+            };
+        }
+        TogglePause();
     }
 
 
@@ -190,50 +239,44 @@ public class GameManager : Singleton<GameManager>
     /// </summary>
     public void RestartGame()
     {
-        AsyncOperation unloading = SceneManager.UnloadSceneAsync(/*"PoligonVikings"*/ (int)DataManager.Scenes.MainGame);
-
-        //AsyncOperation loading = SceneManager.LoadSceneAsync(DataManager.Scenes.startScene);
-
-        UpdateGameState(GameState.Pregame);
-        //UpdateGameScene(DataManager.Scenes.MainGame);
+        SceneManager.UnloadSceneAsync((int)CurrentScene).completed += delegate (AsyncOperation asyncOperation)
+        {
+            CurrentScene = Scenes.StartScene;
+            UpdateGameState(GameState.Pregame);
+        };
     }
-
-    //   todo: Задокументировать 
 
     #region Save & Load     
 
-
+    /// <summary>
+    /// Проверяет существование сохранений и сообщает об их наличии
+    /// </summary>
     public void CheckSaves()
     {
-        // Todo: проверить другие файлы
-        if (File.Exists(@"Saves/Save1/PlayerTransform.json") && File.Exists(@"Saves/Save1/PlayerData.json") && File.Exists(@"Saves/Save1/EnemyTransform.json"))
-        {
-            using (StreamReader sr = new StreamReader(@"Saves/Save1/SaveButton.json"))
-            {
-                JsonUtility.FromJsonOverwrite(sr.ReadToEnd(), CanvasManager.Instance.saveOne);
-                CanvasManager.Instance.loadOne.GetComponent<SaveSlotButton>().Name_Text.text = CanvasManager.Instance.saveOne.DateTime;
-            }
-            isSaveOneAvailable = true;
-        }
-        if (File.Exists(@"Saves/Save2/PlayerTransform.json") && File.Exists(@"Saves/Save2/PlayerData.json") && File.Exists(@"Saves/Save2/EnemyTransform.json"))
-        {
-            using (StreamReader sr = new StreamReader(@"Saves/Save2/SaveButton.json"))
-            {
-                JsonUtility.FromJsonOverwrite(sr.ReadToEnd(), CanvasManager.Instance.saveTwo);
-                CanvasManager.Instance.loadTwo.GetComponent<SaveSlotButton>().Name_Text.text = CanvasManager.Instance.saveTwo.DateTime;
-            }
-            isSaveTwoAvailable = true;
-        }
-        if (File.Exists(@"Saves/Save3/PlayerTransform.json") && File.Exists(@"Saves/Save3/PlayerData.json") && File.Exists(@"Saves/Save3/EnemyTransform.json"))
-        {
-            using (StreamReader sr = new StreamReader(@"Saves/Save3/SaveButton.json"))
-            {
-                JsonUtility.FromJsonOverwrite(sr.ReadToEnd(), CanvasManager.Instance.saveThree);
-                CanvasManager.Instance.loadThree.GetComponent<SaveSlotButton>().Name_Text.text = CanvasManager.Instance.saveThree.DateTime;
-            }
-            isSaveThreeAvailable = true;
-        }
+        CheckSave(@"Saves/Save1", CanvasManager.Instance.saveOne, CanvasManager.Instance.loadOne);
+        CheckSave(@"Saves/Save2", CanvasManager.Instance.saveTwo, CanvasManager.Instance.loadTwo);
+        CheckSave(@"Saves/Save3", CanvasManager.Instance.saveThree, CanvasManager.Instance.loadThree);
         CanvasManager.Instance.UpdateSaves();
+    }
+
+    /// <summary>
+    /// Проверяет наличие сохранения
+    /// </summary>
+    /// <param name="path">Путь сохранения</param>
+    /// <param name="save">Скрипт на кнопке сохранения</param>
+    /// <param name="load">Скрипт на кнопке загрузки</param>
+    private void CheckSave(string path, SaveSlotButton save, SaveSlotButton load)
+    {
+        if (File.Exists($"{path}/CurrentLevel.json") && File.Exists($"{path}/EnemyGoblin.json") && File.Exists($"{path}/EnemyTransform.json") && File.Exists($"{path}/GameManager.json")
+            && File.Exists($"{path}/PlayerData.json") && File.Exists($"{path}/PlayerTransform.json") && File.Exists($"{path}/SaveButton.json"))
+        {
+            using (StreamReader sr = new StreamReader($"{path}/SaveButton.json"))
+            {
+                JsonUtility.FromJsonOverwrite(sr.ReadToEnd(), save);
+                load.DateTMP = save.DateTMP;
+                load.isAvaible = true;
+            }
+        }
     }
 
     /// <summary>
@@ -242,20 +285,28 @@ public class GameManager : Singleton<GameManager>
     public void SaveGame(SaveSlotButton button)
     {
         UpdateGameState(GameState.Pause);
-        button.DateTime = System.DateTime.Now.ToString();
+        button.DateTMP = System.DateTime.Now.ToString();
         string path = button.path;
         Directory.CreateDirectory(path);
         string PlayerTransform = path + @"\PlayerTransform.json";
         string PlayerPlayer = path + @"\PlayerData.json";
         string EnemyTransform = path + @"\EnemyTransform.json";
-        //string EnemyGoblin = path + @"\EnemyGoblin.json";
+        string EnemyGoblin = path + @"\EnemyGoblin.json";
         string ButtonPath = path + @"\SaveButton.json";
         string GameManagerPath = path + @"\GameManager.json";
+        string CurrentLevelPath = path + @"\CurrentLevel.json";
+        Player player = Player.instance;
 
         // Сохраняем GameManager
         using (StreamWriter sw = new StreamWriter(GameManagerPath))
         {
             string data = JsonUtility.ToJson(this, true);
+            sw.Write(data);
+        }
+        // Сохраняем отдельно информацию о текущей сцене
+        using (StreamWriter sw = new StreamWriter(CurrentLevelPath))
+        {
+            string data = JsonUtility.ToJson(CurrentScene, true);
             sw.Write(data);
         }
         // Сохраняем информацию кнопки
@@ -264,46 +315,39 @@ public class GameManager : Singleton<GameManager>
             string data = JsonUtility.ToJson(button, true);
             sw.Write(data);
         }
-
-        Player player = Player.instance;
-
         // Сохраняем Player героя
         using (StreamWriter sw = new StreamWriter(PlayerPlayer))
         {
             string data = JsonUtility.ToJson(player, true);
             sw.Write(data);
         }
-        // Сохраняем Player героя
+        // Сохраняем transform.position героя
         using (StreamWriter sw = new StreamWriter(PlayerTransform))
         {
             string data = JsonUtility.ToJson(player.transform.position, true);
             sw.Write(data);
         }
-        // сохраняем Transform и Goblin врагов
+        // сохраняем Transform врагов
         using (FileStream fs = new FileStream(EnemyTransform, FileMode.Create))
         {
-            //using (FileStream fsgob = new FileStream(EnemyGoblin, FileMode.Create))
-            //{
             List<string> enemies = new List<string>();
-            //List<Goblin> goblins = new List<Goblin>();
-            foreach (var item in EnemyManager.Instance.GetPool)
+            foreach (var item in EnemyManager.Instance.GetActiveAbstractEnemyPool)
             {
-                if (item.activeSelf)
-                {
-                    enemies.Add(JsonUtility.ToJson(item.transform.position));
-                    //goblins.Add(item.GetComponent<Goblin>());
-                }
+                enemies.Add(JsonUtility.ToJson(item.transform.position));
             }
             DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(List<string>));
             serializer.WriteObject(fs, enemies);
-            //DataContractJsonSerializer serializerGob = new DataContractJsonSerializer(typeof(List<Goblin>));
-            //serializerGob.WriteObject(fsgob, goblins);
-            //}
+        }
+        // Сохраняем информацию (Goblin) об активных врагах
+        using (StreamWriter sw = new StreamWriter(EnemyGoblin))
+        {
+            foreach (var goblin in EnemyManager.Instance.GetActiveAbstractEnemyPool)
+            {
+                sw.WriteLine(JsonUtility.ToJson(new GoblinData(goblin as Goblin)));
+            }
         }
 
         CheckSaves();
-        Debug.Log("[GameManager] SaveGame");
-        //UpdateGameState(GameState.RUNNING);
     }
 
     /// <summary>
@@ -316,28 +360,24 @@ public class GameManager : Singleton<GameManager>
         string PlayerTransform = path + @"\PlayerTransform.json";
         string PlayerPlayer = path + @"\PlayerData.json";
         string EnemyTransform = path + @"\EnemyTransform.json";
-        //string EnemyGoblin = path + @"\EnemyGoblin.json";
-        string GameManagerPath = path + @"\GameManager.json";
+        string EnemyGoblin = path + @"\EnemyGoblin.json";
 
-        if (!File.Exists(PlayerTransform) || !File.Exists(PlayerPlayer) || !File.Exists(EnemyTransform))
-        {
-            return;
-        }
+        string GameManagerPath = path + @"\GameManager.json";
 
         Player player = Player.instance;
 
+        // Загружаем GameManager
+        using (StreamReader sr = new StreamReader(GameManagerPath))
+        {
+            string data = sr.ReadToEnd();
+            JsonUtility.FromJsonOverwrite(data, this);
+        }
         // Загружаем Player (статы) героя
         using (StreamReader sr = new StreamReader(PlayerPlayer))
         {
             string data = sr.ReadToEnd();
             JsonUtility.FromJsonOverwrite(data, player);
             player.GetComponent<NavMeshAgent>().ResetPath();
-        }
-        // Загружаем GameManager
-        using (StreamReader sr = new StreamReader(GameManagerPath))
-        {
-            string data = sr.ReadToEnd();
-            JsonUtility.FromJsonOverwrite(data, this);
         }
         // Загружаем Transform героя
         using (StreamReader sr = new StreamReader(PlayerTransform))
@@ -349,51 +389,55 @@ public class GameManager : Singleton<GameManager>
         }
         // Загружаем Transform и Golbin врагов
         using (FileStream fset = new FileStream(EnemyTransform, FileMode.Open))
+        using (StreamReader swgob = new StreamReader(EnemyGoblin))
         {
-            //using (FileStream fsgob = new FileStream(EnemyGoblin, FileMode.Open))
-            //{
-            DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(List<string>));
-            List<string> enemies = serializer.ReadObject(fset) as List<string>;
-            //DataContractJsonSerializer serializerGob = new DataContractJsonSerializer(typeof(List<Goblin>));
-            //List<Goblin> newGoblins = serializerGob.ReadObject(fsgob) as List<Goblin>;
-            for (int i = 0; i < EnemyManager.Instance.GetPool.Count; i++)
+            DataContractJsonSerializer Transformserializer = new DataContractJsonSerializer(typeof(List<string>));
+            List<string> enemiesTransform = Transformserializer.ReadObject(fset) as List<string>;
+            // Деактивируем врагов
+            foreach (var item in EnemyManager.Instance.GetActiveAbstractEnemyPool)
             {
-                EnemyManager.Instance.GetPool[i].SetActive(false);
-                //for (; i < enemies.Count; i++)
-                //{
-                    //EnemyManager.Instance.GetPool[i].transform.position = JsonUtility.FromJson<Vector3>(enemies[i]);
-
-                    //var goblin = EnemyManager.Instance.GetPool[i].GetComponent<Goblin>();
-
-                    ////JsonUtility.FromJson<Goblin>(goblins[i]);
-                    ////goblin.Health = newGoblins[i].Health;
-                    ////goblin.healthBar = goblin.gameObject.GetComponentsInChildren<GameObject>().Last();
-
-                    //goblin.OnEnable();
-                    //EnemyManager.Instance.GetPool[i].SetActive(true);
-                    //goblin.agent.ResetPath();
-                //}
+                item.gameObject.SetActive(false);
             }
-            for (int i = 0; i < enemies.Count; i++)
+            for (int i = 0; i < enemiesTransform.Count; i++)
             {
                 var enemy = EnemyManager.Instance.GetEnemy;
-                enemy.transform.position = JsonUtility.FromJson<Vector3>(enemies[i]);
+                enemy.SetActive(false);
+                enemy.transform.position = JsonUtility.FromJson<Vector3>(enemiesTransform[i]);
                 var goblin = enemy.GetComponent<Goblin>();
-
-                //JsonUtility.FromJson<Goblin>(goblins[i]);
-                //goblin.Health = newGoblins[i].Health;
-                //goblin.healthBar = goblin.gameObject.GetComponentsInChildren<GameObject>().Last();
-                
-                goblin.OnEnable();
-                enemy.SetActive(true);
+                GoblinData goblinData = JsonUtility.FromJson<GoblinData>(swgob.ReadLine());
+                goblin.ApplyData(goblinData);
+                goblin.gameObject.SetActive(true);
                 goblin.agent.ResetPath();
             }
-            //}
         }
+        StartCoroutine(player.ResetRotine());
         EnemyManager.Instance.DestroyAllRagdolls();
         CanvasManager.Instance.UpdateHUD();
-        Debug.Log("[GameManager] LoadGame");
-        //UpdateGameState(GameState.RUNNING);
+        CanvasManager.Instance.UpdateSkills();
+    }
+
+    /// <summary>
+    /// Проверяет текущую сцену и загружаемую, и решает что дальше делать.
+    /// </summary>
+    /// <param name="path">Путь до папки с сохранениями</param>
+    public void CheckCurrentScene(string path)
+    {
+        string CurrentLevelPath = path + @"\CurrentLevel.json";
+
+        // Загружаем информацию о возможной сцене
+        using (StreamReader sr = new StreamReader(CurrentLevelPath))
+        {
+            var privScene = CurrentScene;
+            var newScene = JsonUtility.FromJson<Scenes>(sr.ReadToEnd());
+            if (privScene != newScene)
+            {
+                ChangeScene(newScene);
+            }
+            else
+            {
+                LoadGame(path);
+            }
+        }
     }
 
     #endregion

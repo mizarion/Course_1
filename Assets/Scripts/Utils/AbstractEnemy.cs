@@ -7,7 +7,7 @@ using UnityEngine.AI;
 /// Абстрактный класс, дополняющий AbstractCharacter, реализуя базовый функционал врага
 /// </summary>
 [RequireComponent(typeof(NavMeshAgent))]
-public abstract class AbstractEnemy : AbstractCharacter/*, IEnemy*/
+public abstract class AbstractEnemy : AbstractCharacter
 {
     protected Player player;    //Ссылка на главного героя
     protected float _expMultiplier;    // Получаемый опыт за убийство этого врага
@@ -22,6 +22,16 @@ public abstract class AbstractEnemy : AbstractCharacter/*, IEnemy*/
     [SerializeField] protected GameObject healthBar;
 
     float timer;    // Отсчитывает время прошедшее с предыдущей атаки
+
+    public override float Health
+    {
+        get => base.Health;
+        set
+        {
+            base.Health = value;
+            healthBar.transform.localScale = new Vector3(Health / _listHp[Level], transform.localScale.y, transform.localScale.z) / 4;
+        }
+    }
 
     /// <summary>
     /// Метод (Конструктор) для создания абстрактного врага.
@@ -58,17 +68,6 @@ public abstract class AbstractEnemy : AbstractCharacter/*, IEnemy*/
         Move();
     }
 
-    ///// <summary>
-    ///// Проверяет, находится ли игрок в радиусе агра
-    ///// </summary>
-    ///// <param name="target">Цель</param>
-    ///// <param name="agrRadius">Радиус агра</param>
-    ///// <returns></returns>
-    //public virtual bool GetAggressive(Vector3 target, float agrRadius = 10)
-    //{
-    //    return Vector3.Distance(transform.position, target) < agrRadius;
-    //}
-
     /// <summary>
     /// Обработчик события 
     /// </summary>
@@ -82,13 +81,8 @@ public abstract class AbstractEnemy : AbstractCharacter/*, IEnemy*/
     /// <summary>
     /// Реализует перемещение врага к игроку.
     /// </summary>
-    ///// <param name="target">Координаты</param>
-    ///// <param name="movespeed">Скорость передвижения</param>
-    public virtual void Move(/*Vector3 target*//*, float movespeed = 3*/)
+    public virtual void Move()
     {
-        //agent.speed = movespeed;
-        //agent.acceleration = 20;
-        //agent.stoppingDistance = agrRadius;
         if (Vector3.Distance(player.transform.position, transform.position) < _agrRadius)
         {
             agent.SetDestination(player.transform.position);
@@ -101,7 +95,10 @@ public abstract class AbstractEnemy : AbstractCharacter/*, IEnemy*/
         }
     }
 
-    public override void Die(/*float delay = 0*/)
+    /// <summary>
+    /// Обработчик смерти врага
+    /// </summary>
+    public override void Die()
     {
         player.Experience += _expMultiplier * Level;
         CanvasManager.Instance.UpdateHUD();
@@ -116,9 +113,12 @@ public abstract class AbstractEnemy : AbstractCharacter/*, IEnemy*/
         var forceMultiplier = Mathf.Clamp(Mathf.Log(player.Level * 1f / Level), .2f, 2);
         ragdoll.StartDeath(force * forceMultiplier, 3);
 
-        base.Die(/*delay*/);
+        base.Die();
     }
 
+    /// <summary>
+    /// Отображает в editor'е радиус атаки и агра противников 
+    /// </summary>
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
@@ -126,18 +126,12 @@ public abstract class AbstractEnemy : AbstractCharacter/*, IEnemy*/
         Gizmos.DrawWireSphere(transform.position, _attackRadius);
     }
 
+    /// <summary>
+    /// Обрабатывает получение урона.
+    /// </summary>
+    /// <param name="damage">количество урона</param>
     public override void GetDamage(float damage)
     {
         base.GetDamage(damage);
-        healthBar.transform.localScale = new Vector3(Health / _listHp[Level], transform.localScale.y, transform.localScale.z) / 4;
-    }
-
-    public void OnEnable()
-    {
-        //Health = Health < 1 ? _listHp[Level] : Health;
-        //Manapool = Manapool < 1 ? _listMp[Level] : Manapool;
-        Health = _listHp[Level];
-        Manapool = _listMp[Level];
-        healthBar.transform.localScale = new Vector3(Health / _listHp[Level], transform.localScale.y, transform.localScale.z) / 4;
     }
 }

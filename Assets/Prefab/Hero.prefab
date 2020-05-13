@@ -72,9 +72,9 @@ GameObject:
   - component: {fileID: 4621171860792138}
   - component: {fileID: 95401923652868456}
   - component: {fileID: 984069046568152946}
-  - component: {fileID: 1742906468}
   - component: {fileID: 1742906469}
   - component: {fileID: 1742906466}
+  - component: {fileID: 1742906468}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Player
@@ -139,22 +139,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 0
---- !u!54 &1742906468
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1644408783840310}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!136 &1742906469
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -166,9 +150,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 1
+  m_Height: 1.5
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.75, z: 0}
 --- !u!114 &1742906466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,11 +165,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7de9c2405f2800c42a7edf549c1f4bc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _scrollingText: {fileID: 8392548947045985053, guid: 7332df5dbc659584f95401050a91149f,
+    type: 3}
+  _scrollingTextColor: {r: 0.9433962, g: 0.29741356, b: 0.23584905, a: 1}
   _health: 0
   _mana: 0
   _lvl: 0
   _exp: 0
-  damage: 10
+--- !u!114 &1742906468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644408783840310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90acd23e9e745e6449788ec7fdd863ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agrRange: 20
 --- !u!1 &1651103941662380
 GameObject:
   m_ObjectHideFlags: 0

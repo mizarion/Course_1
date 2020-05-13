@@ -3,26 +3,37 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//[RequireComponent(typeof(TextMesh))]
 public class SaveSlotButton : MonoBehaviour
 {
-    public Text Name_Text;
-
-    [SerializeField]
-    string _name = "default save";
-
-    public string DateTime
-    {
-        get => _name;
-        set { Name_Text.text = value; _name = value; }
-    }
+#pragma warning disable 649
 
     public string path;
 
-    //public int date { get; set; }
+    [SerializeField] TMPro.TextMeshProUGUI _dateTMP;
 
-    public void UpdateText()
+    [SerializeField] string _text;
+
+    public bool isAvaible;
+
+#pragma warning restore 649
+
+    public string DateTMP
     {
-        Name_Text.text = DateTime;
+        get => _text;
+        set
+        {
+            _text = value;
+            _dateTMP.text = value;
+        }
+    }
+
+    /// <summary>
+    /// Обновляет содержимое кнопки и ее отображение
+    /// </summary>
+    /// <param name="forceActivate"></param>
+    public void UpdateButton(bool forceActivate = false)
+    {
+        gameObject.SetActive(isAvaible || forceActivate);
+        _dateTMP.text = _text;
     }
 }

@@ -11,76 +11,37 @@ public class AudioManager : Singleton<AudioManager>
 
 #pragma warning restore 649
 
-    AudioSource _audioSource;
+    public AudioSource AudioSource => GetComponent<AudioSource>();
 
     MyAudioClips CurrentClip;
 
-    protected override void Awake()
+    private void FixedUpdate()
     {
-        base.Awake();
-        _audioSource = GetComponent<AudioSource>();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (!AudioSource.isPlaying)
         {
-            PlayClips(MyAudioClips.StartClip);
-        }
-        else if (Input.GetKeyDown(KeyCode.Q))
-        {
-            //PlayClips(MyAudioClips.secondClip);
             PlayNextClip();
         }
-        //if (!_audioSource.isPlaying)
-        //{
-        //    PlayNextClip();
-        //}
     }
-
-    private void PlayNextClip()
+    
+    /// <summary>
+    /// Проигрывает следующий клип
+    /// </summary>
+    public void PlayNextClip()
     {
-        // Todo: Добавить ... логики?
-        if (CurrentClip == MyAudioClips.LastClip)
-        {
-            CurrentClip = MyAudioClips.StartClip;
-        }
-        else
-        {
-            CurrentClip++;
-        }
-        _audioSource.clip = Clips[(int)CurrentClip];
-        _audioSource.PlayDelayed(1);
-
+        AudioSource.clip = Clips[(int)CurrentClip];
+        AudioSource.PlayDelayed(1);
+        AudioSource.Play();
+        CurrentClip = CurrentClip == MyAudioClips.LastClip ? MyAudioClips.StartClip : CurrentClip + 1;
     }
 
-    public void PlayClips(MyAudioClips audioClip)
-    {
-        int i = (int)audioClip;
-        //if (_audioSource.isPlaying)
-        //{
-        //_audioSource.PlayDelayed(10);
-        //Debug.Log("play");
-        //}
-        //else
-        //{
-        // Играет не зависимо от чего (использовать для единоразовых звуков)
-        //_audioSource.PlayOneShot(Clips[i]);
-        //}
-    }
-
-
+    /// <summary>
+    /// Перечисление клипов
+    /// </summary>
     public enum MyAudioClips
     {
-        StartClip,
-        secondClip,
+        StartClip,     // Winds of Winter 
+        RedSwan,
+        HiroyukiSavano,
         LastClip
     }
 }
