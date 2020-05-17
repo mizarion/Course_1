@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿/// <summary>
+/// Класс, реализующий противника короля гоблинов.
+/// </summary>
 public class GoblinBoss : AbstractEnemy
 {
     private void Awake()

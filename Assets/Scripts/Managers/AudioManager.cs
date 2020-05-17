@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+/// <summary>
+///     
+/// </summary>
 public class AudioManager : Singleton<AudioManager>
 {
 #pragma warning disable 649
 
-    [SerializeField] AudioClip[] Clips;
+    [SerializeField] AudioClip[] Clips;     // Массив, содержащий музыку, для воспроизведения
 
 #pragma warning restore 649
 
@@ -29,7 +29,7 @@ public class AudioManager : Singleton<AudioManager>
     public void PlayNextClip()
     {
         AudioSource.clip = Clips[(int)CurrentClip];
-        AudioSource.PlayDelayed(1);
+        //AudioSource.PlayDelayed(1);
         AudioSource.Play();
         CurrentClip = CurrentClip == MyAudioClips.LastClip ? MyAudioClips.StartClip : CurrentClip + 1;
     }
@@ -45,5 +45,4 @@ public class AudioManager : Singleton<AudioManager>
         LastClip
     }
 }
-
 

@@ -1,22 +1,25 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
+/// <summary>
+/// Класс, реализующий работу кнопки сохранений
+/// </summary>
 public class SaveSlotButton : MonoBehaviour
 {
 #pragma warning disable 649
 
-    public string path;
+    public string path;       // Путь до папки с сохранением
 
-    [SerializeField] TMPro.TextMeshProUGUI _dateTMP;
+    [SerializeField] TMPro.TextMeshProUGUI _dateTMP; // Ссылка компонент с текстом
 
-    [SerializeField] string _text;
+    [SerializeField] string _text;  // Хранит значение для сериализации
 
-    public bool isAvaible;
+    public bool isAvaible;          // Доступность сохранения
 
 #pragma warning restore 649
 
+    /// <summary>
+    /// Свойство для работы с отображаемым текстом на кнопке сохранения 
+    /// </summary>
     public string DateTMP
     {
         get => _text;
@@ -30,7 +33,7 @@ public class SaveSlotButton : MonoBehaviour
     /// <summary>
     /// Обновляет содержимое кнопки и ее отображение
     /// </summary>
-    /// <param name="forceActivate"></param>
+    /// <param name="forceActivate">Принудительная активация</param>
     public void UpdateButton(bool forceActivate = false)
     {
         gameObject.SetActive(isAvaible || forceActivate);

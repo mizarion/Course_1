@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.AI;
-using UnityEngine.EventSystems;
 
 /// <summary>
 /// Класс, реализующий игрока
@@ -11,10 +7,13 @@ using UnityEngine.EventSystems;
 [System.Serializable]
 public class Player : AbstractCharacter, System.ICloneable
 {
-    [HideInInspector] public static Player instance;
-    bool isAttacking;
-    GameObject attackTarget;
+    [HideInInspector] public static Player instance;    // Ссылка на героя. Singleton
+    bool isAttacking;           // Состояние атаки героя. Начата ли атака
+    GameObject attackTarget;    //Ссылка на противника
 
+    /// <summary>
+    /// Свойство, отвечающее за работу с уровнем героя
+    /// </summary>
     public override int Level
     {
         get => base.Level;
@@ -49,18 +48,18 @@ public class Player : AbstractCharacter, System.ICloneable
     }
 
     /// <summary>
-    /// Класс, служащий для сохранения данных героя
+    /// Класс, хранящий данные необходимые для сохранения.
     /// </summary>
     public class PlayerData
     {
-        public float Health;
-        public float Manapool;
-        public int Level;
-        public float Experience;
+        public float Health;    // Хранение данных о здоровье героя
+        public float Manapool;  // Хранение данных о мане героя
+        public int Level;       // Хранение данных о уровне героя
+        public float Experience;// Хранение данных о полученном опыте героя
     }
 
     /// <summary>
-    /// Обрабатывает сохраненные данные
+    /// Принимает и обрабатывает сохраненные данные
     /// </summary>
     /// <param name="data">Сохраненные данные</param>
     public void ApplyPlayerData(PlayerData data)

@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using UnityEngine;
 
 /// <summary>
 /// Интерфейс, отвечающий за основную механику персонажей.

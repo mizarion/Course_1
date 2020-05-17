@@ -1,13 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+/// <summary>
+/// Класс, анимирующий смерть противника.
+/// </summary>
 public class RagdollScript : MonoBehaviour
 {
 #pragma warning disable 649
 
-    [SerializeField] Rigidbody rbody;
-    [SerializeField] float forceToAdd = 5000;
+    [SerializeField] Rigidbody rbody;           // Ссылка на компонент Rigidbody
+    [SerializeField] float forceToAdd = 5000;   // Множитель для силы отталкивания 
 
 #pragma warning restore 649
 

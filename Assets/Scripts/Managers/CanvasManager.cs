@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
@@ -12,38 +11,38 @@ public class CanvasManager : Singleton<CanvasManager>
     [SerializeField] GameObject _startSceneUI;   // Контейнер для объектов стартового меню
 
     [Header("Settings")]
-    [SerializeField] Image _settingsPanel;
+    [SerializeField] Image _settingsPanel;      // Ссылка на меню настроек
     [SerializeField] Image _pauseImage;         // Ссылка на меню паузы
-    [SerializeField] Slider _musicVolume;
-    [SerializeField] TMPro.TextMeshProUGUI _FPSLimit_TMP;
+    [SerializeField] Slider _musicVolume;       // Ссылка на ползунок громкости в меню настроек
+    [SerializeField] TMPro.TextMeshProUGUI _FPSLimit_TMP;       
     [SerializeField] Slider _FPSVolume;
 
     [Header("Save&Load")]
-    [SerializeField] Image _loadMenu;
-    [SerializeField] Image _saveMenu;
-    public SaveSlotButton loadOne;
-    public SaveSlotButton loadTwo;
-    public SaveSlotButton loadThree;
-    public SaveSlotButton saveOne;
-    public SaveSlotButton saveTwo;
-    public SaveSlotButton saveThree;
+    [SerializeField] Image _loadMenu;           // Ссылка на меню загрузки сохранений
+    [SerializeField] Image _saveMenu;           // Ссылка на меню создания сохранений
+    public SaveSlotButton loadOne;              // Ссылка на класс, реализующий работу с кнопками сохранения 
+    public SaveSlotButton loadTwo;              // Ссылка на класс, реализующий работу с кнопками сохранения 
+    public SaveSlotButton loadThree;            // Ссылка на класс, реализующий работу с кнопками сохранения 
+    public SaveSlotButton saveOne;              // Ссылка на класс, реализующий работу с кнопками сохранения 
+    public SaveSlotButton saveTwo;              // Ссылка на класс, реализующий работу с кнопками сохранения 
+    public SaveSlotButton saveThree;            // Ссылка на класс, реализующий работу с кнопками сохранения 
 
     [Header("HUD")]
     [SerializeField] GameObject HUD;            // Контейнер для объектов пользовательского интерфейса
     [SerializeField] Image _healthImage;        // Полоска здоровья героя
     [SerializeField] Image _manaImage;          // Полоска маны героя
-    [SerializeField] Image _expImage;           // Полоска опыта героя'
-    [SerializeField] TMPro.TextMeshProUGUI _lvlText;
-    [SerializeField] TMPro.TextMeshProUGUI _messageText;
-    public Button Skill1, Skill2;
-    [SerializeField] Image _storyImage;
-    [SerializeField] Image _victoryPanel;
+    [SerializeField] Image _expImage;           // Полоска опыта героя
+    [SerializeField] TMPro.TextMeshProUGUI _lvlText;        // Ссылка на текст, отвечающий за показ уровня героя
+    [SerializeField] TMPro.TextMeshProUGUI _messageText;    // Ссылка на текст, для инструкций при смене локаций
+    public Button Skill1, Skill2;               // Ссылка на способности героя
+    [SerializeField] Image _storyImage;         // Ссылка на изображение с предысторией
+    [SerializeField] Image _victoryPanel;       // Ссылка на изображение, появляющиеся после победы над боссом
 
     [Header("Players Death")]
-    [SerializeField] Image _DeathPanel;
+    [SerializeField] Image _DeathPanel;         // Ссылка на меню смерти
 
-    [HideInInspector] public bool needLoad;                       // отвечает за информирование о необходимости загрузки сохранения 
-    [HideInInspector] public string path;
+    [HideInInspector] public bool needLoad;     // отвечает за информирование о необходимости загрузки сохранения 
+    [HideInInspector] public string path;       // Путь до папки с сохранением
 
 #pragma  warning restore 649
 
@@ -180,7 +179,7 @@ public class CanvasManager : Singleton<CanvasManager>
     }
 
     /// <summary>
-    /// Показывает / Скрывает меню с предысторией
+    /// Показывает / Скрывает меню с предысторией.
     /// </summary>
     public void ShowStory()
     {
@@ -228,19 +227,19 @@ public class CanvasManager : Singleton<CanvasManager>
 
     /// <summary>
     /// Обработчик способности 1.
-    /// Хорошо было бы сделать отображение нажатия...
     /// </summary>
     public void SpellOne()
     {
+        // Хорошо было бы сделать отображение нажатия...
         SkillsManager.Instance.FirstSkill();
     }
 
     /// <summary>
     /// Обработчик способности 2
-    /// Хорошо было бы сделать отображение нажатия...
     /// </summary>
     public void SpellTwo()
     {
+        // Хорошо было бы сделать отображение нажатия...
         SkillsManager.Instance.SecondSkill();
     }
 

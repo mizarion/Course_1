@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 /// <summary>
@@ -11,7 +10,7 @@ public class SmoothFollowTarget : Singleton<SmoothFollowTarget>
 
     /// <summary>
     /// ¬строенный метод, который вызываетс€ в конце каждого кадра. 
-    /// »спользуетс€ дл€ перемещени€ камеры за героем  
+    /// »спользуетс€ дл€ перемещени€ камеры за героем.  
     /// </summary>
     public void LateUpdate()
     {

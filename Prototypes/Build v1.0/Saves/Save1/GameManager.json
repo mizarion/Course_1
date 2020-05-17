@@ -1,0 +1,12 @@
+{
+    "CurrentState": 2,
+    "CurrentScene": 1,
+    "isSaveOneAvailable": false,
+    "isSaveTwoAvailable": false,
+    "isSaveThreeAvailable": false,
+    "_deathCounter": 22,
+    "canTeleport": true,
+    "canEnterInDungeon": false,
+    "avaibleFirstSkill": true,
+    "avaibleSecondSkill": true
+}

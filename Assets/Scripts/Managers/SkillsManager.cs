@@ -1,15 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+/// <summary>
+/// 
+/// </summary>
 public class SkillsManager : Singleton<SkillsManager>
 {
-    [SerializeField, Range(50, 100)] float hpHealCost = 50;
-    [SerializeField, Range(10, 20)] float agrCost = 50;
-    [SerializeField, Range(20, 50)] float agrRange = 20;
+    [SerializeField, Range(50, 100)] float hpHealCost = 50; // Стоимость восполнения жизни второй способностью
+    [SerializeField, Range(10, 20)] float agrCost = 20;     // Стоимость использования первой способности
+    [SerializeField, Range(20, 50)] float agrRange = 20;    // Радиус провокации противников
 
     /// <summary>
-    /// Первая способность - агрессия 
+    /// Первая способность – провокация противников
     /// </summary>
     public void FirstSkill()
     {

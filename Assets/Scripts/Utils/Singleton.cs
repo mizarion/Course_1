@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
 /// Класс, реализующий паттерн Singleton. 
@@ -8,7 +6,7 @@ using UnityEngine;
 /// <typeparam name="T">Тип</typeparam>
 public class Singleton<T> : MonoBehaviour where T : Singleton<T>
 {
-    public static T Instance { get; private set; }
+    public static T Instance { get; private set; }  // Свойство, хранящее ссылку на экземпляр класса.
 
     protected virtual void Awake()
     {

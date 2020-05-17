@@ -6322,6 +6322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 745166c445ee7724c8bc2e7b7c75191d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 0}
   _scrollingText: {fileID: 8392548947045985053, guid: 7332df5dbc659584f95401050a91149f,
     type: 3}
   _scrollingTextColor: {r: 0.9811321, g: 0.9580047, b: 0.19900322, a: 1}
@@ -9026,6 +9027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ca10dcee6b315499a7d67bb25be7c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 418046727}
   _scrollingText: {fileID: 8392548947045985053, guid: 7332df5dbc659584f95401050a91149f,
     type: 3}
   _scrollingTextColor: {r: 0.9056604, g: 0.8337332, b: 0.38875046, a: 1}
@@ -14964,6 +14966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ca10dcee6b315499a7d67bb25be7c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 556068977}
   _scrollingText: {fileID: 8392548947045985053, guid: 7332df5dbc659584f95401050a91149f,
     type: 3}
   _scrollingTextColor: {r: 0.9056604, g: 0.8337332, b: 0.38875046, a: 1}
@@ -15235,6 +15238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ca10dcee6b315499a7d67bb25be7c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 580346017}
   _scrollingText: {fileID: 8392548947045985053, guid: 7332df5dbc659584f95401050a91149f,
     type: 3}
   _scrollingTextColor: {r: 0.9056604, g: 0.8337332, b: 0.38875046, a: 1}
@@ -15992,6 +15996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ca10dcee6b315499a7d67bb25be7c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 656748469}
   _scrollingText: {fileID: 8392548947045985053, guid: 7332df5dbc659584f95401050a91149f,
     type: 3}
   _scrollingTextColor: {r: 0.9056604, g: 0.8337332, b: 0.38875046, a: 1}
@@ -17334,6 +17339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ca10dcee6b315499a7d67bb25be7c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 773563458}
   _scrollingText: {fileID: 8392548947045985053, guid: 7332df5dbc659584f95401050a91149f,
     type: 3}
   _scrollingTextColor: {r: 0.9056604, g: 0.8337332, b: 0.38875046, a: 1}
@@ -17614,6 +17620,10 @@ PrefabInstance:
       propertyPath: _lvl
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1742906466, guid: dd51aa0141228c3478f60d3fe5ba00eb, type: 3}
+      propertyPath: agent
+      value: 
+      objectReference: {fileID: 805991645}
     - target: {fileID: 1644408783840310, guid: dd51aa0141228c3478f60d3fe5ba00eb, type: 3}
       propertyPath: m_Name
       value: Hero
@@ -18336,6 +18346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ca10dcee6b315499a7d67bb25be7c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 857374280}
   _scrollingText: {fileID: 8392548947045985053, guid: 7332df5dbc659584f95401050a91149f,
     type: 3}
   _scrollingTextColor: {r: 0.9056604, g: 0.8337332, b: 0.38875046, a: 1}
@@ -33735,6 +33746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ca10dcee6b315499a7d67bb25be7c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 1508818461}
   _scrollingText: {fileID: 8392548947045985053, guid: 7332df5dbc659584f95401050a91149f,
     type: 3}
   _scrollingTextColor: {r: 0.9056604, g: 0.8337332, b: 0.38875046, a: 1}
@@ -40544,6 +40556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ca10dcee6b315499a7d67bb25be7c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 1663797412}
   _scrollingText: {fileID: 8392548947045985053, guid: 7332df5dbc659584f95401050a91149f,
     type: 3}
   _scrollingTextColor: {r: 0.9056604, g: 0.8337332, b: 0.38875046, a: 1}
@@ -41089,6 +41102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ca10dcee6b315499a7d67bb25be7c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 1727917930}
   _scrollingText: {fileID: 8392548947045985053, guid: 7332df5dbc659584f95401050a91149f,
     type: 3}
   _scrollingTextColor: {r: 0.9056604, g: 0.8337332, b: 0.38875046, a: 1}
@@ -48458,6 +48472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ca10dcee6b315499a7d67bb25be7c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 1986949624}
   _scrollingText: {fileID: 8392548947045985053, guid: 7332df5dbc659584f95401050a91149f,
     type: 3}
   _scrollingTextColor: {r: 0.9056604, g: 0.8337332, b: 0.38875046, a: 1}
@@ -48912,6 +48927,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ca10dcee6b315499a7d67bb25be7c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 2033433326}
   _scrollingText: {fileID: 8392548947045985053, guid: 7332df5dbc659584f95401050a91149f,
     type: 3}
   _scrollingTextColor: {r: 0.9056604, g: 0.8337332, b: 0.38875046, a: 1}
@@ -49734,6 +49750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ca10dcee6b315499a7d67bb25be7c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 2140257273}
   _scrollingText: {fileID: 8392548947045985053, guid: 7332df5dbc659584f95401050a91149f,
     type: 3}
   _scrollingTextColor: {r: 0.9056604, g: 0.8337332, b: 0.38875046, a: 1}
@@ -49853,6 +49870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ca10dcee6b315499a7d67bb25be7c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 2468579909548262904}
   _scrollingText: {fileID: 8392548947045985053, guid: 7332df5dbc659584f95401050a91149f,
     type: 3}
   _scrollingTextColor: {r: 0.9056604, g: 0.8337332, b: 0.38875046, a: 1}

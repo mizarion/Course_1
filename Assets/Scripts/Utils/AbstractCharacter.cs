@@ -47,28 +47,28 @@ public abstract class AbstractCharacter : MonoBehaviour, ICharacter
 #pragma warning disable 649
 
     // Компоненты
-    public NavMeshAgent agent { get; protected set; }
-    protected Animator animator;
+    public NavMeshAgent agent; /*{ get; protected set; }*/   // Перемещение персонажа на сцене
+    protected Animator animator;        // Анимирует действия персонажа
     //protected Rigidbody rbody;
 
-    [SerializeField] ScrollingText _scrollingText;
-    [SerializeField] Color _scrollingTextColor;
-    Transform _scrollingTextContainer;
+    [SerializeField] ScrollingText _scrollingText;      // Ссылка на клонируемый объект
+    [SerializeField] Color _scrollingTextColor;         // Цвет вслывающего текста
+    Transform _scrollingTextContainer;                  // Контейнер, куда будут помещаться созданные объекты.
 
     // значения, который можно задать в инспекторе. DebugOnly! Потом удалить атрибуты
     [Header("Values"), Space]
-    [SerializeField] float _health;
-    [SerializeField] float _mana;
-    [SerializeField] int _lvl;
-    [SerializeField] float _exp;
+    [SerializeField] float _health;     // Хранит текущее количество здоровья персонажа
+    [SerializeField] float _mana;       // Хранит текущее количество маны персонажа
+    [SerializeField] int _lvl;          // Хранит текущий уровень
+    [SerializeField] float _exp;        // Хранит текущее количество опыта
 
 #pragma warning restore 649
 
     // списки со значениями 
-    protected List<int> _listHp;
-    protected List<int> _listMp;
-    protected List<int> _listExp;
-    protected List<int> _listDmg;
+    protected List<int> _listHp;        // Список возможных значений здоровья
+    protected List<int> _listMp;        // Список возможных значений маны
+    protected List<int> _listExp;       // Список возможных значений опыта
+    protected List<int> _listDmg;       // Список возможных значений урона
 
     /// <summary>
     /// Имя персонажа

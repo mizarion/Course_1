@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -9,8 +8,8 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public abstract class AbstractEnemy : AbstractCharacter
 {
-    protected Player player;    //Ссылка на главного героя
-    protected float _expMultiplier;    // Получаемый опыт за убийство этого врага
+    protected Player player;           // Ссылка на главного героя
+    protected float _expMultiplier;    // Множитель получаемого опыта за убийство этого противника
 
     [SerializeField] protected float _agrRadius = 10;       // Радиус, с которого враг замечает героя
     [SerializeField] protected float _attackRadius; //= 2;  // Радиус, с которого враг начинает атаковать героя
@@ -18,8 +17,8 @@ public abstract class AbstractEnemy : AbstractCharacter
     //[SerializeField] float _multiplier = 3;
 
     [Header("GameObject")]
-    [SerializeField] protected GameObject DieRagdoll;
-    [SerializeField] protected GameObject healthBar;
+    [SerializeField] protected GameObject DieRagdoll;       // Ragdoll’ для анимации смерти.
+    [SerializeField] protected GameObject healthBar;        // Полоска здоровья
 
     float timer;    // Отсчитывает время прошедшее с предыдущей атаки
 
@@ -121,8 +120,9 @@ public abstract class AbstractEnemy : AbstractCharacter
     /// </summary>
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
+        Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, _agrRadius);
+        Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, _attackRadius);
     }
 

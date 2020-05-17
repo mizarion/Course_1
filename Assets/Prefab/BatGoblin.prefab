@@ -89,6 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ca10dcee6b315499a7d67bb25be7c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 2022802453115235838}
   _scrollingText: {fileID: 8392548947045985053, guid: 7332df5dbc659584f95401050a91149f,
     type: 3}
   _scrollingTextColor: {r: 0.9056604, g: 0.8337332, b: 0.38875046, a: 1}

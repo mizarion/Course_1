@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
 /// Класс, реализующий визуализацию информации об уроне.
@@ -8,10 +6,10 @@ using UnityEngine;
 [RequireComponent(typeof(TextMesh))]
 public class ScrollingText : MonoBehaviour
 {
-    TextMesh _textMesh;
-    [SerializeField] float _duration = 3;
-    [SerializeField] float _speed = 3;
-    float _timer;
+    TextMesh _textMesh;         // Ссылка на главного героя
+    [SerializeField] float _duration = 3;   // Получаемый опыт за убийство этого врага
+    [SerializeField] float _speed = 3;      // Радиус, с которого враг замечает героя
+    float _timer;       // Время жизни объекта
 
     void Awake()
     {

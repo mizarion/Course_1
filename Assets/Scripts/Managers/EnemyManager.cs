@@ -2,26 +2,31 @@
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using UnityEngine;
-using UnityEngineInternal;
 
+/// <summary>
+/// Класс, реализующий работу с врагами.
+/// </summary>
 public class EnemyManager : Singleton<EnemyManager>
 {
     #region Object Pooling 
 #pragma warning disable 649
 
-    [SerializeField] GameObject enemySample;
-    [SerializeField] Transform[] _spawnPositions;
-    [SerializeField] int poolStartLength = 20;
-    [SerializeField] float _spawnRadius = 50;
-    List<AbstractEnemy> _abstractEnemiesPool = new List<AbstractEnemy>();
+    [SerializeField] GameObject enemySample;        // Образец создоваемых врагов
+    [SerializeField] Transform[] _spawnPositions;   // Позиции для создания противников
+    [SerializeField] int poolStartLength = 20;      // Минимальное количество противников в массиве. Для Object Pooling 
+    [SerializeField] float _spawnRadius = 50;       // Минимальное расстояние между героем и созданным противником.
+    List<AbstractEnemy> _abstractEnemiesPool = new List<AbstractEnemy>();       // Список противников приведенных к AbstractEnemy
 
-    public List<GameObject> ragdollPool = new List<GameObject>();
+    public List<GameObject> ragdollPool = new List<GameObject>();               // Список ragdoll’ов, которые нужно удалить при загрузке сохранения.
 
-    [SerializeField, DataMember] List<GameObject> _pool = new List<GameObject>();
+    [SerializeField, DataMember] List<GameObject> _pool = new List<GameObject>(); // Список GameObject противников.
 
 #pragma warning restore 649
 
-    public GameObject GetEnemy
+    /// <summary>
+    /// Свойство, находящее не используемого противника из пула, активирует и возвращает его.
+    /// </summary>
+    public GameObject GetEnemy      
     {
         get
         {
@@ -42,10 +47,13 @@ public class EnemyManager : Singleton<EnemyManager>
         }
     }
 
+    /// <summary>
+    /// Свойство, возвращающее ссылку на пул GameObject’ов.
+    /// </summary>
     public List<GameObject> GetPool => _pool;
 
     /// <summary>
-    /// Возвращает активных врагов.
+    /// Свойство, находящее используемых противников из пула, добавляет их в список и возвращает его.
     /// </summary>
     public List<AbstractEnemy> GetActiveAbstractEnemyPool
     {
@@ -63,6 +71,9 @@ public class EnemyManager : Singleton<EnemyManager>
         }
     }
 
+    /// <summary>
+    /// Свойство, возвращающее список противников приведенных к AbstractEnemy.
+    /// </summary>
     public List<AbstractEnemy> GetAbstractEnemyPool => _abstractEnemiesPool;
 
 

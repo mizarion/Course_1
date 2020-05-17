@@ -1,9 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+/// <summary>
+/// Класс, отвечающий за переход между локациями. Переход с причала на остров.
+/// </summary>
 public class Cutscene_dock : MonoBehaviour
 {
+    /// <summary>
+    /// Встроенный метод. Используется для обработки нахождения в триггере
+    /// </summary>
+    /// <param name="other">Вошедший коллайдер</param>
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -32,6 +37,10 @@ public class Cutscene_dock : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Встроенный метод. Используется для обработки выхода из триггера
+    /// </summary>
+    /// <param name="other">Вышедший коллайдер</param>
     private void OnTriggerExit(Collider other)
     {
         CanvasManager.Instance.UpdateMessage(string.Empty);

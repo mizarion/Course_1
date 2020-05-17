@@ -1,24 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class GoblinData 
+﻿/// <summary>
+/// Класс, содержащий данные о гоблинах для сохранения.
+/// </summary>
+public class GoblinData
 {
     public GoblinData(Goblin goblin)
     {
         Health = goblin.Health;
         Manapool = goblin.Manapool;
-        Level= goblin.Level;
+        Level = goblin.Level;
     }
-
-    //public GoblinData(GoblinBoss goblin)
-    //{
-    //    Health = goblin.Health;
-    //    Manapool = goblin.Manapool;
-    //    Level = goblin.Level;
-    //}
-
-    public float Health;
-    public float Manapool;
-    public int Level;
+    
+    public float Health;     // Хранение данных о здоровье героя
+    public float Manapool;   // Хранение данных о мане героя
+    public int Level;        // Хранение данных об уровне героя
 }

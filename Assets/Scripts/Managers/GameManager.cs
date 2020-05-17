@@ -1,14 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Runtime.Serialization.Json;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
 
 /// <summary>
 /// Игровые состояния
@@ -41,20 +36,26 @@ public class GameManager : Singleton<GameManager>
     /// </summary>
     public GameState CurrentState;
 
+    /// <summary>
+    /// Текущая сцена
+    /// </summary>
     public Scenes CurrentScene;
 
-    [HideInInspector] public bool isSaveOneAvailable;
-    [HideInInspector] public bool isSaveTwoAvailable;
-    [HideInInspector] public bool isSaveThreeAvailable;
+    [HideInInspector] public bool isSaveOneAvailable;   // Доступность 1 сохранения
+    [HideInInspector] public bool isSaveTwoAvailable;   // Доступность 2 сохранения
+    [HideInInspector] public bool isSaveThreeAvailable; // Доступность 3 сохранения
 
-    [SerializeField] int _deathCounter;
+    [SerializeField] int _deathCounter;     // Счетчик убийств
 
-    public bool canTeleport;
-    public bool canEnterInDungeon;
+    public bool canTeleport;        // Возможность перемещения на остров
+    public bool canEnterInDungeon;  // Возможность перемещения в подземелье
 
-    public bool avaibleFirstSkill;
-    public bool avaibleSecondSkill;
+    public bool avaibleFirstSkill;  // Доступность 1 способности
+    public bool avaibleSecondSkill; // Доступность 2 способности
 
+    /// <summary>
+    /// Свойство, обрабатывающее количество смертей
+    /// </summary>
     public int DeathCounter
     {
         get => _deathCounter;
@@ -76,6 +77,9 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
+    /// <summary>
+    /// Встроенный метод. Используется для задавания уничтожаемых объектов, инициализации полей и проверки существующих сохранений. 
+    /// </summary>
     void Start()
     {
         DontDestroyOnLoad(gameObject);
@@ -234,8 +238,7 @@ public class GameManager : Singleton<GameManager>
 
 
     /// <summary>
-    /// Перезапускает игру.
-    /// Выгружает текущую сцену, меняя режим интерфейса на стартовое меню.  
+    /// Перезапускает игру, выгружая текущую сцену и меняя режим интерфейса на стартовое меню.  
     /// </summary>
     public void RestartGame()
     {
@@ -417,7 +420,7 @@ public class GameManager : Singleton<GameManager>
     }
 
     /// <summary>
-    /// Проверяет текущую сцену и загружаемую, и решает что дальше делать.
+    /// Проверяет текущую сцену и загружаемую, и решает, что дальше делать.
     /// </summary>
     /// <param name="path">Путь до папки с сохранениями</param>
     public void CheckCurrentScene(string path)
